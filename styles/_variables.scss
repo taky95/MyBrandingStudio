@@ -1,0 +1,38 @@
+
+$baseFont: var(--font-roboto);
+$titleFont: var(--font-libre);
+$decorativeFont: var(--font-lavish);
+
+$white: #f0f0f0;
+$green: #1D6167;
+$lightgreen: #207475;
+$darkgreen: #155253;
+$graygreen: #0D2F30;
+$lightorange: #F9B39D;
+$orange: #D46039;
+
+$titleFontSize: 36px;
+$logoTitleFontSize: 30px;
+$subTitleFontSize: 24px;
+$baseFontSize: 20px;
+$mobileFontSize: 16px;
+$descFontSize: 14px;
+$logoMobileFontSize: 12px;
+
+@keyframes fadeIn{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+@keyframes zoomIn{
+    0%{
+        transform: scale(1.3);
+    }
+    100%{
+        transform: scale(1);
+    }
+}

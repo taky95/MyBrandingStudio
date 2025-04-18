@@ -1,95 +1,125 @@
 import Image from "next/image";
-import styles from "./page.module.css";
+import styles from "./index.module.css";
+import Link from "next/link";
 
 export default function Home() {
-  return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol>
-          <li>
-            Get started by editing <code>app/page.tsx</code>.
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+  const nav = [
+    {
+      title: "Services",
+      img: "https://via.placeholder.com/1920x1080",
+      link: "/services",
+    },
+    {
+      title: "Services",
+      img: "https://via.placeholder.com/1920x1080",
+      link: "/services",
+    },
+    {
+      title: "Services",
+      img: "https://via.placeholder.com/1920x1080",
+      link: "/services",
+    },
+    ]
 
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.secondary}
-          >
-            Read our docs
-          </a>
+  const steps = [
+    {
+      title:'1:1 Program',
+      desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+    },
+    {
+      title:'Sales & Growth',
+      desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+    },
+    {
+      title:'Marketing',
+      desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+    },
+    {
+      title:'Branding',
+      desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+    },
+    {
+      title:'Mindset',
+      desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+    },
+  ]
+  return (
+    <>
+      <section className={styles.hero}>
+        <Image src="https://via.placeholder.com/1920x1080" alt="slider" />
+        <div className={styles.cards}>
+          <div className={styles.card_content}>
+            <h1>Improve your Impact & Income</h1>
+            <p>Slider Description</p>
+            <button>Lets Do it!</button>
+          </div>
+          <Image src="https://via.placeholder.com/1920x1080" alt="logo" />
         </div>
-      </main>
-      <footer className={styles.footer}>
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+      </section>
+      <section className={styles.nav}>
+        {nav.map((nav_item, index) => (
+            <div className={styles.nav_content} key={index}>
+            <Image src={nav_item.img} alt="service-info" />
+            <p>{nav_item.title}</p>
+            <Link href={nav_item.link}>arrow</Link>
+          </div>
+        ))} 
+      </section>
+      <section className={styles.intro}>
+        <h2></h2>
+        <p></p>
+      </section>
+      <section className={styles.steps}>
+        {steps.map((step, index) => (
+          <div className={styles.steps_content} key={index}>
+            <Image src="https://via.placeholder.com/1920x1080" alt="step" />
+            <div>
+              <h2>{step.title}</h2>
+              <p>{step.desc}</p>
+              <Link href="#">Read more</Link>
+            </div>
+          </div>
+        ))} 
+      </section>
+      <section className="introduction">
+        <Image src="https://via.placeholder.com/1920x1080" alt="review" />
+        <div>
+          <h2>Hey, Im Marina,</h2>
+          <h3>your new branding</h3>
+          <h3>b marketing strategist</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          <button>Read my story</button>
+        </div>
+      </section>
+      <section className="resources">
+        <h2>Resources</h2>
+        <div className="resource">
+          <div className="resource-item">
+            <h3>Resource Title</h3>
+            <button>Read more</button>
+            <Image src="https://via.placeholder.com/1920x1080" alt="resource" />
+          </div>
+          <div className="resource-item">
+            <h3>Resource Title</h3>
+            <button>Read more</button>
+            <Image src="https://via.placeholder.com/1920x1080" alt="resource" />
+          </div>
+          <div className="resource-item">
+            <h3>Resource Title</h3>
+            <button>Read more</button>
+            <Image src="https://via.placeholder.com/1920x1080" alt="resource" />
+          </div>
+        </div>
+      </section>
+      <section className="socialmedia">
+        <ul>
+          <li><a href="#"><Image src="https://via.placeholder.com/1920x1080" alt="slider" /></a></li>
+          <li><a href="#"><Image src="https://via.placeholder.com/1920x1080" alt="slider" /></a></li>
+          <li><a href="#"><Image src="https://via.placeholder.com/1920x1080" alt="slider" /></a></li>
+          <li><a href="#"><Image src="https://via.placeholder.com/1920x1080" alt="slider" /></a></li>
+          <li><a href="#"><Image src="https://via.placeholder.com/1920x1080" alt="slider" /></a></li>
+        </ul>
+      </section>
+  </>
   );
 }
