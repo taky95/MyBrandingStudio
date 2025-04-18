@@ -1,0 +1,45 @@
+# --- Build Stage ---
+  FROM node:20-slim AS builder
+
+  WORKDIR /app
+
+  # Install OpenSSL and dependencies first (for caching)
+  RUN apt-get update && apt-get install -y openssl
+
+  # Install dependencies first (for caching)
+  COPY package.json package-lock.json ./
+  
+  # Install dependencies
+  RUN npm ci
+  
+  # Copy the rest of the app
+  COPY . .
+  
+  # Build the Next.js application (for production)
+  RUN npm run build
+  
+  # --- Run Stage ---
+  FROM node:20-slim
+  
+  WORKDIR /app
+  
+  ENV NODE_ENV=production
+  
+  # Install OpenSSL and dependencies first (for caching)
+  RUN apt-get update && apt-get install -y openssl
+
+  # Install only production dependencies
+  COPY package.json package-lock.json ./
+  RUN npm ci --omit=dev
+  
+  # Copy necessary files from the build stage
+  COPY --from=builder /app/.next .next
+  COPY --from=builder /app/public public
+  COPY --from=builder /app/node_modules node_modules
+  COPY --from=builder /app/package.json .
+  COPY --from=builder /app/next.config.js .
+  
+  # Expose the port for the Next.js app
+  EXPOSE 3000
+  
+  CMD ["npm", "start"]
