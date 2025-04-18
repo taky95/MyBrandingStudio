@@ -19,7 +19,7 @@ jobs:
       - uses: gr2m/merge-schedule-action@v2
         with:
           # Time zone to use. Default is UTC. Time zone is used when ISO date string is used.
-          time_zone: 'Asia/Tokyo'
+          time_zone: 'Canada/Mountain'
           # Require all pull request statuses to be successful before
           # merging. Default is `false`.
           require_statuses_success: 'true'

@@ -1,24 +1,22 @@
 ---
-name: Issue汎用テンプレート
-about: このプロジェクトで使うIssue用のテンプレートです。
+name: General issue template
+about: template used to report general issues.
 title: ''
 labels: ''
 assignees: ''
 
 ---
 
-<!-- あくまでテンプレートなので必ずしもすべての項目を埋めなくてよい -->
+<!-- Request Template -->
+# Overview
+# Purpose
+# Suggestion
+# Tasks
+- [ ] Task A
 
-<!-- 要望のテンプレート -->
-# 概要
-# 目的
-# 提案内容
-# タスク
-- [ ] 細かいタスクに分解できているなら書き出す
-
-<!-- 不具合のテンプレート -->
-# 概要
-# 再現手順
-# 修正しないとどう困るか
-# 原因
-# 修正案
+<!-- Bug Template -->
+# Overview
+# How to recreate
+# Issue
+# Cause
+# Fix
