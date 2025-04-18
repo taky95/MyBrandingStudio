@@ -1,13 +1,13 @@
 import Link from 'next/link'
-import style from '../../styles/header.module.scss'
+import styles from '@/styles/header.module.scss'
 import Image from 'next/image'
 
 const Header = () :React.JSX.Element => {
     return (
         <header>
-            <nav className={style.menuBar}>
-                <Image src="https://via.placeholder.com/1920x1080" alt="logo" />
-                <Link href="/" className={style.title}>My Branding Studio</Link>
+            <nav className={styles.menuBar}>
+                <Image src="https://via.placeholder.com/1920x1080" width={100} height={100} alt="logo" />
+                <Link href="/" className={styles.title}>My Branding Studio</Link>
                     
                 <ul>
                     <li>
@@ -30,8 +30,8 @@ const Header = () :React.JSX.Element => {
                     </li>
                 </ul>
             </nav>
-            <div className={style.hamburgerMenu}>
-                <Link href="/" className={style.title}>My Branding Studio</Link>
+            <div className={styles.hamburgerMenu}>
+                <Link href="/" className={styles.title}>My Branding Studio</Link>
             </div>
         </header>
     );

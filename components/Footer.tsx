@@ -1,13 +1,13 @@
-import styles from '../styles/footer.module.scss'
+import styles from '@/styles/footer.module.scss'
 import Link from 'next/link'
 import Image from 'next/image'
 
 const Footer = () :React.JSX.Element => {
     return (
         <footer className={styles.footer}>
-            <Image src="https://via.placeholder.com/1920x1080" alt="footer" />
+            <Image src="https://via.placeholder.com/1920x1080" width={100} height={100} alt="footer" />
             <div className={styles.footer_content}>
-                <Image src="https://via.placeholder.com/1920x1080" alt="logo" />
+                <Image src="https://via.placeholder.com/1920x1080" width={100} height={100} alt="logo" />
                 <div className="footer-menu">
                     <ul>
                         <li>
