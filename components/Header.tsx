@@ -6,9 +6,10 @@ const Header = () :React.JSX.Element => {
     return (
         <header>
             <nav className={styles.menuBar}>
-                <Image src="https://via.placeholder.com/1920x1080" width={100} height={100} alt="logo" />
-                <Link href="/" className={styles.title}>My Branding Studio</Link>
-                    
+                <Link href="/" className={styles.titleLogo}>
+                    <Image src="https://picsum.photos/200/100" width={200} height={100} alt="logo" />
+                    <span>personal branding studio</span>
+                </Link>
                 <ul>
                     <li>
                         <Link href="/about" >About</Link>
