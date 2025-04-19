@@ -1,7 +1,6 @@
-
-$baseFont: var(--font-roboto);
-$titleFont: var(--font-libre);
-$decorativeFont: var(--font-lavish);
+$baseFont: var(--font-roboto, "Roboto", Arial, sans-serif);
+$titleFont: var(--font-libre, "Libre Bodoni", Georgia, serif);
+$decorativeFont: var(--font-lavish, "Lavishly Yours", cursive);
 
 $white: #f0f0f0;
 $green: #1D6167;
@@ -10,6 +9,7 @@ $darkgreen: #155253;
 $graygreen: #0D2F30;
 $lightorange: #F9B39D;
 $orange: #D46039;
+$black: #070808;
 
 $titleFontSize: 36px;
 $logoTitleFontSize: 30px;
