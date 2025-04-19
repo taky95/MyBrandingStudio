@@ -1,65 +1,32 @@
 import Image from "next/image";
-import styles from "./index.module.css";
-import Link from "next/link";
+import styles from "@/styles/index.module.scss";
+//import Link from "next/link";
 
-export default function Home() {
-  const nav = [
-    {
-      title: "Services",
-      img: "https://via.placeholder.com/1920x1080",
-      link: "/services",
-    },
-    {
-      title: "Services",
-      img: "https://via.placeholder.com/1920x1080",
-      link: "/services",
-    },
-    {
-      title: "Services",
-      img: "https://via.placeholder.com/1920x1080",
-      link: "/services",
-    },
-    ]
+import { GET_POSTS } from '../graphql/queries/query';
+import client from '@/lib/apollo-client'; // Import the Apollo Client instance
+//import { nav, steps } from "@/data";
+import Card from "@/components/Card";
 
-  const steps = [
-    {
-      title:'1:1 Program',
-      desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
-    },
-    {
-      title:'Sales & Growth',
-      desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
-    },
-    {
-      title:'Marketing',
-      desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
-    },
-    {
-      title:'Branding',
-      desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
-    },
-    {
-      title:'Mindset',
-      desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
-    },
-  ]
+export default async function Home() {
+  const { data } = await client.query({ query: GET_POSTS });
+  console.log(data);
+
   return (
     <>
       <section className={styles.hero}>
-        <Image src="https://via.placeholder.com/1920x1080" alt="slider" />
-        <div className={styles.cards}>
-          <div className={styles.card_content}>
-            <h1>Improve your Impact & Income</h1>
-            <p>Slider Description</p>
-            <button>Lets Do it!</button>
-          </div>
-          <Image src="https://via.placeholder.com/1920x1080" alt="logo" />
+        <div className={styles.hero_background}>
+          <Image src="https://picsum.photos/400/200" layout="fill" priority alt="slider"/>
         </div>
+        <div className={styles.hero_content}>
+          <Card />
+        </div>
+
       </section>
+      {/*
       <section className={styles.nav}>
         {nav.map((nav_item, index) => (
             <div className={styles.nav_content} key={index}>
-            <Image src={nav_item.img} alt="service-info" />
+            <Image src={nav_item.img} width={100} height={100}  alt="service-info" />
             <p>{nav_item.title}</p>
             <Link href={nav_item.link}>arrow</Link>
           </div>
@@ -72,7 +39,7 @@ export default function Home() {
       <section className={styles.steps}>
         {steps.map((step, index) => (
           <div className={styles.steps_content} key={index}>
-            <Image src="https://via.placeholder.com/1920x1080" alt="step" />
+            <Image src="https://picsum.photos/100/100" width={100} height={100}  alt="step" />
             <div>
               <h2>{step.title}</h2>
               <p>{step.desc}</p>
@@ -82,7 +49,7 @@ export default function Home() {
         ))} 
       </section>
       <section className="introduction">
-        <Image src="https://via.placeholder.com/1920x1080" alt="review" />
+        <Image src="https://picsum.photos/100/100" width={100} height={100} alt="review" />
         <div>
           <h2>Hey, Im Marina,</h2>
           <h3>your new branding</h3>
@@ -97,29 +64,30 @@ export default function Home() {
           <div className="resource-item">
             <h3>Resource Title</h3>
             <button>Read more</button>
-            <Image src="https://via.placeholder.com/1920x1080" alt="resource" />
+            <Image src="https://picsum.photos/100/100" width={100} height={100} alt="resource" />
           </div>
           <div className="resource-item">
             <h3>Resource Title</h3>
             <button>Read more</button>
-            <Image src="https://via.placeholder.com/1920x1080" alt="resource" />
+            <Image src="https://picsum.photos/100/100" width={100} height={100} alt="resource" />
           </div>
           <div className="resource-item">
             <h3>Resource Title</h3>
             <button>Read more</button>
-            <Image src="https://via.placeholder.com/1920x1080" alt="resource" />
+            <Image src="https://picsum.photos/100/100" width={100} height={100} alt="resource" />
           </div>
         </div>
       </section>
       <section className="socialmedia">
         <ul>
-          <li><a href="#"><Image src="https://via.placeholder.com/1920x1080" alt="slider" /></a></li>
-          <li><a href="#"><Image src="https://via.placeholder.com/1920x1080" alt="slider" /></a></li>
-          <li><a href="#"><Image src="https://via.placeholder.com/1920x1080" alt="slider" /></a></li>
-          <li><a href="#"><Image src="https://via.placeholder.com/1920x1080" alt="slider" /></a></li>
-          <li><a href="#"><Image src="https://via.placeholder.com/1920x1080" alt="slider" /></a></li>
+          <li><a href="#"><Image src="https://picsum.photos/100/100" width={100} height={100} alt="slider" /></a></li>
+          <li><a href="#"><Image src="https://picsum.photos/100/100" width={100} height={100} alt="slider" /></a></li>
+          <li><a href="#"><Image src="https://picsum.photos/100/100" width={100} height={100} alt="slider" /></a></li>
+          <li><a href="#"><Image src="https://picsum.photos/100/100" width={100} height={100} alt="slider" /></a></li>
+          <li><a href="#"><Image src="https://picsum.photos/100/100" width={100} height={100} alt="slider" /></a></li>
         </ul>
       </section>
+      */}
   </>
   );
 }
