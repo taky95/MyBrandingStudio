@@ -1,0 +1,72 @@
+@use 'variables';
+
+.footer{
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+  background-color: variables.$lightgreen;
+  padding: 2%;
+
+  .footer_content{
+    flex: 0 0 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; 
+    width: 100%; 
+    height: 100%; 
+
+    h2{
+      color: variables.$orange;
+      font-family: variables.$decorativeFont;
+      font-size: 45px;
+    }
+    .footer_menu{
+      display: flex;
+      justify-content: center;
+      align-items: center; 
+      width: 100%; 
+      height: 100%; 
+      gap: 2rem;
+
+      .footer_link{
+        display: flex;
+        justify-content: center;
+        align-items: center; 
+        width: 100%; 
+        height: 100%; 
+        gap: 2rem;
+
+        ul{
+          list-style: none;
+        }
+    
+        a{
+          color: variables.$white;
+          text-decoration: none;
+          font-size: variables.$descFontSize;
+        }
+      }
+      .footer_social{
+        display: flex;
+        justify-content: center;
+        align-items: center; 
+        width: 100%; 
+        height: 100%; 
+
+        ul{
+          list-style: none;
+          display: flex;
+          justify-content: space-evenly;
+          gap: 1rem;
+        }
+    
+        a{
+          color: variables.$white;
+          text-decoration: none;
+          font-size: variables.$logoTitleFontSize;
+        }
+      }
+    }
+  }
+}
