@@ -20,7 +20,7 @@ export default async function Home() {
             priority
             alt="slider"
             fill
-            sizes="100vw" />
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 100vw" />
         </div>
         <div className={styles.hero_content}>
           <Card />
