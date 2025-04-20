@@ -2,7 +2,7 @@
 
 import React from "react";
 import dynamic from "next/dynamic";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import styles from "@/styles/card.module.scss";
 import { cards } from "@/data";
 

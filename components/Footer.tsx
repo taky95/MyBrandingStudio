@@ -1,6 +1,6 @@
 import styles from '@/styles/footer.module.scss'
 import Link from 'next/link'
-import Image from 'next/image'
+import Image from "next/legacy/image"
 import { FaFacebookF, FaTwitter, FaInstagram } from 'react-icons/fa';
 
 const Footer = () :React.JSX.Element => {

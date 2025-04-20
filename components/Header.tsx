@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import styles from '@/styles/header.module.scss'
-import Image from 'next/image'
+import Image from "next/legacy/image"
 
 const Header = () :React.JSX.Element => {
     return (
