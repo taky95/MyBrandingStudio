@@ -1,4 +1,6 @@
 @use 'variables';
+@use 'sass:color';
+
 .cardSlider {
   width: 620px;
   height: auto; 
@@ -86,7 +88,7 @@
         z-index: 5;
 
         &:hover {
-          background-color: darken(variables.$black, 10%);
+          background-color: color.adjust(variables.$black, $lightness: 10%);
         }
       }
     }
