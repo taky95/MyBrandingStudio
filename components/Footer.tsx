@@ -1,12 +1,20 @@
 import styles from '@/styles/footer.module.scss'
 import Link from 'next/link'
-import Image from "next/legacy/image"
+import Image from "next/image"
 import { FaFacebookF, FaTwitter, FaInstagram } from 'react-icons/fa';
 
 const Footer = () :React.JSX.Element => {
     return (
         <footer className={styles.footer}>
-            <Image src="https://picsum.photos/400/200" width={400} height={200} alt="footer" />
+            <Image
+                src="https://picsum.photos/400/200"
+                width={400}
+                height={200}
+                alt="footer"
+                style={{
+                    maxWidth: "100%",
+                    height: "auto"
+                }} />
             <div className={styles.footer_content}>
                 <h2>Let&#39;s make your brand shine!</h2>
                 <div className={styles.footer_menu}>
@@ -44,7 +52,7 @@ const Footer = () :React.JSX.Element => {
                 </div>
             </div>
         </footer>
-    )
+    );
 }
 
 export default Footer

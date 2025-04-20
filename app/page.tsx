@@ -1,4 +1,4 @@
-import Image from "next/legacy/image";
+import Image from "next/image";
 import styles from "@/styles/index.module.scss";
 //import Link from "next/link";
 
@@ -15,7 +15,12 @@ export default async function Home() {
     <>
       <section className={styles.hero}>
         <div className={styles.hero_background}>
-          <Image src="https://picsum.photos/400/200" layout="fill" priority alt="slider"/>
+          <Image
+            src="https://picsum.photos/400/200"
+            priority
+            alt="slider"
+            fill
+            sizes="100vw" />
         </div>
         <div className={styles.hero_content}>
           <Card />
@@ -88,6 +93,6 @@ export default async function Home() {
         </ul>
       </section>
       */}
-  </>
+    </>
   );
 }

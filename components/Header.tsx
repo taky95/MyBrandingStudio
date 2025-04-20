@@ -1,13 +1,21 @@
 import Link from 'next/link'
 import styles from '@/styles/header.module.scss'
-import Image from "next/legacy/image"
+import Image from "next/image"
 
 const Header = () :React.JSX.Element => {
     return (
         <header>
             <nav className={styles.menuBar}>
                 <Link href="/" className={styles.titleLogo}>
-                    <Image src="https://picsum.photos/200/100" width={200} height={100} alt="logo" />
+                    <Image
+                        src="https://picsum.photos/200/100"
+                        width={200}
+                        height={100}
+                        alt="logo"
+                        style={{
+                            maxWidth: "100%",
+                            height: "auto"
+                        }} />
                     <span>personal branding studio</span>
                 </Link>
                 <ul>

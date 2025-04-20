@@ -2,7 +2,7 @@
 
 import React from "react";
 import dynamic from "next/dynamic";
-import Image from "next/legacy/image";
+import Image from "next/image";
 import styles from "@/styles/card.module.scss";
 import { cards } from "@/data";
 
@@ -33,11 +33,7 @@ export default function Card() {
               <button>{card.buttonText}</button>
             </div>
             <div className={styles.cardImage}>
-              <Image
-                src={card.image}
-                layout='fill'
-                alt={`Slide ${index + 1}`}
-              />
+              <Image src={card.image} alt={`Slide ${index + 1}`} fill sizes="100vw" />
             </div>
           </div>
         ))}
