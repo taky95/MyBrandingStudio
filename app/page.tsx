@@ -1,11 +1,12 @@
 import Image from "next/image";
 import styles from "@/styles/index.module.scss";
-//import Link from "next/link";
+import Link from "next/link";
 
 import { GET_POSTS } from '../graphql/queries/query';
 import client from '@/lib/apollo-client'; // Import the Apollo Client instance
-//import { nav, steps } from "@/data";
+import { nav } from "@/data";
 import Card from "@/components/Card";
+import { HiOutlineArrowLongRight } from "react-icons/hi2";
 
 export default async function Home() {
   const { data } = await client.query({ query: GET_POSTS });
@@ -25,7 +26,36 @@ export default async function Home() {
         <div className={styles.hero_content}>
           <Card />
         </div>
+      </section>
+      <section className={styles.nav}>
+        {nav.map((nav_item, index) => {
+          // Subtract a fixed value from each RGB component to make it darker
+          const baseR = 29;
+          const baseG = 97;
+          const baseB = 103;
+          const darkeningFactor = 20; // Amount to subtract per iteration
 
+          const dynamicColor = `rgba(
+            ${Math.max(baseR - index * darkeningFactor, 0)}, 
+            ${Math.max(baseG - index * darkeningFactor, 0)}, 
+            ${Math.max(baseB - index * darkeningFactor, 0)}, 
+            1
+          )`;
+          return (
+            <Link href={nav_item.link} key={index}>
+              <div className={styles.nav_content} 
+                style={{
+                  backgroundColor: dynamicColor,
+                }}
+              >
+                <Image src={nav_item.img} alt={nav_item.title} 
+                  className={styles.nav_image} fill/>
+                <h2>{nav_item.title}</h2>
+                <HiOutlineArrowLongRight className={styles.nav_arrow}/>
+              </div>
+            </Link>
+          )}
+        )} 
       </section>
       {/*
       <section className={styles.nav}>

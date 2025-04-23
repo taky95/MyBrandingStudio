@@ -5,14 +5,14 @@ export const nav = [
     link: "/services",
   },
   {
-    title: "Services",
+    title: "Products",
     img: "https://picsum.photos/100/100",
-    link: "/services",
+    link: "/products",
   },
   {
-    title: "Services",
+    title: "Book Consultation",
     img: "https://picsum.photos/100/100",
-    link: "/services",
+    link: "/contact",
   },
   ]
 
