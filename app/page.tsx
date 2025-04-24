@@ -4,7 +4,7 @@ import Link from "next/link";
 
 import { GET_POSTS } from '../graphql/queries/query';
 import client from '@/lib/apollo-client'; // Import the Apollo Client instance
-import { nav } from "@/data";
+import { intro, nav, resources } from "@/data";
 import Card from "@/components/Card";
 import { HiOutlineArrowLongRight } from "react-icons/hi2";
 
@@ -29,25 +29,9 @@ export default async function Home() {
       </section>
       <section className={styles.nav}>
         {nav.map((nav_item, index) => {
-          // Subtract a fixed value from each RGB component to make it darker
-          const baseR = 29;
-          const baseG = 97;
-          const baseB = 103;
-          const darkeningFactor = 20; // Amount to subtract per iteration
-
-          const dynamicColor = `rgba(
-            ${Math.max(baseR - index * darkeningFactor, 0)}, 
-            ${Math.max(baseG - index * darkeningFactor, 0)}, 
-            ${Math.max(baseB - index * darkeningFactor, 0)}, 
-            1
-          )`;
           return (
             <Link href={nav_item.link} key={index}>
-              <div className={styles.nav_content} 
-                style={{
-                  backgroundColor: dynamicColor,
-                }}
-              >
+              <div className={styles.nav_content}>
                 <Image src={nav_item.img} alt={nav_item.title} 
                   className={styles.nav_image} fill/>
                 <h2>{nav_item.title}</h2>
@@ -57,20 +41,44 @@ export default async function Home() {
           )}
         )} 
       </section>
-      {/*
-      <section className={styles.nav}>
-        {nav.map((nav_item, index) => (
-            <div className={styles.nav_content} key={index}>
-            <Image src={nav_item.img} width={100} height={100}  alt="service-info" />
-            <p>{nav_item.title}</p>
-            <Link href={nav_item.link}>arrow</Link>
-          </div>
-        ))} 
-      </section>
       <section className={styles.intro}>
-        <h2></h2>
-        <p></p>
+        <h2>{intro.title}</h2>
+        <p>{intro.desc}</p>
       </section>
+      <section className={styles.bio}>
+        <div className={styles.bio_card}>
+          <div className={styles.bio_content}>
+            <div className={styles.bio_text}>
+              <h2>Hey, I&#39;m Marina,</h2>
+              <h3>your new branding</h3>
+              <h3>&amp; marketing strategist.</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+              <button>Read my story</button>
+            </div>
+            <Image src="/sample2.jpg" 
+              width={320} height={320} alt="bio_picture" className={styles.bio_picture}/>
+          </div>
+        </div>
+      </section>
+      <section className={styles.resources}>
+        <h2>Resources</h2>
+        <div className={styles.resources_content}>
+          {resources.map((r_item, index) => {
+            return (            
+              <div className={styles.resources_links} key={index}>
+                <h3>{r_item.title}</h3>
+                <Link href={r_item.link}>
+                  Read more <HiOutlineArrowLongRight className={styles.resources_arrow}/>
+                </Link>
+                <Image src={r_item.img} alt={r_item.title} 
+                  width={250} height={250} className={styles.resources_image} layout="responsive"/>
+              </div>
+            )}
+          )} 
+        </div>
+        <span className={styles.resources_line}></span>
+      </section>
+      {/*
       <section className={styles.steps}>
         {steps.map((step, index) => (
           <div className={styles.steps_content} key={index}>
@@ -83,16 +91,7 @@ export default async function Home() {
           </div>
         ))} 
       </section>
-      <section className="introduction">
-        <Image src="https://picsum.photos/100/100" width={100} height={100} alt="review" />
-        <div>
-          <h2>Hey, Im Marina,</h2>
-          <h3>your new branding</h3>
-          <h3>b marketing strategist</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-          <button>Read my story</button>
-        </div>
-      </section>
+
       <section className="resources">
         <h2>Resources</h2>
         <div className="resource">

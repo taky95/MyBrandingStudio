@@ -1,4 +1,5 @@
 @use 'variables';
+@use 'sass:color';
 
 .hero{
   position: relative;
@@ -37,7 +38,6 @@
   }
 }
 
-
 .nav{
   display: grid;
   grid-template-columns: repeat(3, 1fr); // 3 equally spaced columns
@@ -58,6 +58,8 @@
     overflow: hidden;
     z-index: 0;
     transition: all 0.5s ease;
+    min-width: 250px;
+    min-height: 250px;
     &:hover {
       transform: scale(1.03);
     }
@@ -68,10 +70,8 @@
       left: 0;
       width: 100%;
       height: 100%;
-      object-fit: cover; // Ensures the image scales properly
-      mix-blend-mode: multiply; // Blend with the background color
-      opacity: 0.5; // Optional: Adjust transparency
-      z-index: -1; // Ensures it stays behind the content
+      object-fit: cover;
+      z-index: -1; 
     }
 
     h2{ 
@@ -85,5 +85,153 @@
       color: variables.$orange;
       font-size: 4rem;
     }
+  }
+}
+
+.intro{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 2% 5%;
+  background-color: variables.$darkgreen;
+  min-height: 300px;
+
+  h2{
+    font-size: 60px;
+    color: variables.$lightorange;
+    font-family: variables.$decorativeFont;
+    font-weight: 400;
+  }
+}
+
+.bio{
+  background-color: variables.$graygreen;
+  display: flex;
+  justify-content: center;
+  height: 520px;
+
+  .bio_card{
+    display: flex;
+    width: 80%;
+    margin: 6% 0%;
+    background-color: variables.$white;
+    position: relative;
+    color: variables.$black;
+    justify-content: center;
+    align-items: center;
+
+    .bio_content{
+      display: flex;
+      justify-content: center;
+      position: absolute;
+      right:-50px;
+
+      .bio_text{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-left: 5%;
+        padding-right: 5%;
+
+        h2, h3{
+          font-family: variables.$titleFont;
+          letter-spacing: 0.05rem;
+          word-spacing: 0.5rem;
+        }
+        
+        p{
+          font-size: variables.$mobileFontSize;
+          padding: 5% 0%;
+        }
+
+        button {
+          padding: 10px 20px;
+          background-color: variables.$orange;
+          color: variables.$white;
+          font-family: variables.$titleFont;
+          font-size: variables.$baseFontSize;
+          border: none;
+          cursor: pointer;
+          width:300px;
+          height:50px;
+          transition: background-color 0.3s ease;
+  
+          &:hover {
+            background-color: color.adjust(variables.$orange, $lightness: 10%);
+          }
+        }
+      }
+    }
+  }
+}
+
+.resources{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: variables.$graygreen;
+  min-height: 300px;
+  padding-bottom: 2%;
+  align-items: center;
+
+  h2{
+    font-size: variables.$titleFontSize;
+    color: variables.$white;
+    font-family: variables.$titleFont;
+    font-weight: 400;
+    text-align: center;
+    margin-bottom: 2%;
+  }
+
+  .resources_content{
+    display: flex;
+    justify-content: space-evenly; // Distribute items evenly with equal spacing
+    align-items: center;
+    gap: 0.05rem; // Add consistent spacing between child elements
+    margin-bottom: 5%;
+    width: 100%;
+
+    .resources_links{
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      flex-direction: column;
+      padding: 1%;
+      //min-width: 250px;
+
+      h3{
+        font-size: variables.$mobileFontSize;
+        font-family: variables.$baseFont;
+        font-weight: 400;
+        text-transform: uppercase;
+      }
+
+      a{
+        text-decoration: none;
+        color: variables.$white;
+        font-family: variables.$titleFont;
+        display: flex;
+        align-items: center;
+        transition: all 0.3s ease-in-out;
+
+        &:hover{
+          color: color.adjust(variables.$white, $lightness: -30%);
+        }
+
+        .resources_arrow{
+          color: variables.$orange;
+          font-size: 2rem;
+          margin-left: 1rem;
+        }
+      }
+    }
+  }
+
+  .resources_line{
+    display: block;
+    height: 2px;
+    background-color: variables.$orange;
+    width: 96%;
+    margin: 1rem 0;
   }
 }

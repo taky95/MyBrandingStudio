@@ -1,20 +1,39 @@
 export const nav = [
   {
     title: "Services",
-    img: "https://picsum.photos/100/100",
+    img: "/nav1.png",
     link: "/services",
   },
   {
     title: "Products",
-    img: "https://picsum.photos/100/100",
+    img: "/nav2.png",
     link: "/products",
   },
   {
     title: "Book Consultation",
-    img: "https://picsum.photos/100/100",
+    img: "/nav3.png",
     link: "/contact",
   },
-  ]
+]
+
+export const resources = [
+  {
+    title: "How to create engaging website content",
+    img: "/nav1.png",
+    link: "/services",
+  },
+  {
+    title: "How to create engaging website content",
+    img: "/nav2.png",
+    link: "/products",
+  },
+  {
+    title: "How to create engaging website content",
+    img: "/nav3.png",
+    link: "/contact",
+  },
+]
+
 
 export const steps = [
   {
@@ -59,3 +78,8 @@ export const cards = [
     image: "https://picsum.photos/800/400?3",
   },
 ];
+
+export const intro = {
+  title: 'Why Branding Matters?',
+  desc: 'Your brand is how people see you and connect with your story. When you build a strong brand, you earn trust, stand out from the crowd, and attract exciting oppotunities. It helps you form deeper relationships with your audience while also boosting your income by bringingin in new customers, partnerships, and growth.'
+}
