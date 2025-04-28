@@ -33,7 +33,11 @@ export default function Card() {
               <button>{card.buttonText}</button>
             </div>
             <div className={styles.cardImage}>
-              <Image src={card.image} alt={`Slide ${index + 1}`} fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 100vw" />
+              <Image
+                src={card.image}
+                alt={`Slide ${index + 1}`}
+                fill
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 100vw" />
             </div>
           </div>
         ))}

@@ -5,7 +5,7 @@ import { FaFacebookF, FaTwitter, FaInstagram } from 'react-icons/fa';
 
 const Footer = () :React.JSX.Element => {
     return (
-        <footer className={styles.footer}> 
+        <footer className={styles.footer}>
             <span className={styles.footer_line}></span>
             <div className={styles.footer_background}>
                 <Image
@@ -14,6 +14,8 @@ const Footer = () :React.JSX.Element => {
                     height={200}
                     alt="footer"
                     style={{
+                        maxWidth: "100%",
+                        height: "auto",
                         maxWidth: "100%",
                         height: "auto"
                     }} />

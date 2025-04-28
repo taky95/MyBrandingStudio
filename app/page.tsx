@@ -22,7 +22,7 @@ export default async function Home() {
             priority
             alt="slider"
             fill
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 100vw" />
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 100vw"/>
         </div>
         <div className={styles.hero_content}>
           <Card />
@@ -33,13 +33,17 @@ export default async function Home() {
           return (
             <Link href={nav_item.link} key={index}>
               <div className={styles.nav_content}>
-                <Image src={nav_item.img} alt={nav_item.title} 
-                  className={styles.nav_image} fill/>
+                <Image
+                  src={nav_item.img}
+                  alt={nav_item.title}
+                  className={styles.nav_image}
+                  fill
+                  />
                 <h2>{nav_item.title}</h2>
                 <HiOutlineArrowLongRight className={styles.nav_arrow}/>
               </div>
             </Link>
-          )}
+          );}
         )} 
       </section>
       <section className={styles.intro}>
@@ -59,8 +63,16 @@ export default async function Home() {
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
               <Link href='\about'><button>Read my story</button></Link>
             </div>
-            <Image src="/sample2.jpg" 
-              width={320} height={320} alt="bio_picture" className={styles.bio_picture}/>
+            <Image
+              src="/sample2.jpg"
+              width={320}
+              height={320}
+              alt="bio_picture"
+              className={styles.bio_picture}
+              style={{
+                maxWidth: "100%",
+                height: "auto"
+              }} />
           </div>
         </div>
       </section>
@@ -68,16 +80,25 @@ export default async function Home() {
         <h2>Resources</h2>
         <div className={styles.resources_content}>
           {resources.map((r_item, index) => {
-            return (            
+            return (
               <div className={styles.resources_links} key={index}>
                 <h3>{r_item.title}</h3>
                 <Link href={r_item.link}>
                   Read more <HiOutlineArrowLongRight className={styles.resources_arrow}/>
                 </Link>
-                <Image src={r_item.img} alt={r_item.title} 
-                  width={250} height={250} className={styles.resources_image} layout="responsive"/>
+                <Image
+                  src={r_item.img}
+                  alt={r_item.title}
+                  width={250}
+                  height={250}
+                  className={styles.resources_image}
+                  sizes="100vw"
+                  style={{
+                    width: "100%",
+                    height: "auto"
+                  }} />
               </div>
-            )}
+            );}
           )} 
         </div>
         <span className={styles.resources_line}></span>
