@@ -184,12 +184,10 @@
   }
 
   .resources_content{
-    display: flex;
-    justify-content: space-evenly; // Distribute items evenly with equal spacing
-    align-items: center;
-    gap: 0.05rem; // Add consistent spacing between child elements
-    margin-bottom: 5%;
-    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); // 3 equally spaced columns
+    gap: 1rem;
+    padding: 2%;
 
     .resources_links{
       display: flex;
