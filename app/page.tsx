@@ -4,9 +4,10 @@ import Link from "next/link";
 
 import { GET_POSTS } from '../graphql/queries/query';
 import client from '@/lib/apollo-client'; // Import the Apollo Client instance
-import { intro, nav, resources } from "@/data";
+import { intro, nav, resources, steps } from "@/data";
 import Card from "@/components/Card";
 import { HiOutlineArrowLongRight } from "react-icons/hi2";
+import Steps from "@/components/Steps";
 
 export default async function Home() {
   const { data } = await client.query({ query: GET_POSTS });
@@ -45,6 +46,9 @@ export default async function Home() {
         <h2>{intro.title}</h2>
         <p>{intro.desc}</p>
       </section>
+      <section className={styles.steps}>
+        <Steps steps={steps}/>
+      </section>
       <section className={styles.bio}>
         <div className={styles.bio_card}>
           <div className={styles.bio_content}>
@@ -53,7 +57,7 @@ export default async function Home() {
               <h3>your new branding</h3>
               <h3>&amp; marketing strategist.</h3>
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-              <button>Read my story</button>
+              <Link href='\about'><button>Read my story</button></Link>
             </div>
             <Image src="/sample2.jpg" 
               width={320} height={320} alt="bio_picture" className={styles.bio_picture}/>
@@ -79,39 +83,8 @@ export default async function Home() {
         <span className={styles.resources_line}></span>
       </section>
       {/*
-      <section className={styles.steps}>
-        {steps.map((step, index) => (
-          <div className={styles.steps_content} key={index}>
-            <Image src="https://picsum.photos/100/100" width={100} height={100}  alt="step" />
-            <div>
-              <h2>{step.title}</h2>
-              <p>{step.desc}</p>
-              <Link href="#">Read more</Link>
-            </div>
-          </div>
-        ))} 
-      </section>
 
-      <section className="resources">
-        <h2>Resources</h2>
-        <div className="resource">
-          <div className="resource-item">
-            <h3>Resource Title</h3>
-            <button>Read more</button>
-            <Image src="https://picsum.photos/100/100" width={100} height={100} alt="resource" />
-          </div>
-          <div className="resource-item">
-            <h3>Resource Title</h3>
-            <button>Read more</button>
-            <Image src="https://picsum.photos/100/100" width={100} height={100} alt="resource" />
-          </div>
-          <div className="resource-item">
-            <h3>Resource Title</h3>
-            <button>Read more</button>
-            <Image src="https://picsum.photos/100/100" width={100} height={100} alt="resource" />
-          </div>
-        </div>
-      </section>
+
       <section className="socialmedia">
         <ul>
           <li><a href="#"><Image src="https://picsum.photos/100/100" width={100} height={100} alt="slider" /></a></li>

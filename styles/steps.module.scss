@@ -1,0 +1,112 @@
+@use 'variables';
+@use 'sass:color';
+
+.accordionContainer {
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+  background-color: variables.$graygreen;
+  max-height: 500px;
+  min-height: 500px;;
+}
+
+.accordionItem {
+  flex: 0.5;
+  transition: flex 0.5s ease;
+  align-content: center;
+
+  &:last-child {
+    border-right: none;
+  }
+
+  &.active {
+    flex: 10; // Expand the active item
+  }
+
+  .steps_title {
+    padding: 16px;
+    font-weight: 400;
+    writing-mode: vertical-rl;
+    display: flex;
+    height: 100%;;
+    justify-content: center;
+  }
+
+  .steps_content {
+    display: none;
+    opacity: 0; // Initially hidden
+    height: 0; // Collapse the height
+    overflow: hidden; // Prevent content overflow
+    transition: opacity 1s ease; // Smooth transition
+    padding: 0; // Remove padding when collapsed
+  }
+}
+
+.accordionItem.active .steps_content {
+  display: flex;
+  align-items: center;
+  opacity: 1; // Fully visible
+  height: 100%;
+
+  .steps_image{
+    display: flex;
+    justify-content: center; // Center the image horizontally if needed
+    align-items: center; // Center the image vertically if needed
+    height: 100%; // Ensure the container takes the full height
+    width: 50%; // Restrict the container to 30% of the width
+    margin-right: 20px;;
+
+    .imageWrapper {
+      position: relative; // Required for next/image with `fill`
+      height: 100%; // Fill the height of the parent container
+      width: 100%; // Fill the width of the `.steps_image` container
+      overflow: hidden; // Ensure the image doesn't overflow the container
+    }
+  }
+
+  .steps_text{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 70%;
+    padding-left: 50px;
+    padding-right: 50px;
+
+    h2{
+      font-weight: 400;
+      margin: 0;
+    }
+
+    p {
+      margin-top: 30px;
+      margin-bottom: 50px;
+    }
+
+    a{
+      text-decoration: none;
+      color: variables.$white;
+  
+      button {
+        padding: 10px 20px;
+        background-color: variables.$orange;
+        color: variables.$white;
+        font-family: variables.$titleFont;
+        font-size: variables.$subTitleFontSize;
+        border: none;
+        cursor: pointer;
+        width:300px;
+        height:50px;
+        transition: background-color 0.3s ease;
+  
+        &:hover {
+          background-color: color.adjust(variables.$orange, $lightness: 10%);
+        }
+      }
+    }
+  }
+
+}
+
+.accordionItem.active .steps_title {
+  display: none;
+}
