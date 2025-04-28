@@ -15,8 +15,6 @@ const Header = () :React.JSX.Element => {
                         style={{
                             maxWidth: "100%",
                             height: "auto",
-                            maxWidth: "100%",
-                            height: "auto"
                         }} />
                     <span>personal branding studio</span>
                 </Link>
