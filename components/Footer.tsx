@@ -16,8 +16,6 @@ const Footer = () :React.JSX.Element => {
                     style={{
                         maxWidth: "100%",
                         height: "auto",
-                        maxWidth: "100%",
-                        height: "auto"
                     }} />
                 <div className={styles.footer_content}>
                     <h2>Let&#39;s make your brand shine!</h2>
