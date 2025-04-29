@@ -44,7 +44,11 @@ const AccordionMenu: React.FC<Steps> = ({ steps }) => {
             </div>
             <div className={styles.steps_content}>
               <div className={styles.steps_image}>
-                <div className={styles.imageWrapper}>
+                <div className={styles.imageWrapper}
+                  style={{
+                    position: "relative",
+                  }}
+                >
                   <Image
                     src={steps[activeIndex].img}
                     alt={steps[activeIndex].title}
