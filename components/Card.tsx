@@ -4,11 +4,19 @@ import React from "react";
 import dynamic from "next/dynamic";
 import Image from "next/image";
 import styles from "@/styles/card.module.scss";
-import { cards } from "@/data";
 
 const Slider = dynamic(() => import("react-slick"), { ssr: false });
 
-export default function Card() {
+interface Card {
+  cards:{
+    title: string;
+    description: string;
+    buttonText: string;
+    image: string;
+  }[]
+}
+
+const Card: React.FC<Card> = ({ cards }) => {
 
   const settings = {
     dots: true, // Enables pagination dots
@@ -45,3 +53,5 @@ export default function Card() {
     </div>
   );
 }
+
+export default Card;
