@@ -46,7 +46,6 @@ export const steps = [
     desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
     img: 'https://picsum.photos/400/400?1',
     link: '/services'
-    
   },
   {
     title:'Marketing',
@@ -93,3 +92,32 @@ export const intro = {
   title: 'Why Branding Matters?',
   desc: 'Your brand is how people see you and connect with your story. When you build a strong brand, you earn trust, stand out from the crowd, and attract exciting oppotunities. It helps you form deeper relationships with your audience while also boosting your income by bringingin in new customers, partnerships, and growth.'
 }
+
+export const instagram = [
+    {
+    caption:'1:1 Program',
+    timestamp: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+    media_url: 'https://picsum.photos/400/400?1',
+  },
+  {
+    caption:'Sales & Growth',
+    timestamp: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+    media_url: 'https://picsum.photos/400/400?1',
+  },
+  {
+    caption:'Marketing',
+    timestamp: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+    media_url: 'https://picsum.photos/400/400?1',
+
+  },
+  {
+    caption:'Branding',
+    timestamp: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+    media_url: 'https://picsum.photos/400/400?1',
+  },
+  {
+    caption:'Mindset',
+    timestamp: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+    media_url: 'https://picsum.photos/400/400?1',
+  },
+]
