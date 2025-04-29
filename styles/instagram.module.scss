@@ -1,0 +1,16 @@
+@use 'variables';
+@use 'sass:color';
+
+.slider_container {
+  height: 260px; // Set the container height
+  overflow: hidden; // Prevent overflow issues
+  position: relative;
+  align-content: center;
+  margin-bottom: -5px;
+
+  .slider_item{
+    position: relative;
+  }
+
+}
+

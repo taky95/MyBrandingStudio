@@ -4,10 +4,11 @@ import Link from "next/link";
 
 import { GET_POSTS } from '../graphql/queries/query';
 import client from '@/lib/apollo-client'; // Import the Apollo Client instance
-import { intro, nav, resources, steps } from "@/data";
+import { instagram, intro, nav, resources, steps, cards } from "@/data";
 import Card from "@/components/Card";
 import { HiOutlineArrowLongRight } from "react-icons/hi2";
 import Steps from "@/components/Steps";
+import Instagram from "@/components/Instagram";
 
 export default async function Home() {
   const { data } = await client.query({ query: GET_POSTS });
@@ -25,7 +26,7 @@ export default async function Home() {
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 100vw"/>
         </div>
         <div className={styles.hero_content}>
-          <Card />
+          <Card cards={cards}/>
         </div>
       </section>
       <section className={styles.nav}>
@@ -68,11 +69,7 @@ export default async function Home() {
               width={320}
               height={320}
               alt="bio_picture"
-              className={styles.bio_picture}
-              style={{
-                maxWidth: "100%",
-                height: "auto"
-              }} />
+              className={styles.bio_picture} />
           </div>
         </div>
       </section>
@@ -102,6 +99,9 @@ export default async function Home() {
           )} 
         </div>
         <span className={styles.resources_line}></span>
+      </section>
+      <section className={styles.socialmedia}>
+          <Instagram instagram={instagram} />
       </section>
       {/*
 
