@@ -61,6 +61,10 @@
       height: 100%; // Fill the height of the parent container
       width: 100%; // Fill the width of the `.steps_image` container
       overflow: hidden; // Ensure the image doesn't overflow the container
+
+      img{
+        object-fit: cover;
+      }
     }
   }
 
