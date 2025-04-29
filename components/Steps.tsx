@@ -53,6 +53,7 @@ const AccordionMenu: React.FC<Steps> = ({ steps }) => {
                     src={steps[activeIndex].img}
                     alt={steps[activeIndex].title}
                     fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   />
                 </div>
               </div>

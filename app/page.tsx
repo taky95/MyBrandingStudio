@@ -39,6 +39,7 @@ export default async function Home() {
                   alt={nav_item.title}
                   className={styles.nav_image}
                   fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   />
                 <h2>{nav_item.title}</h2>
                 <HiOutlineArrowLongRight className={styles.nav_arrow}/>
