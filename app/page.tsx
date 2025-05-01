@@ -2,8 +2,8 @@ import Image from "next/image";
 import styles from "@/styles/index.module.scss";
 import Link from "next/link";
 
-import { GET_POSTS } from '../graphql/queries/query';
-import client from '@/lib/apollo-client'; // Import the Apollo Client instance
+//import { GET_POSTS } from '../graphql/queries/query';
+//import client from '@/lib/apollo-client'; // Import the Apollo Client instance
 import { instagram, intro, nav, resources, steps, cards } from "@/data";
 import Card from "@/components/Card";
 import { HiOutlineArrowLongRight } from "react-icons/hi2";
@@ -11,8 +11,8 @@ import Steps from "@/components/Steps";
 import Instagram from "@/components/Instagram";
 
 export default async function Home() {
-  const { data } = await client.query({ query: GET_POSTS });
-  console.log(data);
+  //const { data } = await client.query({ query: GET_POSTS });
+  //console.log(data);
 
   return (
     <>
