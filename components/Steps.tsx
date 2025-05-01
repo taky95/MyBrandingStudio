@@ -24,7 +24,7 @@ const AccordionMenu: React.FC<Steps> = ({ steps }) => {
   return (
     <div className={styles.accordionContainer}>
       {steps.map((step, index) => {
-          const colors = ['#0D2F30', '#155253', '#207475', '#1D6167']
+          const colors = ['#051111', '#0D2F30', '#155253', '#207475', '#1D6167']
           const dynamicColor = colors[index % colors.length];
         return (
           <div

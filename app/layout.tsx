@@ -2,7 +2,7 @@
 import '@/styles/global.scss'; 
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import { Roboto, Lavishly_Yours, Libre_Bodoni} from 'next/font/google';
+import { Roboto, Sacramento, Libre_Bodoni} from 'next/font/google';
 import Head from 'next/head';
 
 const roboto = Roboto({
@@ -12,10 +12,10 @@ const roboto = Roboto({
   variable: '--font-roboto',    // Optional: for use in CSS
 });
 
-const lavish = Lavishly_Yours({
+const sacra  = Sacramento({
   subsets: ['latin'],
   display: 'swap',
-  variable: '--font-lavish',
+  variable: '--font-sacra',
   weight: '400'
 });
 
@@ -54,7 +54,7 @@ export const metadata = {
 
 export default async function RootLayout({ children,}: {children: React.ReactNode}) {
   return (
-    <html lang="en" className={`${roboto.variable} ${lavish.variable} ${libre.variable}`}>
+    <html lang="en" className={`${roboto.variable} ${sacra.variable} ${libre.variable}`}>
       <body>
         <Head>
           <meta charSet="UTF-8" />
