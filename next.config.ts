@@ -10,6 +10,12 @@ const nextConfig: NextConfig = {
         port: "",
         pathname: "/**",
       },
+      {
+        protocol: "https",
+        hostname: "wp.mybrandingstudio.ca",
+        port: "",
+        pathname: "/**",
+      },
     ],
   },
   output: 'standalone', // Important for Docker
