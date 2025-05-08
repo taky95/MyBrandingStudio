@@ -106,19 +106,6 @@ export default async function Home() {
       <section className={styles.socialmedia}>
           <Instagram instagram={instagram} />
       </section>
-      {/*
-
-
-      <section className="socialmedia">
-        <ul>
-          <li><a href="#"><Image src="https://picsum.photos/100/100" width={100} height={100} alt="slider" /></a></li>
-          <li><a href="#"><Image src="https://picsum.photos/100/100" width={100} height={100} alt="slider" /></a></li>
-          <li><a href="#"><Image src="https://picsum.photos/100/100" width={100} height={100} alt="slider" /></a></li>
-          <li><a href="#"><Image src="https://picsum.photos/100/100" width={100} height={100} alt="slider" /></a></li>
-          <li><a href="#"><Image src="https://picsum.photos/100/100" width={100} height={100} alt="slider" /></a></li>
-        </ul>
-      </section>
-      */}
     </>
   );
 }
