@@ -4,19 +4,15 @@ import React from "react";
 import dynamic from "next/dynamic";
 import Image from "next/image";
 import styles from "@/styles/card.module.scss";
+import { HeroCard } from "@/graphql/queries/query";
 
 const Slider = dynamic(() => import("react-slick"), { ssr: false });
 
-interface Card {
-  cards:{
-    title: string;
-    description: string;
-    buttonText: string;
-    image: string;
-  }[]
+interface CardProps {
+  cards: HeroCard[]; // Add the cards prop
 }
 
-const Card: React.FC<Card> = ({ cards }) => {
+const Card = ({ cards }: CardProps) => {
 
   const settings = {
     dots: true, // Enables pagination dots
@@ -29,20 +25,19 @@ const Card: React.FC<Card> = ({ cards }) => {
     arrows: false, // Hides next/prev arrows
   };
 
-
   return (
     <div className={styles.cardSlider}>
       <Slider {...settings}>
         {cards.map((card, index) => (
           <div key={index} className={styles.card}>
             <div className={styles.cardContent}>
-              <h1>{card.title}</h1>
-              <p>{card.description}</p>
-              <button>{card.buttonText}</button>
+              <h1>{card.cardField.title}</h1>
+              <p>{card.cardField.description}</p>
+              <button>{card.cardField.buttonText}</button>
             </div>
             <div className={styles.cardImage}>
               <Image
-                src={card.image}
+                src={card.cardField.image.node.sourceUrl}
                 alt={`Slide ${index + 1}`}
                 fill
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 100vw" />

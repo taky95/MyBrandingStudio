@@ -4,8 +4,6 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { Roboto, Sacramento, Libre_Bodoni} from 'next/font/google';
 import Head from 'next/head';
-import client from '@/lib/apollo-client';
-import { GET_POSTS } from '@/graphql/queries/query';
 
 const roboto = Roboto({
   subsets: ['latin'],          // Required
@@ -51,14 +49,10 @@ export const metadata = {
       },
     ],
   },
-
 };
 
-export default async function RootLayout({ children,}: {children: React.ReactNode}) {
-  const { data } = await client.query({ query: GET_POSTS });
-  console.log(data.logoTypes.nodes[0].logo.logoImage.node.sourceUrl); 
-  const logoUrl = data.logoTypes.nodes[0].logo.logoImage.node.sourceUrl;
-  
+export default function RootLayout({ children,}: {children: React.ReactNode}) {
+
   return (
     <html lang="en" className={`${roboto.variable} ${sacra.variable} ${libre.variable}`}>
       <body>
@@ -75,7 +69,7 @@ export default async function RootLayout({ children,}: {children: React.ReactNod
 
           <link rel="manifest" href="/manifest.webmanifest" crossOrigin="anonymous"/>
         </Head>
-        <Header data={logoUrl}/>
+        <Header />
           <main>
             {children} 
           </main>

@@ -4,15 +4,10 @@ import { useState } from "react";
 import styles from "../styles/steps.module.scss";
 import Image from "next/image";
 import Link from "next/link";
+import { Step } from "@/graphql/queries/query";
 
 interface Steps {
-  steps:
-    {
-      title: string;
-      desc: string;
-      img: string;
-      link: string;
-    }[];
+  steps: Step[];
 }
 
 const AccordionMenu: React.FC<Steps> = ({ steps }) => {
@@ -40,7 +35,7 @@ const AccordionMenu: React.FC<Steps> = ({ steps }) => {
               className={styles.steps_title}
               onMouseEnter={() => toggleAccordion(index)}
             >
-              Step {steps.length-index}: {step.title}
+              Step {steps.length-index}: {step.stepField.title}
             </div>
             <div className={styles.steps_content}>
               <div className={styles.steps_image}>
@@ -50,17 +45,17 @@ const AccordionMenu: React.FC<Steps> = ({ steps }) => {
                   }}
                 >
                   <Image
-                    src={steps[activeIndex].img}
-                    alt={steps[activeIndex].title}
+                    src={steps[activeIndex].stepField.image.node.sourceUrl}
+                    alt={steps[activeIndex].stepField.title}
                     fill
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   />
                 </div>
               </div>
               <div className={styles.steps_text}>
-                <h2>{step.title}</h2>
-                <p>{step.desc}</p>
-                <Link href={step.link}><button>Lean More</button></Link>
+                <h2>{step.stepField.title}</h2>
+                <p>{step.stepField.description}</p>
+                <Link href={step.stepField.link}><button>Lean More</button></Link>
               </div>
             </div>
           </div>

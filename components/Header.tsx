@@ -1,15 +1,20 @@
 import Link from 'next/link'
 import styles from '@/styles/header.module.scss'
 import Image from "next/image"
+import client from '@/lib/apollo-client';
+import { HOME_PAGE_QUERY } from '../graphql/queries/query';
 
-
-const Header = ({ data }: { data: string }): React.JSX.Element => {
+const Header = async (): Promise<React.JSX.Element> => {
+    const { data } = await client.query({ 
+        query: HOME_PAGE_QUERY,
+    });
+    const logoUrl= data.logos.nodes[0].logoField.image.node.sourceUrl
     return (
         <header>
             <nav className={styles.menuBar}>
                 <Link href="/" className={styles.titleLogo}>
                     <Image
-                        src={data}
+                        src={logoUrl}
                         width={200}
                         height={100}
                         alt="logo"

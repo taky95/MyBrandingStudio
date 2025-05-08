@@ -2,47 +2,61 @@ import Image from "next/image";
 import styles from "@/styles/index.module.scss";
 import Link from "next/link";
 
-//import { GET_POSTS } from '../graphql/queries/query';
-//import client from '@/lib/apollo-client'; // Import the Apollo Client instance
-import { instagram, intro, nav, resources, steps, cards } from "@/data";
+import { HOME_PAGE_QUERY, NavItem, Resource} from '../graphql/queries/query';
+import client from '@/lib/apollo-client'; // Import the Apollo Client instance
+import { instagram } from "@/data";
 import Card from "@/components/Card";
 import { HiOutlineArrowLongRight } from "react-icons/hi2";
 import Steps from "@/components/Steps";
 import Instagram from "@/components/Instagram";
 
 export default async function Home() {
-  //const { data } = await client.query({ query: GET_POSTS });
-  //console.log(data);
+  const { data } = await client.query({ 
+    query: HOME_PAGE_QUERY,
+    fetchPolicy: "no-cache", // Disable caching
+    context: {
+      fetchOptions: {
+        next: { revalidate: 60 }, // Revalidate every 60 seconds
+      },
+    },
+  });
 
+  const heroCards = data.heroCards.nodes
+  const nav =data.navItems.nodes
+  const intro = data.introductions.nodes[0].introField
+  const steps = data.steps.nodes
+  const resources = data.resources.nodes
+  const bio = data.bios.nodes[0].bioField
+  const heroImage = data.heroImages.nodes[0].heroImageField.image.node.sourceUrl
   return (
     <>
       <section className={styles.hero}>
         <div className={styles.hero_background}>
           <Image
-            src="https://picsum.photos/400/200"
+            src={heroImage}
             priority
             alt="slider"
             fill
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 100vw"/>
         </div>
         <div className={styles.hero_content}>
-          <Card cards={cards}/>
+          <Card cards={heroCards}/>
         </div>
       </section>
       <section className={styles.nav}>
-        {nav.map((nav_item, index) => {
+        {nav.map((nav_item: NavItem, index: number) => {
           return (
-            <Link href={nav_item.link} key={index}>
+            <Link href={nav_item.navField.link} key={index}>
               <div className={styles.nav_content}>
-                <Image
-                  src={nav_item.img}
-                  alt={nav_item.title}
-                  className={styles.nav_image}
-                  fill
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                  />
-                <h2>{nav_item.title}</h2>
-                <HiOutlineArrowLongRight className={styles.nav_arrow}/>
+          <Image
+            src={nav_item.navField.image.node.sourceUrl}
+            alt={nav_item.navField.title}
+            className={styles.nav_image}
+            fill
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            />
+          <h2>{nav_item.navField.title}</h2>
+          <HiOutlineArrowLongRight className={styles.nav_arrow}/>
               </div>
             </Link>
           );}
@@ -50,7 +64,7 @@ export default async function Home() {
       </section>
       <section className={styles.intro}>
         <h2>{intro.title}</h2>
-        <p>{intro.desc}</p>
+        <p>{intro.description}</p>
       </section>
       <section className={styles.steps}>
         <Steps steps={steps}/>
@@ -59,10 +73,10 @@ export default async function Home() {
         <div className={styles.bio_card}>
           <div className={styles.bio_content}>
             <div className={styles.bio_text}>
-              <h2>Hey, I&#39;m Marina,</h2>
-              <h3>your new branding</h3>
-              <h3>&amp; marketing strategist.</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+              <h2>{bio.heading}</h2>
+              <h3>{bio.subHeading1}</h3>
+              <h3>{bio.subHeading2}</h3>
+              <p>{bio.description}</p>
               <Link href='\about'><button>Read my story</button></Link>
             </div>
             <div className={styles.bio_picture} >
@@ -79,16 +93,16 @@ export default async function Home() {
       <section className={styles.resources}>
         <h2>Resources</h2>
         <div className={styles.resources_content}>
-          {resources.map((r_item, index) => {
+          {resources.map((r_item: Resource, index: number) => {
             return (
               <div className={styles.resources_links} key={index}>
-                <h3>{r_item.title}</h3>
-                <Link href={r_item.link}>
+                <h3>{r_item.resourceField.title}</h3>
+                <Link href={r_item.resourceField.link}>
                   Read more <HiOutlineArrowLongRight className={styles.resources_arrow}/>
                 </Link>
                 <Image
-                  src={r_item.img}
-                  alt={r_item.title}
+                  src={r_item.resourceField.image.node.sourceUrl}
+                  alt={r_item.resourceField.title}
                   width={250}
                   height={250}
                   className={styles.resources_image}

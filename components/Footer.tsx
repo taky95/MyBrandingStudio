@@ -2,20 +2,27 @@ import styles from '@/styles/footer.module.scss'
 import Link from 'next/link'
 import Image from "next/image"
 import { FaFacebookF, FaTwitter, FaInstagram } from 'react-icons/fa';
+import client from '@/lib/apollo-client';
+import { HOME_PAGE_QUERY } from '../graphql/queries/query';
 
-const Footer = () :React.JSX.Element => {
+const Footer = async (): Promise<React.JSX.Element> => {
+    const { data } = await client.query({ 
+        query: HOME_PAGE_QUERY,
+    });
+    const logoUrl= data.logos.nodes[1].logoField.image.node.sourceUrl
     return (
         <footer className={styles.footer}>
             <span className={styles.footer_line}></span>
             <div className={styles.footer_background}>
                 <Image
-                    src="https://picsum.photos/400/200"
-                    width={400}
+                    src={logoUrl}
+                    width={300}
                     height={200}
                     alt="footer"
                     style={{
                         maxWidth: "100%",
                         height: "auto",
+                        width: "auto",
                     }} />
                 <div className={styles.footer_content}>
                     <h2>Let&#39;s make your brand shine!</h2>
