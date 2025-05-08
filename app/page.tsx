@@ -65,12 +65,14 @@ export default async function Home() {
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
               <Link href='\about'><button>Read my story</button></Link>
             </div>
-            <Image
-              src="/sample2.jpg"
-              width={320}
-              height={320}
-              alt="bio_picture"
-              className={styles.bio_picture} />
+            <div className={styles.bio_picture} >
+              <Image
+                src="/sample2.jpg"
+                alt="bio_picture"
+                fill
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              />
+            </div>
           </div>
         </div>
       </section>
