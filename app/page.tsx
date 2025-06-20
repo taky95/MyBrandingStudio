@@ -10,15 +10,12 @@ import { HiOutlineArrowLongRight } from "react-icons/hi2";
 import Steps from "@/components/Steps";
 import Instagram from "@/components/Instagram";
 
+export const revalidate = 60;
+
 export default async function Home() {
   const { data } = await client.query({ 
     query: HOME_PAGE_QUERY,
     fetchPolicy: "no-cache", // Disable caching
-    context: {
-      fetchOptions: {
-        next: { revalidate: 60 }, // Revalidate every 60 seconds
-      },
-    },
   });
 
   const heroCards = data.heroCards.nodes
