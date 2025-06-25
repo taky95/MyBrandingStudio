@@ -274,3 +274,12 @@
     margin: 1rem 0;
   }
 }
+
+// -1280px small PC/shrink screen
+@media screen and (max-width:80em) {}
+
+  // -960px tablet
+@media screen and (max-width:60em) {}
+
+  // 480px mobile
+@media screen and (max-width:30em) {}
