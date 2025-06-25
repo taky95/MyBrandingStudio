@@ -45,15 +45,19 @@ export default async function Home() {
           return (
             <Link href={nav_item.navField.link} key={index}>
               <div className={styles.nav_content}>
-          <Image
-            src={nav_item.navField.image.node.sourceUrl}
-            alt={nav_item.navField.title}
-            className={styles.nav_image}
-            fill
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-            />
-          <h2>{nav_item.navField.title}</h2>
-          <HiOutlineArrowLongRight className={styles.nav_arrow}/>
+                <Image
+                  src={nav_item.navField.image.node.sourceUrl}
+                  alt={nav_item.navField.title}
+                  className={styles.nav_image}
+                  fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  />
+                <h2>{nav_item.navField.title}</h2>
+                <div className={styles.nav_arrow} >
+                  <Image src="/arrow.png" alt="arrow" fill 
+                    sizes="(max-width: 768px) 40px, 60px"
+                  />
+                </div>
               </div>
             </Link>
           );}
