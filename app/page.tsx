@@ -2,7 +2,7 @@ import Image from "next/image";
 import styles from "@/styles/index.module.scss";
 import Link from "next/link";
 
-import { HOME_PAGE_QUERY, NavItem, Resource} from '../graphql/queries/query';
+import { WP_QUERY, NavItem, Resource} from '../graphql/queries/query';
 import client from '@/lib/apollo-client'; // Import the Apollo Client instance
 import { instagram } from "@/data";
 import Card from "@/components/Card";
@@ -13,7 +13,7 @@ export const revalidate = 60;
 
 export default async function Home() {
   const { data } = await client.query({ 
-    query: HOME_PAGE_QUERY,
+    query: WP_QUERY,
     fetchPolicy: "no-cache", // Disable caching
   });
 

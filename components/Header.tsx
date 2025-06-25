@@ -2,11 +2,11 @@ import Link from 'next/link'
 import styles from '@/styles/header.module.scss'
 import Image from "next/image"
 import client from '@/lib/apollo-client';
-import { HOME_PAGE_QUERY } from '../graphql/queries/query';
+import { WP_QUERY } from '../graphql/queries/query';
 
 const Header = async (): Promise<React.JSX.Element> => {
     const { data } = await client.query({ 
-        query: HOME_PAGE_QUERY,
+        query: WP_QUERY,
     });
     const logoUrl= data.logos.nodes[0].logoField.image.node.sourceUrl
     return (
