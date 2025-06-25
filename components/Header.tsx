@@ -31,7 +31,7 @@ const Header = async (): Promise<React.JSX.Element> => {
                         <Link href="/services" >Services</Link>
                     </li>
                     <li>
-                        <Link href="/portfolio" >Portfolio</Link>
+                        <Link href="/work" >Work</Link>
                     </li>
                     <li>
                         <Link href="/program" >1:1 Program</Link>
