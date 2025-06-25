@@ -6,7 +6,6 @@ import { HOME_PAGE_QUERY, NavItem, Resource} from '../graphql/queries/query';
 import client from '@/lib/apollo-client'; // Import the Apollo Client instance
 import { instagram } from "@/data";
 import Card from "@/components/Card";
-import { HiOutlineArrowLongRight } from "react-icons/hi2";
 import Steps from "@/components/Steps";
 import Instagram from "@/components/Instagram";
 
@@ -99,19 +98,21 @@ export default async function Home() {
               <div className={styles.resources_links} key={index}>
                 <h3>{r_item.resourceField.title}</h3>
                 <Link href={r_item.resourceField.link}>
-                  Read more <HiOutlineArrowLongRight className={styles.resources_arrow}/>
+                  Read more
+                  <div className={styles.resources_arrow} >
+                    <Image src="/arrow.png" alt="arrow" fill 
+                      sizes="(max-width: 768px) 40px, 60px"
+                    />
+                  </div>
                 </Link>
-                <Image
-                  src={r_item.resourceField.image.node.sourceUrl}
-                  alt={r_item.resourceField.title}
-                  width={250}
-                  height={250}
-                  className={styles.resources_image}
-                  sizes="100vw"
-                  style={{
-                    width: "100%",
-                    height: "auto"
-                  }} />
+                <div className={styles.resources_image}>
+                  <Image
+                    src={r_item.resourceField.image.node.sourceUrl}
+                    alt={r_item.resourceField.title}
+                    fill
+                    sizes="(max-width: 768px) 100px, 250px"
+                  />
+                </div>
               </div>
             );}
           )} 
