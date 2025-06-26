@@ -114,3 +114,63 @@
 .accordionItem.active .steps_title {
   display: none;
 }
+
+@media screen and (max-width:30em) {
+  .accordionContainer {
+    flex-direction: column; // Stack items vertically on small screens
+    max-height: none; // Remove max-height to allow full expansion
+  }
+
+  .accordionItem {
+    flex: 1; // Allow items to take equal space
+
+    &.active {
+      flex: 1; // Keep active item full width
+    }
+
+    .steps_title {
+      writing-mode: horizontal-tb; // Change text orientation for better readability
+      height: auto; // Allow title height to adjust
+      padding: 10px; // Adjust padding for smaller screens
+    }
+
+    .steps_content {
+      padding: 20px; // Add padding for content
+      height: auto; // Allow content to expand naturally
+    }
+  }
+  
+  .accordionItem.active .steps_content {
+    flex-direction: column;
+
+    .steps_image{
+      display: inline-block; // Change to inline-block for better layout
+      height: 150px;
+      width: 100%;
+      margin: 0;
+      margin-bottom: 1rem;
+
+    }
+
+    .steps_text{
+      padding-left: 20px;
+      padding-right: 20px;
+
+      h2 {
+        font-size: variables.$baseFontSize;
+      }
+
+      p {
+        font-size: variables.$mobileFontSize;
+        margin-top: 10px;
+        margin-bottom: 20px;
+      }
+
+      a button {
+        width: 100%; // Make button full width on small screens
+        height: auto; // Adjust height for smaller screens
+        font-size: variables.$baseFontSize;
+      }
+    }
+  }
+}

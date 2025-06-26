@@ -52,3 +52,25 @@
 .hamburgerMenu{
   display:none;
 }
+
+
+@media screen and (max-width:30em) {
+  .menuBar{
+    display: none;
+  }
+
+  .hamburgerMenu{
+    width: 100%;
+    height: auto;
+    background-color: variables.$black;
+    display: flex;
+    align-items: center;
+    position: fixed;
+    z-index: 100;
+
+    .titleLogo{
+      margin-top: 2px;
+      margin-left: 5px;
+    }
+  }
+}

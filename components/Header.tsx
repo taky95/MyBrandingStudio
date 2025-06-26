@@ -3,6 +3,7 @@ import styles from '@/styles/header.module.scss'
 import Image from "next/image"
 import client from '@/lib/apollo-client';
 import { WP_QUERY } from '../graphql/queries/query';
+import HamburgerMenu from './Hamburger';
 
 const Header = async (): Promise<React.JSX.Element> => {
     const { data } = await client.query({ 
@@ -45,7 +46,19 @@ const Header = async (): Promise<React.JSX.Element> => {
                 </ul>
             </nav>
             <div className={styles.hamburgerMenu}>
-                <Link href="/" className={styles.title}>My Branding Studio</Link>
+                <Link href="/" className={styles.titleLogo}>
+                    <Image
+                        src={logoUrl}
+                        width={100}
+                        height={50}
+                        alt="logo"
+                        style={{
+                            width: "auto",
+                            maxWidth: "100%",
+                            height: "auto",
+                        }} />
+                </Link>
+                <HamburgerMenu />
             </div>
         </header>
     );

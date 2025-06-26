@@ -110,7 +110,7 @@ export default async function Home() {
                     src={r_item.resourceField.image.node.sourceUrl}
                     alt={r_item.resourceField.title}
                     fill
-                    sizes="(max-width: 768px) 100px, 250px"
+                    sizes="(max-width: 768px) 300px, 300px"
                   />
                 </div>
               </div>

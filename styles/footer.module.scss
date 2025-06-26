@@ -11,6 +11,7 @@
   padding-top: 0;
   background-image: url('/footer.png');
   background-repeat: round;
+  overflow: hidden;
 
   .footer_line{
     display: block;
@@ -78,6 +79,92 @@
           justify-content: center;
           align-items: center;
           align-self: end; 
+          width: 100%; 
+          height: 100%; 
+
+          ul{
+            list-style: none;
+            display: flex;
+            justify-content: space-evenly;
+            gap: 1rem;
+          }
+      
+          a{
+            color: variables.$white;
+            text-decoration: none;
+            font-size: variables.$logoTitleFontSize;
+          }
+        }
+      }
+    }
+  }
+
+  .footer_mobile{
+    display: none;
+  }
+}
+
+@media screen and (max-width:30em) {
+  .footer{
+    .footer_background{
+      display: none;
+    }
+    
+    .footer_mobile{
+      flex: 0 0 60%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center; 
+      width: 100%; 
+      height: 100%; 
+
+      h2{
+        color: variables.$orange;
+        font-family: variables.$decorativeFont;
+        font-size: variables.$baseFontSize;
+        text-align: center;
+        margin-bottom: 1rem;
+      }
+
+      .footer_menu{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center; 
+        width: 100%; 
+        height: 100%; 
+        gap: 1rem;
+
+        .footer_link{
+          display: flex;
+          justify-content: space-around;
+          align-items: center; 
+          width: 100%; 
+          height: 100%; 
+          text-align: center;
+
+          ul{
+            list-style: none;
+          }
+      
+          a{
+            color: variables.$white;
+            text-decoration: none;
+            font-size: variables.$descFontSize;
+            transition: all 0.3s ease-in-out;
+
+            &:hover{
+              color: color.adjust(variables.$white, $lightness: -20%);
+              transform: scale(1.1);
+            }
+          }
+        }
+        
+        .footer_social{
+          display: flex;
+          justify-content: center;
+          align-items: center; 
           width: 100%; 
           height: 100%; 
 

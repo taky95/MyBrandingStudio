@@ -94,3 +94,46 @@
     }
   }
 }
+
+  // 480px mobile
+@media screen and (max-width:30em) {
+  .cardSlider {
+    width: 280px;
+    
+    :global(.slick-dots) {
+      bottom: 5px;
+      li{
+        button::before{
+          font-size: 8px;
+        }
+      }
+    }
+
+    .card{
+      height: 200px;
+
+      .cardContent{
+        margin-top: -50px;
+        h1 {
+          font-size: variables.$descFontSize;
+          margin-bottom: 2px;
+        }
+
+        p {
+          font-size: 10px;
+          margin-bottom: 2px;
+        }
+
+        button {
+          padding: 5px 10px;
+          font-size: 10px;
+          width:150px;
+          height:25px;
+          margin-top: 5px;
+          bottom: -15px;
+          right: -10px;
+        }
+      }
+    }
+  }
+}

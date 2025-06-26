@@ -1,0 +1,146 @@
+@use 'variables';
+
+.hamburgerMenu{
+    display: none;
+}
+
+@media screen and (max-width:30em) {
+
+    .hamburgerMenu {
+        display: block;
+        position: absolute;
+        right: 10px;
+        top: 0;
+
+        .hiddenBtn {
+            display: none;
+        }
+
+        /* ハンバーガーアイコンの設置スペース */
+        .hamburgerBtn {
+            display: flex;
+            height: 60px;
+            width: 60px;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            z-index: 100; /* 重なり順を一番上にする */
+            cursor: pointer;
+
+            /* 三本線の一番上の棒の位置調整 */
+            & span:before {
+                bottom: 8px;
+            }
+            /* 三本線の一番下の棒の位置調整 */
+            & span:after {
+                top: 8px;
+            }
+        }
+
+        .hamburgerBtn::after{
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            content: 'MENU';
+            display: block;
+            width: 100%;
+            font-size: 8px;
+            text-decoration: none;
+            text-align: center;
+            white-space: nowrap;
+            transition: all .4s;
+        }
+
+        /* ハンバーガーメニューのアイコン */
+        .hamburgerBtn span,
+        .hamburgerBtn span:before,
+        .hamburgerBtn span:after {
+            content: '';
+            display: block;
+            height: 1px;
+            width: 30px;
+            border-radius: 1px;
+            background: variables.$white;
+            transition: 0.5s;
+            position: absolute;
+        }
+
+        /* メニューのデザイン*/
+        .navContent {
+            width: 100%;
+            height: 100%;
+            position: fixed;
+            top: 70px;
+            right: 0;
+            transition: .5s;
+            pointer-events: none;
+            border-bottom-left-radius: 4px;
+            border-bottom-right-radius: 4px;
+
+            .navList{
+                display: none;
+            }
+        }
+
+        /* アイコンがクリックされたら*/
+        .hiddenBtn:checked ~ .navContent{
+
+            /* メニューを表示 */
+
+            background: variables.$black;
+            opacity: 90%;
+            pointer-events: auto;
+
+            .navList {
+                list-style: none;
+                margin-top: 15%;
+                padding-left: 0;
+                display: block;
+
+                li{
+                    padding: 0 0 40px 0;
+                    position: relative;
+
+                    a{
+                        font-size: 16px;
+                        display: block;
+                        text-align: center;
+                    }
+                }
+
+                hr{
+                    width: 30%;
+                    height: 0.5px;
+                    color: variables.$white;
+                    background-image: linear-gradient(90deg,rgba(7, 8, 8, 1) 0%, rgba(240, 240, 240, 1) 50%, rgba(7, 8, 8, 1) 100%);
+                    margin: auto;
+                    top: -32px;
+                    border: 0 none;
+                    position: relative;
+                }
+            }
+
+            a{
+                text-decoration: none;
+                font-size: variables.$subTitleFontSize;
+                color: variables.$white;
+            }
+            
+        }
+        
+        .hiddenBtn:checked ~ .hamburgerBtn span {
+            background: rgba(255, 255, 255, 0); /* Make the middle line transparent */
+        }
+        
+        .hiddenBtn:checked ~ .hamburgerBtn span::before {
+            bottom: 0;
+            transform: rotate(45deg); /* Rotate the top line */
+        }
+        
+        .hiddenBtn:checked ~ .hamburgerBtn span::after {
+            top: 0;
+            transform: rotate(-45deg); /* Rotate the bottom line */
+        }
+    }
+}
+
