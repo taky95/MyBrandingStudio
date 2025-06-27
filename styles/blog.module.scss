@@ -1,0 +1,28 @@
+@use 'variables';
+@use 'sass:color';
+
+.hero{
+  .hero_background{
+    position: relative;
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+    object-fit: contain;
+  }
+
+  h1{
+    font-size: variables.$titleFontSize;
+  }
+
+  p{
+
+  }
+}
+
+.list{
+
+}
+
+.intro{
+
+}
