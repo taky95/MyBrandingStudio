@@ -1,6 +1,8 @@
 @use 'variables';
 @import "slick-carousel/slick/slick.css";
 @import "slick-carousel/slick/slick-theme.css";
+@import '../public/wp-styles/styles.min.css';
+@import '../public/wp-styles/theme.min.css';
 
 * {
     margin: 0;

@@ -61,11 +61,6 @@ export default function RootLayout({ children,}: {children: React.ReactNode}) {
           <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
           <meta name="theme-color" content="#1D6167" />
           <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-
-          {/*eslint-disable-next-line @next/next/no-css-tags*/}
-          <link rel="stylesheet" href="/wp-styles/style.min.css" />
-          {/*eslint-disable-next-line @next/next/no-css-tags*/}
-          <link rel="stylesheet" href="/wp-styles/theme.min.css" />
           
           <link rel="shortcut icon" href="/favicon.ico" />
           <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"/>
