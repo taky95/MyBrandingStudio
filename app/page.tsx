@@ -8,6 +8,7 @@ import { instagram } from "@/data";
 import Card from "@/components/Card";
 import Steps from "@/components/Steps";
 import Instagram from "@/components/Instagram";
+import DefaultButton from "@/components/Button";
 
 export const revalidate = 60;
 
@@ -77,7 +78,7 @@ export default async function Home() {
               <h3>{bio.subHeading1}</h3>
               <h3>{bio.subHeading2}</h3>
               <p>{bio.description}</p>
-              <Link href='\about'><button>Read my story</button></Link>
+              <DefaultButton src="\about" text="Read my story" />
             </div>
             <div className={styles.bio_picture} >
               <Image
