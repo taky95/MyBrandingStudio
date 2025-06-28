@@ -9,6 +9,7 @@ import Card from "@/components/Card";
 import Steps from "@/components/Steps";
 import Instagram from "@/components/Instagram";
 import DefaultButton from "@/components/Button";
+import Tile from "@/components/Tile";
 
 export const revalidate = 60;
 
@@ -96,25 +97,12 @@ export default async function Home() {
         <div className={styles.resources_content}>
           {resources.map((r_item: Resource, index: number) => {
             return (
-              <div className={styles.resources_links} key={index}>
-                <h3>{r_item.resourceField.title}</h3>
-                <Link href={r_item.resourceField.link}>
-                  Read more
-                  <div className={styles.resources_arrow} >
-                    <Image src="/arrow.png" alt="arrow" fill 
-                      sizes="(max-width: 768px) 40px, 60px"
-                    />
-                  </div>
-                </Link>
-                <div className={styles.resources_image}>
-                  <Image
+              <Tile 
+                    key={index}
                     src={r_item.resourceField.image.node.sourceUrl}
-                    alt={r_item.resourceField.title}
-                    fill
-                    sizes="(max-width: 768px) 300px, 300px"
-                  />
-                </div>
-              </div>
+                    title={r_item.resourceField.title}
+                    link={r_item.resourceField.link}
+                    alt={r_item.resourceField.title}></Tile>
             );}
           )} 
         </div>

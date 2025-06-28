@@ -4,6 +4,7 @@ import Link from "next/link";
 
 import { GET_POSTS, Post } from '../../graphql/queries/query-blog';
 import client from '@/lib/apollo-client'; // Import the Apollo Client instance
+import Tile from "@/components/Tile";
 
 export default async function Blog() {
     const { data } = await client.query({ 
@@ -28,25 +29,13 @@ export default async function Blog() {
             <section className={styles.list}>
                 <div className={styles.collection}>
                     {posts.map((post: Post) => (
-                        <div className={styles.blog_links} key={post.slug}>
-                            <h3>{post.title}</h3>
-                            <Link href={`/blog/${post.slug}`}>
-                                Read more
-                                <div className={styles.blog_arrow} >
-                                    <Image src="/arrow.png" alt="arrow" fill 
-                                    sizes="(max-width: 768px) 40px, 60px"
-                                    />
-                                </div>
-                            </Link>
-                            <div className={styles.blog_image}>
-                                <Image
-                                src={post.featuredImage? post.featuredImage.node.sourceUrl : "/sample1.jpg"}
-                                alt={post.featuredImage? post.featuredImage.node.altText : "/sample1.jpg"}
-                                fill
-                                sizes="(max-width: 768px) 300px, 300px"
-                                />
-                            </div>
-                        </div>
+                        <Tile
+                            key={post.slug}
+                            src={post.featuredImage ? post.featuredImage.node.sourceUrl : "/sample1.jpg"}
+                            title={post.title}
+                            link={`/blog/${post.slug}`}
+                            alt={post.featuredImage ? post.featuredImage.node.altText : "Blog Image Placeholder"}
+                        ></Tile>
                     ))}
                 </div>
             </section>
