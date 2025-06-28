@@ -5,6 +5,8 @@ import Link from "next/link";
 import { GET_POSTS, Post } from '../../graphql/queries/query-blog';
 import client from '@/lib/apollo-client'; // Import the Apollo Client instance
 import Tile from "@/components/Tile";
+import DefaultButton from "@/components/Button";
+import { FadeInOnScroll } from "@/components/FadeIn";
 
 export default async function Blog() {
     const { data } = await client.query({ 
@@ -35,6 +37,7 @@ export default async function Blog() {
                             title={post.title}
                             link={`/blog/${post.slug}`}
                             alt={post.featuredImage ? post.featuredImage.node.altText : "Blog Image Placeholder"}
+                            size='360px'
                         ></Tile>
                     ))}
                 </div>
@@ -50,20 +53,30 @@ export default async function Blog() {
                                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 100vw"
                             />
                         </div>
-                        <div className={styles.intro_text}>
-                            <h3>DESIGN WITH PURPOSE.</h3>
-                            <h3>MARKETING WITH RESULTS.</h3>
-                            <Link href="/contact" >View my Portfolio</Link>
+                        <div className={styles.intro_card}>
+                            <FadeInOnScroll delay={400} once={false}>
+                                <div> 
+                                <h3>DESIGN WITH PURPOSE.</h3>
+                                <h3>MARKETING WITH RESULTS.</h3>
+                                </div>
+                            </FadeInOnScroll>
+                            <FadeInOnScroll delay={400} once={false}>
+                                <DefaultButton
+                                    text="View my Portfolio"
+                                    src="/contact"
+                                />
+                            </FadeInOnScroll>
                         </div>
                     </div>
-                    <Link href="/contact" >
-                        Let&apos;s Connect & create 
+                    <Link href="/contact" className={styles.intro_banner}>
+                        Let&apos;s Connect & Create 
                         <div className={styles.intro_arrow} >
                             <Image src="/arrow.png" alt="arrow" fill 
                             sizes="(max-width: 768px) 40px, 60px"
                             />
                         </div>
                     </Link>
+                    <span className={styles.separator}></span>
                 </div>
             </section>
         </>

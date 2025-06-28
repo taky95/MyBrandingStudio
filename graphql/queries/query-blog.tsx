@@ -18,6 +18,24 @@ query GetAllPosts {
   }
 }`
 
+export const GET_RECENT_POSTS = gql`
+query GetAllPosts {
+  posts(first: 2, where: { orderby: { field: DATE, order: DESC } }) {
+    nodes {
+      title
+      slug
+      date
+      excerpt
+      featuredImage {
+        node {
+          sourceUrl
+          altText
+        }
+      }
+    }
+  }
+}`
+
 export const GET_POST_BYSLUG = gql`
 query GetPostBySlug($slug: ID!) {
   post(id: $slug, idType: SLUG) {
