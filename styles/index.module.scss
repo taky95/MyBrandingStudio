@@ -315,6 +315,10 @@
         height: 80%;
         transition: none;
 
+        &:hover {
+          transform: none
+        } 
+
         img{
           width: auto;
           height: auto;
