@@ -1,6 +1,8 @@
 @use 'variables';
 @import "slick-carousel/slick/slick.css";
 @import "slick-carousel/slick/slick-theme.css";
+@import '../public/wp-styles/styles.min.css';
+@import '../public/wp-styles/theme.min.css';
 
 * {
     margin: 0;
@@ -15,4 +17,16 @@ body{
     font-weight: 200;
     color: variables.$white;
     margin: 0;
+}
+
+.fade-in {
+    opacity: 0;
+    transform: translateY(5px);
+    transition: opacity 0.8s ease-in, transform 0.8s ease-in;
+    will-change: opacity, transform;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: none;
 }

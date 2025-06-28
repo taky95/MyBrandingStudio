@@ -1,3 +1,4 @@
+import { ResetMenuOnRouteChange } from './ResetMenu';
 import Link from 'next/link';
 import style from '../styles/hamburger.module.scss'
 
@@ -5,6 +6,7 @@ const HamburgerMenu = () :React.JSX.Element => {
 
     return (
         <div className={style.hamburgerMenu} >
+            <ResetMenuOnRouteChange />
             <input id="hiddenBtn" className={style.hiddenBtn} type="checkbox"/>
             <label htmlFor="hiddenBtn" className={style.hamburgerBtn}><span/></label>
             <nav className={style.navContent}>

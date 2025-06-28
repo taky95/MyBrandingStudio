@@ -156,23 +156,6 @@
           font-size: variables.$mobileFontSize;
           padding: 5% 0%;
         }
-
-        button {
-          padding: 10px 20px;
-          background-color: variables.$orange;
-          color: variables.$white;
-          font-family: variables.$titleFont;
-          font-size: variables.$baseFontSize;
-          border: none;
-          cursor: pointer;
-          width:300px;
-          height:50px;
-          transition: background-color 0.3s ease;
-  
-          &:hover {
-            background-color: color.adjust(variables.$orange, $lightness: 10%);
-          }
-        }
       }
 
       .bio_picture{
@@ -214,59 +197,6 @@
     gap: 1rem;
     padding-bottom: 3%;
     max-width: 1020px;
-
-    .resources_links{
-      display: flex;
-      justify-content: center;
-      align-items: flex-start;
-      flex-direction: column;
-      padding: 1%;
-      //min-width: 250px;
-
-      h3{
-        font-size: variables.$mobileFontSize;
-        font-family: variables.$baseFont;
-        font-weight: 400;
-        text-transform: uppercase;
-        flex: auto;
-      }
-
-      a{
-        text-decoration: none;
-        color: variables.$white;
-        font-family: variables.$titleFont;
-        display: flex;
-        align-items: center;
-        transition: all 0.3s ease-in-out;
-        margin: 5% 0 3%;
-
-        &:hover{
-          color: color.adjust(variables.$white, $lightness: -30%);
-        }
-
-        .resources_arrow{
-          position: relative;
-          width: 60px;
-          min-width: 60px;
-          height: 18px;
-          margin-left: 1rem;
-
-          img{
-            object-fit: cover;
-          }
-        }
-      }
-
-      .resources_image{
-        position: relative;
-        width: 300px;
-        height: 300px;
-        
-        img{
-          object-fit: cover;
-        }
-      }
-    }
   }
 
   .resources_line{
@@ -314,6 +244,10 @@
         width: 80%;
         height: 80%;
         transition: none;
+
+        &:hover {
+          transform: none
+        } 
 
         img{
           width: auto;
@@ -377,6 +311,8 @@
   }
 
   .resources{
+    padding: 0 5%;
+
     h2{
       margin-top: 10%;
       font-size: variables.$baseFontSize;

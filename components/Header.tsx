@@ -8,6 +8,7 @@ import HamburgerMenu from './Hamburger';
 const Header = async (): Promise<React.JSX.Element> => {
     const { data } = await client.query({ 
         query: WP_QUERY,
+        fetchPolicy: "no-cache"
     });
     const logoUrl= data.logos.nodes[0].logoField.image.node.sourceUrl
     return (

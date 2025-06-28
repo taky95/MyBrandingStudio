@@ -3,8 +3,8 @@
 import { useState } from "react";
 import styles from "../styles/steps.module.scss";
 import Image from "next/image";
-import Link from "next/link";
 import { Step } from "@/graphql/queries/query";
+import DefaultButton from "./Button";
 
 interface Steps {
   steps: Step[];
@@ -55,7 +55,7 @@ const AccordionMenu: React.FC<Steps> = ({ steps }) => {
               <div className={styles.steps_text}>
                 <h2>{step.stepField.title}</h2>
                 <p>{step.stepField.description}</p>
-                <Link href={step.stepField.link}><button>Lean More</button></Link>
+                <DefaultButton src={step.stepField.link} text="Learn More" />
               </div>
             </div>
           </div>

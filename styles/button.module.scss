@@ -1,0 +1,21 @@
+@use 'variables';
+@use 'sass:color';
+
+.defaultButton {
+  button {
+    padding: 10px 20px;
+    background-color: variables.$orange;
+    color: variables.$white;
+    font-family: variables.$titleFont;
+    font-size: variables.$subTitleFontSize;
+    border: none;
+    cursor: pointer;
+    width:300px;
+    height:50px;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: color.adjust(variables.$orange, $lightness: 10%);
+    }
+  }
+}

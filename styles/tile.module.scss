@@ -1,0 +1,70 @@
+@use 'variables';
+@use 'sass:color';
+
+.link{
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  padding: 1%;
+
+  h3{
+    font-size: variables.$mobileFontSize;
+    font-family: variables.$baseFont;
+    font-weight: 400;
+    text-transform: uppercase;
+    flex: auto;
+  }
+
+  a{
+    text-decoration: none;
+    color: variables.$white;
+    font-family: variables.$titleFont;
+    display: flex;
+    align-items: center;
+    transition: all 0.3s ease-in-out;
+    margin: 3% 0 3%;
+
+    &:hover{
+      color: color.adjust(variables.$white, $lightness: -30%);
+
+      .arrow img{
+        transform: translateX(3px);
+      }
+    }
+
+    .arrow{
+      position: relative;
+      width: 60px;
+      min-width: 60px;
+      height: 18px;
+      margin-left: 1rem;
+      
+
+      img{
+        object-fit: cover;
+        transition: all 0.2s ease-in-out;
+      }
+    }
+  }
+
+  .image{
+    position: relative;
+    width: 20rem;
+    height: 20rem;
+    
+    img{
+      object-fit: cover;
+    }
+  }
+}
+
+@media screen and (max-width:30em) {
+  .link{
+    align-items: center;
+
+    h3{
+      text-align: center;
+    }
+  }
+}

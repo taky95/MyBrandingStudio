@@ -13,6 +13,12 @@
   background-repeat: round;
   overflow: hidden;
 
+  .socialmedia{
+    display: grid;
+    background-color: variables.$white;
+    width: 110%;
+  }
+
   .footer_line{
     display: block;
     height: 2px;
@@ -41,6 +47,7 @@
         font-family: variables.$decorativeFont;
         font-size: 5vw;
         font-weight: 400;
+        user-select: none;
       }
       .footer_menu{
         display: flex;
