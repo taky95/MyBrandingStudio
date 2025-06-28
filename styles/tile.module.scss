@@ -52,3 +52,13 @@
     }
   }
 }
+
+@media screen and (max-width:30em) {
+  .link{
+    align-items: center;
+
+    h3{
+      text-align: center;
+    }
+  }
+}
