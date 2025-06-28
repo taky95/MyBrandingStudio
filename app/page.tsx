@@ -4,10 +4,8 @@ import Link from "next/link";
 
 import { WP_QUERY, NavItem, Resource} from '../graphql/queries/query';
 import client from '@/lib/apollo-client'; // Import the Apollo Client instance
-import { instagram } from "@/data";
 import Card from "@/components/Card";
 import Steps from "@/components/Steps";
-import Instagram from "@/components/Instagram";
 import DefaultButton from "@/components/Button";
 import Tile from "@/components/Tile";
 
@@ -108,9 +106,7 @@ export default async function Home() {
         </div>
         <span className={styles.resources_line}></span>
       </section>
-      <section className={styles.socialmedia}>
-          <Instagram instagram={instagram} />
-      </section>
+      
     </>
   );
 }

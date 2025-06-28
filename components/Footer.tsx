@@ -4,14 +4,20 @@ import Image from "next/image"
 import { FaFacebookF, FaTwitter, FaInstagram } from 'react-icons/fa';
 import client from '@/lib/apollo-client';
 import { WP_QUERY } from '../graphql/queries/query';
+import Instagram from './Instagram';
+import { instagram } from "@/data";
 
 const Footer = async (): Promise<React.JSX.Element> => {
     const { data } = await client.query({ 
         query: WP_QUERY,
+        fetchPolicy: "no-cache"
     });
     const logoUrl= data.logos.nodes[1].logoField.image.node.sourceUrl
     return (
         <footer className={styles.footer}>
+            <div className={styles.socialmedia}>
+                <Instagram instagram={instagram} />
+            </div>
             <span className={styles.footer_line}></span>
             <div className={styles.footer_background}>
                 <Image
