@@ -8,7 +8,7 @@ import Head from 'next/head';
 const roboto = Roboto({
   subsets: ['latin'],          // Required
   display: 'swap',             // Optional: improves rendering
-  weight: ['200', '400', '700'],      // Optional: include specific weights
+  weight: ['200', '300', '400', '700'],      // Optional: include specific weights
   variable: '--font-roboto',    // Optional: for use in CSS
 });
 
