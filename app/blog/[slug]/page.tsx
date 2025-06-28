@@ -9,7 +9,13 @@ import Link from "next/link";
 import Tile from "@/components/Tile";
 import {FadeInOnScroll} from "@/components/FadeIn";
 
-export default async function BlogPostPage({ params }: { params: { slug: string } }) {
+interface BlogPostPageProps {
+  params: {
+    slug: string;
+  };
+}
+
+export default async function BlogPostPage({ params }: BlogPostPageProps) {
   const { slug } = params;
   const { data } = await client.query({
     query: GET_POST_BYSLUG,
