@@ -9,9 +9,10 @@ interface TileProps {
   title: string;
   link: string;
   alt: string;
+  size?: string;
 }
 
-const Tile = ({ src, title, link, alt }: TileProps) => {
+const Tile = ({ src, title, link, alt, size }: TileProps) => {
   
   return(
     <div className={styles.link} >
@@ -24,7 +25,7 @@ const Tile = ({ src, title, link, alt }: TileProps) => {
           />
         </div>
       </Link>
-      <div className={styles.image}>
+      <div className={styles.image} style={{ width: size, height: size }}>
         <Image
           src={src}
           alt={alt}
