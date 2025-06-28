@@ -47,6 +47,7 @@
         font-family: variables.$decorativeFont;
         font-size: 5vw;
         font-weight: 400;
+        user-select: none;
       }
       .footer_menu{
         display: flex;
