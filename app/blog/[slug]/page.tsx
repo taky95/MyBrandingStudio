@@ -10,13 +10,11 @@ import Tile from "@/components/Tile";
 import {FadeInOnScroll} from "@/components/FadeIn";
 
 interface BlogPostPageProps {
-  params: {
-    slug: string;
-  };
+  params: Promise<{slug: string }>
 }
 
 export default async function BlogPostPage({ params }: BlogPostPageProps) {
-  const { slug } = params;
+  const { slug } = await params;
   const { data } = await client.query({
     query: GET_POST_BYSLUG,
     variables: { slug },
