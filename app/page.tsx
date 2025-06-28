@@ -8,6 +8,7 @@ import Card from "@/components/Card";
 import Steps from "@/components/Steps";
 import DefaultButton from "@/components/Button";
 import Tile from "@/components/Tile";
+import { FadeInOnScroll } from "@/components/FadeIn";
 
 export const revalidate = 60;
 
@@ -70,25 +71,27 @@ export default async function Home() {
         <Steps steps={steps}/>
       </section>
       <section className={styles.bio}>
-        <div className={styles.bio_card}>
-          <div className={styles.bio_content}>
-            <div className={styles.bio_text}>
-              <h2>{bio.heading}</h2>
-              <h3>{bio.subHeading1}</h3>
-              <h3>{bio.subHeading2}</h3>
-              <p>{bio.description}</p>
-              <DefaultButton src="\about" text="Read my story" />
-            </div>
-            <div className={styles.bio_picture} >
-              <Image
-                src="/sample2.jpg"
-                alt="bio_picture"
-                fill
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-              />
+        <FadeInOnScroll delay={200} once={true}>
+          <div className={styles.bio_card}>
+            <div className={styles.bio_content}>
+              <div className={styles.bio_text}>
+                <h2>{bio.heading}</h2>
+                <h3>{bio.subHeading1}</h3>
+                <h3>{bio.subHeading2}</h3>
+                <p>{bio.description}</p>
+                <DefaultButton src="\about" text="Read my story" />
+              </div>
+              <div className={styles.bio_picture} >
+                <Image
+                  src="/sample2.jpg"
+                  alt="bio_picture"
+                  fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                />
+              </div>
             </div>
           </div>
-        </div>
+        </FadeInOnScroll>
       </section>
       <section className={styles.resources}>
         <h2>Resources</h2>
