@@ -1,0 +1,322 @@
+@use 'variables';
+@use 'sass:color';
+
+.hero{
+  position: relative;
+
+  .hero_background{
+    position: relative;
+    width: 100%;
+    height: 580px;
+    overflow: hidden;
+
+    img{
+      object-fit: cover;
+    }
+  }
+
+  h1{
+    pointer-events: none;
+    letter-spacing: 12px; 
+    font-family: variables.$titleFont;
+    font-size: 160px;
+    position: absolute;
+    bottom: -48px;
+    left: 50%;
+    transform: translateX(-50%);
+    filter: drop-shadow(6px -3px 5px #5e5e5e);
+  }
+
+    // Shadow affect at the top 
+  &::after { 
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(180deg, rgba(7,8,8,1) 2%, rgba(255,255,255,0) 30%);
+    z-index: 1;
+  }
+}
+
+.desc{
+  background-color: variables.$graygreen;
+  font-size: variables.$descFontSize;
+  padding: 4% 5%;
+  text-align: center;
+}
+
+.list{
+  .works{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); // 3 equally spaced columns
+    gap: 1rem;
+    padding: 2%;
+    position: relative;
+    
+    a{
+      text-decoration: none;
+    }
+
+    .works_content{
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      aspect-ratio: 1 / 1; 
+      padding: 5%;
+      position: relative;
+      overflow: hidden;
+      z-index: 0;
+      min-width: 250px;
+      min-height: 250px;
+
+      .works_image {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 200px;
+        height: 200px;
+        object-fit: cover;
+        z-index: -1;
+        transition: all 0.5s ease;
+        cursor: pointer;
+      }
+
+      h2{ 
+        font-size: variables.$logoTitleFontSize;
+        color: variables.$white;
+        font-family: variables.$titleFont;
+        font-weight: 400;
+        user-select: none;
+        cursor: pointer;
+      }
+      
+
+      .works_arrow{
+        position: relative;
+        width: 60px;
+        min-width: 60px;
+        height: 24px;
+
+        img{
+          object-fit: cover;
+          transition: all 0.3s ease;
+        }
+      }
+
+      &:hover{
+        .works_image{
+          transform: scale(1.07);
+        }
+      
+        .works_arrow{
+          img{
+            transform: translateX(.5rem);
+          }
+        }
+      }
+    }
+      
+    .gallery_overlay{
+      position: fixed;
+      inset: 0;
+      background-color: rgba(0, 0, 0, 0.6);
+      z-index: 999;
+    }
+
+    .gallery_modal{
+      position: fixed;
+      top: 10%;
+      left: 25%;
+      width: 90%;
+      max-width: 800px;
+      max-height: 90vh; /* 🧠 Prevents overflowing viewport */
+      overflow-y: auto;  /* Enables scrolling if needed */
+      overflow-x: hidden;
+      padding: 24px;
+      background: white;
+      border-radius: 1px;
+      transform: translate(-50%, -50%);
+      z-index: 1000;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      display: flex;
+      flex-direction: column;
+
+      .gallery_close{
+        position: absolute;
+        top: 12px;
+        right: 16px;
+        font-size: 1.5rem;
+        background: none;
+        border: none;
+        color: #666;
+        cursor: pointer;
+      }
+
+      .gallery{
+        max-width: 800px;
+        margin: 0 auto; 
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        padding: 0 8%;
+
+        .gallery_title{
+          margin-bottom: 16px;
+          font-size: variables.$logoTitleFontSize;
+          font-family: variables.$titleFont;
+          text-align: center;
+          color: black;
+        }
+
+        .gallery_desc{
+          color: black;
+          font-size: 1rem;
+          font-family: variables.$titleFont;
+          margin-bottom: 16px;
+          text-align: center;
+        }
+
+        .gallery_image{
+          width: 100%;
+          height: auto;
+          position: relative;
+
+          img{
+            object-fit: contain;
+          }
+        }
+      }
+
+      /* Gallery Nav Arrow */
+      :global(.slick-prev)::before,
+      :global(.slick-next)::before {
+        content:'';
+      }
+
+      :global(.slick-prev),
+      :global(.slick-next) {
+        z-index: 10;
+        transition: all 0.3s ease;
+      }
+
+      :global(.slick-prev img),
+      :global(.slick-next img){
+        background-color: rgba(0, 0, 0, 0);
+        border-radius: 50%;
+        padding: 5px;
+      }
+
+      :global(.slick-prev:hover img),
+      :global(.slick-next:hover img) {
+        background-color: rgba(variables.$orange, 0.1);
+        transition: all 0.5s ease;
+      }
+
+      :global(.slick-prev) {
+        left: -10px;
+      }
+
+      :global(.slick-next) {
+        right: 30px;
+      }
+    }
+  }
+}
+
+.intro{
+  height: 100%;
+  padding: 5% 5%;
+  background-color: variables.$white;
+  color: variables.$black;
+  display: flex;
+  flex-direction: column;
+  font-family: variables.$titleFont;
+  
+  h3{
+    font-size: variables.$logoTitleFontSize;
+    margin-bottom: 16px;;
+  }
+
+  p{
+    margin-bottom: 16px;;
+  }
+
+  a{
+    color: variables.$black;
+    text-decoration: none;
+    font-size: variables.$logoTitleFontSize;
+    margin-left: auto;
+    display: inline-block; // ensures underline matches text
+    text-decoration: none;
+    background-image: linear-gradient(to right, orange, red);
+    background-repeat: no-repeat;
+    background-position: 0 100%;
+    background-size: 0% 2px; // underline thickness
+    transition: background-size 0.3s ease;
+    
+    &:hover {
+      background-size: 100% 2px; // animates underline to full word width
+    }
+  }
+}
+
+// 480px mobile
+@media screen and (max-width:30em) {
+  .hero{
+    h1{
+      font-size: 100px; // Adjusted for smaller screens
+      bottom: -30px; // Adjusted for smaller screens
+    }
+  }
+
+  .list{
+    .works{
+      grid-template-columns: repeat(2, 1fr); // 3 equally spaced columns
+      padding: 1%;
+      gap: 0.5rem;
+
+      .works_content{
+        min-width: 50px;
+        min-height: 50px;
+        padding: 5%;
+        transition: none;
+        justify-content: center;
+      }
+
+      .gallery_modal{
+        top: 25%;
+        left: 5%;
+
+        :global(.slick-prev),
+        :global(.slick-next) {
+          top: 65%;
+        }
+
+        :global(.slick-prev) {
+          left: -30px;
+        }
+
+        :global(.slick-next) {
+          right: 10px;
+        }
+      }
+    }
+  }
+
+  .intro{
+    h3{
+      font-size: variables.$baseFontSize;
+    }
+
+    p{
+      font-size: variables.$mobileFontSize;
+    }
+
+    a{
+      font-size: variables.$baseFontSize;
+      background-size: 100% 2px;
+    }
+  }
+}
