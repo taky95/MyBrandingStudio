@@ -35,7 +35,7 @@ export const metadata = {
   openGraph: {
     title: "My Branding Studio",
     description: "providing support for branding.",
-    url: "https://mybrandingstudio.c",
+    url: "https://mybrandingstudio.ca",
     siteName: "My Branding Studio",
     locale: "en_US",
     type: "website",
@@ -48,6 +48,27 @@ export const metadata = {
       },
     ],
   },
+  icons: {
+    icon: [
+      { url: "/favicon.ico" },
+      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+      { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+    ],
+    apple: [
+      { url: "/apple-touch-icon.png", sizes: "180x180" },
+    ],
+  },
+  manifest: "/manifest.webmanifest",
+  other: {
+    "apple-mobile-web-app-status-bar-style": "black-translucent",
+  },
+};
+
+export const viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  minimumScale: 1,
+  themeColor: '#1D6167',
 };
 
 export default function RootLayout({ children,}: {children: React.ReactNode}) {
@@ -55,19 +76,6 @@ export default function RootLayout({ children,}: {children: React.ReactNode}) {
   return (
     <html lang="en" className={`${roboto.variable} ${sacra.variable} ${libre.variable}`}>
       <body>
-        <head>
-          <meta charSet="UTF-8" />
-          <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
-          <meta name="theme-color" content="#1D6167" />
-          <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-          
-          <link rel="shortcut icon" href="/favicon.ico" />
-          <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"/>
-          <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"/>
-          <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"/>
-
-          <link rel="manifest" href="/manifest.webmanifest" crossOrigin="anonymous"/>
-        </head>
         <Header />
           <main>
             {children} 
