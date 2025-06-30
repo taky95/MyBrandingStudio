@@ -14,7 +14,6 @@
     align-items: center;
     flex-direction: column;
     color: variables.$white;
-    text-decoration: none;
     margin-top:12px;
     margin-left: 20px;
 
@@ -35,7 +34,6 @@
     
     li{
       a{
-        text-decoration: none;
         color: variables.$white;
         font-size: variables.$mobileFontSize;
         transition: all 0.3s ease-in-out;

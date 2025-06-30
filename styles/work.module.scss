@@ -54,10 +54,6 @@
     gap: 1rem;
     padding: 2%;
     position: relative;
-    
-    a{
-      text-decoration: none;
-    }
 
     .works_content{
       display: flex;
@@ -245,11 +241,9 @@
 
   a{
     color: variables.$black;
-    text-decoration: none;
     font-size: variables.$logoTitleFontSize;
     margin-left: auto;
     display: inline-block; // ensures underline matches text
-    text-decoration: none;
     background-image: linear-gradient(to right, orange, red);
     background-repeat: no-repeat;
     background-position: 0 100%;
