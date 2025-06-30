@@ -58,7 +58,7 @@ export const metadata = {
       { url: "/apple-touch-icon.png", sizes: "180x180" },
     ],
   },
-  manifest: "/manifest.webmanifest",
+  manifest: "/site.webmanifest",
   other: {
     "apple-mobile-web-app-status-bar-style": "black-translucent",
   },
