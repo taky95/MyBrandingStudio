@@ -64,7 +64,9 @@ export default async function Home() {
         )} 
       </section>
       <section className={styles.intro}>
-        <h2>{intro.title}</h2>
+        <div className={styles.intro_title}>
+          <Image src='/intro-title.png' alt='intro-title' fill/>
+        </div>
         <p>{intro.description}</p>
       </section>
       <section className={styles.steps}>
@@ -75,6 +77,9 @@ export default async function Home() {
           <div className={styles.bio_card}>
             <div className={styles.bio_content}>
               <div className={styles.bio_text}>
+                <div className={styles.bio_title}>
+                  <Image src='/bio-title.png' alt='bio-title' fill/>
+                </div>
                 <h2>{bio.heading}</h2>
                 <h3>{bio.subHeading1}</h3>
                 <h3>{bio.subHeading2}</h3>
