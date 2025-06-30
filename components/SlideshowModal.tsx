@@ -60,10 +60,10 @@ export default function SlideshowModal({
           {/* Modal */}
           <motion.div
             className={styles.gallery_modal}
-            initial={{ y: 60, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            exit={{ y: 60, opacity: 0 }}
-            transition={{ type: 'spring', damping: 25, stiffness: 300 }}
+            initial={{ opacity: 0, y: "-10%", x: "-50%", scale: 1 }}
+            animate={{ opacity: 1, y: "-50%", x: "-50%" }}
+            exit={{ opacity: 0, y: "-10%"}}
+            transition={{ type: 'spring', damping: 25, stiffness: 300, delay: 0.2}}
           >
             <button
               onClick={onClose}

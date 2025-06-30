@@ -123,8 +123,8 @@
 
     .gallery_modal{
       position: fixed;
-      top: 10%;
-      left: 25%;
+      top: 50%;
+      left: 50%;
       width: 90%;
       max-width: 800px;
       max-height: 90vh; /* 🧠 Prevents overflowing viewport */
@@ -280,9 +280,8 @@
       }
 
       .gallery_modal{
-        top: 25%;
-        left: 5%;
-
+        overflow-y: auto;
+        
         :global(.slick-prev),
         :global(.slick-next) {
           top: 65%;
