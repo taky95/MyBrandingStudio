@@ -1,12 +1,13 @@
 @use 'variables';
 @use 'sass:color';
 
-.link{
+.tile{
   display: flex;
   justify-content: center;
   align-items: flex-start;
   flex-direction: column;
   padding: 1%;
+  transition: all 0.3s ease-in-out;
 
   h3{
     font-size: variables.$mobileFontSize;
@@ -14,23 +15,17 @@
     font-weight: 400;
     text-transform: uppercase;
     flex: auto;
+    color: variables.$white;
+    transition: all 0.3s ease-in-out;
   }
 
-  a{
+  .link{
     color: variables.$white;
     font-family: variables.$titleFont;
     display: flex;
     align-items: center;
-    transition: all 0.3s ease-in-out;
     margin: 3% 0 3%;
-
-    &:hover{
-      color: color.adjust(variables.$white, $lightness: -30%);
-
-      .arrow img{
-        transform: translateX(3px);
-      }
-    }
+    transition: all 0.3s ease-in-out;
 
     .arrow{
       position: relative;
@@ -49,11 +44,29 @@
 
   .image{
     position: relative;
-    width: 20rem;
-    height: 20rem;
+    width: 25rem;
+    height: 25rem;
+    transition: all 0.3s ease-in-out;
     
     img{
       object-fit: cover;
+    }
+  }
+
+  &:hover{
+    h3{
+      color: color.adjust(variables.$white, $lightness: -30%);
+    }
+
+    .link{
+      color: color.adjust(variables.$white, $lightness: -30%);
+      .arrow img{
+        transform: translateX(3px);
+      }
+    }
+
+    .image{
+      opacity: 0.8;
     }
   }
 }
