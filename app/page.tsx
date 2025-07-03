@@ -84,7 +84,7 @@ export default async function Home() {
                 <h3>{bio.subHeading1}</h3>
                 <h3>{bio.subHeading2}</h3>
                 <p>{bio.description}</p>
-                <DefaultButton src="\about" text="Read my story" />
+                <DefaultButton src="\about">Read my story</DefaultButton>
               </div>
               <div className={styles.bio_picture} >
                 <Image

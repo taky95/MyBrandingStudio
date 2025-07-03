@@ -3,19 +3,66 @@
 
 .defaultButton {
   button {
-    padding: 10px 20px;
-    background-color: variables.$orange;
-    color: variables.$white;
     font-family: variables.$titleFont;
     font-size: variables.$subTitleFontSize;
-    border: none;
+    display: inline-block;
+    text-align: center;
+    padding: 10px 20px;
+    border: 3px solid variables.$orange;
+    border-radius: 1px;
+    position: relative;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.1);
+    color: variables.$white;
+    text-decoration: none;
+    transition: 0.3s ease all;
+    z-index: 1;
+    background-color: variables.$orange;
     cursor: pointer;
-    width:300px;
-    height:50px;
-    transition: background-color 0.3s ease;
 
-    &:hover {
-      background-color: color.adjust(variables.$orange, $lightness: 10%);
+    &:before {
+      transition: 0.5s all ease;
+      position: absolute;
+      top: 0;
+      left: 50%;
+      right: 50%;
+      bottom: 0;
+      opacity: 0;
+      content: '';
+      z-index: -1;
+      background-color: variables.$white;
     }
+
+    &:hover, &:focus {
+      color: variables.$orange;
+    }
+
+    &:hover:before, &:focus:before {
+      transition: 0.5s all ease;
+      left: 0;
+      right: 0;
+      opacity: 1;
+    }
+
+    &:active {
+      transform: scale(0.9);
+    }
+  }
+}
+
+.bannerButton {
+    display: flex;
+    background-color: variables.$green;
+    color: variables.$white;
+    font-size: variables.$logoTitleFontSize;
+    font-family: variables.$titleFont;
+    background-image: url('/banner.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    align-items: center;
+    padding: 1.5% 0;
+    justify-content: center;
+
+  .btn {
+    margin-left:5%;
   }
 }

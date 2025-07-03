@@ -240,19 +240,8 @@
   }
 
   a{
-    color: variables.$black;
-    font-size: variables.$logoTitleFontSize;
     margin-left: auto;
-    display: inline-block; // ensures underline matches text
-    background-image: linear-gradient(to right, orange, red);
-    background-repeat: no-repeat;
-    background-position: 0 100%;
-    background-size: 0% 2px; // underline thickness
-    transition: background-size 0.3s ease;
-    
-    &:hover {
-      background-size: 100% 2px; // animates underline to full word width
-    }
+    display: inline-block;
   }
 }
 

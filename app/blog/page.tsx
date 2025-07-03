@@ -1,11 +1,10 @@
 import Image from "next/image";
 import styles from "@/styles/blog.module.scss";
-import Link from "next/link";
 
 import { GET_POSTS, Post } from '../../graphql/queries/query-blog';
 import client from '@/lib/apollo-client'; // Import the Apollo Client instance
 import Tile from "@/components/Tile";
-import DefaultButton from "@/components/Button";
+import DefaultButton, { BannerButton } from "@/components/Button";
 import { FadeInOnScroll } from "@/components/FadeIn";
 
 export default async function Blog() {
@@ -62,20 +61,17 @@ export default async function Blog() {
                             </FadeInOnScroll>
                             <FadeInOnScroll delay={400} once={false}>
                                 <DefaultButton
-                                    text="View my Portfolio"
                                     src="/contact"
-                                />
+                                >View my Portfolio</DefaultButton>
                             </FadeInOnScroll>
                         </div>
                     </div>
-                    <Link href="/contact" className={styles.intro_banner}>
-                        Let&apos;s Connect & Create 
-                        <div className={styles.intro_arrow} >
-                            <Image src="/arrow.png" alt="arrow" fill 
-                            sizes="(max-width: 768px) 40px, 60px"
-                            />
-                        </div>
-                    </Link>
+                    <div className={styles.intro_banner}>
+                        <BannerButton
+                            src="/contact"
+                            btnText="Talk to Us"
+                        >Let&apos;s Connect & Create</BannerButton>
+                    </div>
                     <span className={styles.separator}></span>
                 </div>
             </section>

@@ -55,7 +55,7 @@ const AccordionMenu: React.FC<Steps> = ({ steps }) => {
               <div className={styles.steps_text}>
                 <h2>{step.stepField.title}</h2>
                 <p>{step.stepField.description}</p>
-                <DefaultButton src={step.stepField.link} text="Learn More" />
+                <DefaultButton src={step.stepField.link}>Learn More</DefaultButton>
               </div>
             </div>
           </div>

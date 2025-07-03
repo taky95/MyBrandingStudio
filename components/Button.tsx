@@ -5,15 +5,28 @@ import styles from "@/styles/button.module.scss";
 
 interface ButtonProps {
   src: string; 
-  text: string;
+  children?: React.ReactNode;
 }
 
-const DefaultButton = ({ src, text }: ButtonProps) => {
+const DefaultButton = ({ src, children }: ButtonProps) => {
   
   return(
     <Link href={src} className={styles.defaultButton}>
-      <button>{text}</button>
+      <button>{children}</button>
     </Link>
+
+  )
+}
+
+export const BannerButton = ({ src, children, btnText }: ButtonProps & { btnText: string }) => {
+  
+  return(
+    <div className={styles.bannerButton}>
+        {children} 
+        <div className={styles.btn} >
+            <DefaultButton src={src}>{btnText}</DefaultButton>
+        </div>
+    </div>
 
   )
 }

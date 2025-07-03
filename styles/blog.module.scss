@@ -128,37 +128,7 @@
     }
 
     .intro_banner{
-      display: flex;
-      background-color: variables.$green;
-      color: variables.$white;
-      font-size: variables.$logoTitleFontSize;
-      font-family: variables.$titleFont;
-      align-items: center;
-      padding: 2% 0;
       margin: 8% 0;
-      justify-content: center;
-      transition: all 0.2s ease-in;
-
-      &:hover{
-        background-color: color.adjust(variables.$green, $lightness: -5%);
-        
-        .intro_arrow{
-          transform: translateX(10px);
-        }
-      }
-
-      .intro_arrow{
-        position: relative;
-        width: 60px;
-        min-width: 60px;
-        height: 18px;
-        margin-left: 1rem;
-        transition: all 0.2s ease-in-out;
-
-        img{
-          object-fit: cover;
-        }
-      } 
     }
 
     .separator{
