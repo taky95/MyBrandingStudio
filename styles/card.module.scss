@@ -2,7 +2,8 @@
 @use 'sass:color';
 
 .cardSlider {
-  width: 620px;
+  max-width: 840px;
+  min-width: 500px;
   height: auto; 
   margin: 0 auto; 
   position: relative;
@@ -34,7 +35,7 @@
     align-items: center; 
     justify-content: space-between; 
     width: 100%; 
-    height: 320px; 
+    height: 460px;
     background-color: variables.$white; 
     border-radius: 1px; 
     overflow: hidden; 
@@ -55,7 +56,7 @@
 
     .cardContent {
       flex: 0 0 60%; // Content takes 70% of the card's width
-      padding: 20px; // Add padding around the content
+      padding: 50px; // Add padding around the content
       text-align: left; // Align text to the left
       position: relative;
 
