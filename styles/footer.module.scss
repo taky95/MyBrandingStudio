@@ -6,12 +6,10 @@
   justify-content: center;
   align-items: center; 
   flex-direction: column;
-  background-color: variables.$lightgreen;
   padding: 2%;
   padding-top: 0;
-  background-image: url('/footer.png');
-  background-repeat: round;
   overflow: hidden;
+  background-color: variables.$black;
 
   .socialmedia{
     display: grid;
