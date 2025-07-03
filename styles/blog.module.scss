@@ -42,7 +42,7 @@
 
 .list{
     color: variables.$white;
-    background-color: variables.$darkergreen;
+    background-color: variables.$blackgreen;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -61,7 +61,7 @@
 .article{
   padding: 50px 20%; 
   color: variables.$white;
-  background-color: variables.$darkergreen;
+  background-color: variables.$blackgreen;
 
   .article_image{
     position: relative;
@@ -77,7 +77,7 @@
 }
 
 .intro{
-  background-color: variables.$darkergreen;
+  background-color: variables.$blackgreen;
   
   .intro_content{
     display: flex;
@@ -129,7 +129,7 @@
 
     .intro_banner{
       display: flex;
-      background-color: variables.$lightgreen;
+      background-color: variables.$green;
       color: variables.$white;
       font-size: variables.$logoTitleFontSize;
       font-family: variables.$titleFont;
@@ -140,7 +140,7 @@
       transition: all 0.2s ease-in;
 
       &:hover{
-        background-color: color.adjust(variables.$lightgreen, $lightness: -5%);
+        background-color: color.adjust(variables.$green, $lightness: -5%);
         
         .intro_arrow{
           transform: translateX(10px);
