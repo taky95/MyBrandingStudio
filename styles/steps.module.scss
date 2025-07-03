@@ -55,15 +55,17 @@
     height: 100%; // Ensure the container takes the full height
     width: 50%; // Restrict the container to 30% of the width
     margin-right: 20px;;
+    flex-basis: fit-content;
 
     .imageWrapper {
       position: relative; // Required for next/image with `fill`
       height: 100%; // Fill the height of the parent container
-      width: 100%; // Fill the width of the `.steps_image` container
+      width: 350px; // Fill the width of the `.steps_image` container
       overflow: hidden; // Ensure the image doesn't overflow the container
 
       img{
         object-fit: cover;
+        object-position: left;
       }
     }
   }
