@@ -1,7 +1,7 @@
 import styles from '@/styles/footer.module.scss'
 import Link from 'next/link'
 import Image from "next/image"
-import { FaFacebookF, FaTwitter, FaInstagram } from 'react-icons/fa';
+import { FaFacebookF, FaInstagram, FaLinkedin } from 'react-icons/fa';
 import client from '@/lib/apollo-client';
 import { WP_QUERY } from '../graphql/queries/query';
 import Instagram from './Instagram';
@@ -61,7 +61,7 @@ const Footer = async (): Promise<React.JSX.Element> => {
                         <div className={styles.footer_social}>
                             <ul>
                             <li><a href="#"><FaFacebookF /></a></li>
-                            <li><a href="#"><FaTwitter /></a></li>
+                            <li><a href="#"><FaLinkedin /></a></li>
                             <li><a href="#"><FaInstagram /></a></li>
                             </ul>
                         </div>                
@@ -110,7 +110,7 @@ const Footer = async (): Promise<React.JSX.Element> => {
                         <div className={styles.footer_social}>
                             <ul>
                             <li><a href="#"><FaFacebookF /></a></li>
-                            <li><a href="#"><FaTwitter /></a></li>
+                            <li><a href="#"><FaLinkedin /></a></li>
                             <li><a href="#"><FaInstagram /></a></li>
                             </ul>
                         </div>                
