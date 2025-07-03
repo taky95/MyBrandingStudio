@@ -44,8 +44,8 @@
 
   .image{
     position: relative;
-    width: 25rem;
-    height: 25rem;
+    width: 100%; // full screen width or container width
+    padding-top: 100%; 
     transition: all 0.3s ease-in-out;
     
     img{

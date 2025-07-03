@@ -226,7 +226,8 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr); // 3 equally spaced columns
     gap: 1rem;
-    padding: 2% 5%;
+    padding: 2% 2%;
+    width: 100%;
   }
 
   .resources_line{
