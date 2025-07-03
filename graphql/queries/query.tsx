@@ -94,17 +94,17 @@ query GetCustomParts {
       }
     }
   }
-  resources{
-    nodes{
-      resourceField{
-        title
-        image{
-          node{
-            sourceUrl
-            altText
-          }
+  posts(first: 3, where: { orderby: { field: DATE, order: DESC } }) {
+    nodes {
+      title
+      slug
+      date
+      excerpt
+      featuredImage {
+        node {
+          sourceUrl
+          altText
         }
-        link
       }
     }
   }

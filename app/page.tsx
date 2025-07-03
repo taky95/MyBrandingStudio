@@ -2,13 +2,14 @@ import Image from "next/image";
 import styles from "@/styles/index.module.scss";
 import Link from "next/link";
 
-import { WP_QUERY, NavItem, Resource} from '../graphql/queries/query';
+import { WP_QUERY, NavItem } from '../graphql/queries/query';
 import client from '@/lib/apollo-client'; // Import the Apollo Client instance
 import Card from "@/components/Card";
 import Steps from "@/components/Steps";
 import DefaultButton from "@/components/Button";
 import Tile from "@/components/Tile";
 import { FadeInOnScroll } from "@/components/FadeIn";
+import { Post } from "@/graphql/queries/query-blog";
 
 export const revalidate = 60;
 
@@ -22,7 +23,7 @@ export default async function Home() {
   const nav =data.navItems.nodes
   const intro = data.introductions.nodes[0].introField
   const steps = data.steps.nodes
-  const resources = data.resources.nodes
+  const resources = data.posts.nodes
   const bio = data.bios.nodes[0].bioField
   const heroImage = data.heroImages.nodes[0].heroImageField.image.node.sourceUrl
   return (
@@ -101,14 +102,14 @@ export default async function Home() {
       <section className={styles.resources}>
         <h2>Resources</h2>
         <div className={styles.resources_content}>
-          {resources.map((r_item: Resource, index: number) => {
+          {resources.map((r_item: Post, index: number) => {
             return (
               <Tile 
                     key={index}
-                    src={r_item.resourceField.image.node.sourceUrl}
-                    title={r_item.resourceField.title}
-                    link={r_item.resourceField.link}
-                    alt={r_item.resourceField.title}></Tile>
+                    src={r_item.featuredImage? r_item.featuredImage.node.sourceUrl : '/sample1.jpg'}
+                    title={r_item.title}
+                    link={'/blog/'+r_item.slug}
+                    alt={r_item.title}></Tile>
             );}
           )} 
         </div>
