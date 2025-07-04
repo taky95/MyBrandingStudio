@@ -87,6 +87,19 @@
     .image{
       width: 100% !important; // full screen width or container width
       padding-top: 100% !important; 
+      transition: none;
+    }
+
+
+    &.hover{
+      .link{
+        .arrow img{
+          transform: none;
+        }
+      }
+      .image{
+        opacity: 1;
+      }
     }
   }
 }
