@@ -25,6 +25,10 @@
     }
   }
 
+  :global(.slick-dots li button:before){
+    color: variables.$white; // Change the color of the dots
+  }
+
   :global(li.slick-active) {
     button:before {
       opacity: 1;
@@ -99,10 +103,14 @@
   // 480px mobile
 @media screen and (max-width:30em) {
   .cardSlider {
-    width: 280px;
+    width: 100vw;
+    height: 92vh;
+    max-width: none;
+    min-width: auto;
     
     :global(.slick-dots) {
-      bottom: 5px;
+      bottom: 50px;
+      z-index: 20;
       li{
         button::before{
           font-size: 8px;
@@ -111,28 +119,39 @@
     }
 
     .card{
-      height: 200px;
+      height: 92vh;
+      display: inline-block !important;
 
       .cardContent{
-        margin-top: -50px;
+        z-index: 20;
+        background-color: rgba(variables.$white, 0.8);
+        width: 60vw;
+        height: auto;
+        position: absolute;
+        top: 40vh;
+        margin-left: 40vw;
+        padding: 1%;
+        padding-bottom: 2.5%;
+
         h1 {
-          font-size: variables.$descFontSize;
+          font-size: variables.$subTitleFontSize;
           margin-bottom: 2px;
         }
 
         p {
-          font-size: 10px;
+          font-size: variables.$baseFontSize;
           margin-bottom: 2px;
         }
 
         button {
           padding: 5px 10px;
-          font-size: 10px;
-          width:150px;
-          height:25px;
+          font-size: variables.$subTitleFontSize;
+          width:260px;
+          height:50px;
           margin-top: 5px;
-          bottom: -15px;
-          right: -10px;
+          bottom: 5px;
+          right: 0px;
+          background-color: variables.$orange;
         }
       }
     }

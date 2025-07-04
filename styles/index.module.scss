@@ -248,7 +248,13 @@
   // 480px mobile
 @media screen and (max-width:30em) {
   .hero{
-    height: 300px;
+    height: 92vh;
+
+    .hero_background{
+      img{
+        display: none;
+      }
+    } 
 
     .hero_content{
         margin-top: 8%;
