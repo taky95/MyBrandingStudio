@@ -74,11 +74,19 @@
 }
 
 @media screen and (max-width:30em) {
-  .link{
-    align-items: center;
+  .tile{
+    padding: 5%;
+    .link{
+      align-items: center;
 
-    h3{
-      text-align: center;
+      h3{
+        text-align: center;
+      }
+    }
+
+    .image{
+      width: 100% !important; // full screen width or container width
+      padding-top: 100% !important; 
     }
   }
 }
