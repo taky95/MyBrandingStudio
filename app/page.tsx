@@ -53,11 +53,13 @@ export default async function Home() {
                   fill
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   />
-                <h2>{nav_item.navField.title}</h2>
-                <div className={styles.nav_arrow} >
-                  <Image src="/arrow.png" alt="arrow" fill 
-                    sizes="(max-width: 768px) 40px, 60px"
-                  />
+                <div className={styles.navField_titleArea}>
+                  <h2>{nav_item.navField.title}</h2>
+                  <div className={styles.nav_arrow} >
+                    <Image src="/arrow.png" alt="arrow" fill 
+                      sizes="(max-width: 768px) 40px, 60px"
+                    />
+                  </div>
                 </div>
               </div>
             </Link>

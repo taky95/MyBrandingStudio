@@ -262,20 +262,21 @@
   }
 
   .nav{
-    grid-template-columns: repeat(3, 1fr); // 3 equally spaced columns
-    padding: 1%;
-    gap: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-between;
+    padding: 2% 0; 
+
     
     .nav_content{
-      min-width: 50px;
-      min-height: 50px;
-      padding: 5%;
+      height: 250px;
+      width: 100%;
       transition: none;
       justify-content: center;
+      min-height: auto;
 
-      h2{
-        font-size: variables.$descFontSize;
-      }
+
 
       .nav_image{
         width: 80%;
@@ -292,12 +293,24 @@
         }
       }
 
-      .nav_arrow{
-        width: 24px;
-        min-width: 24px;
-        height: 10px;
-        margin-left: 0.5rem;
+      .navField_titleArea{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+
+        h2{
+          font-size: variables.$logoTitleFontSize;
+        }
+
+        .nav_arrow{
+          width: 60px;
+          min-width: 60px;
+          height: 20px;
+          margin-left: auto;
+        }
       }
+
     }
   }
 
