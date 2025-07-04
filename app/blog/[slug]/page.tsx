@@ -57,7 +57,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
         :<></>}
         <FixBackgroundText />
         <article
-          className=""
+          className={styles.paragraph}
           dangerouslySetInnerHTML={{ __html: post.content }}
         />
       </section>

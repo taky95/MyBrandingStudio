@@ -149,7 +149,7 @@
   .hero{
     h1{
       font-size: 100px; // Adjusted for smaller screens
-      bottom: -24px; // Adjusted for smaller screens
+      bottom: -31px; // Adjusted for smaller screens
     }
   }
 
@@ -169,6 +169,9 @@
       img{
         object-fit: contain;
       }
+    }
+    .paragraph{
+      padding: 0 5%;
     }
   }
 

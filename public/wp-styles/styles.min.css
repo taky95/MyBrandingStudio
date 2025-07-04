@@ -33,3 +33,10 @@
   display: block;
   padding-left: 18.5%;
 }
+
+@media screen and (max-width:30em) {
+  .has-background > * {
+    max-width: 30em; 
+    padding-left: 0;
+  }
+}
