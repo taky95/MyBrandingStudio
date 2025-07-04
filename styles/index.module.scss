@@ -266,7 +266,8 @@
     flex-direction: column;
     height: 100%;
     justify-content: space-between;
-    padding: 2% 0; 
+    padding: 0.5rem 0; 
+    gap: 0.5rem;
 
     
     .nav_content{
@@ -275,8 +276,6 @@
       transition: none;
       justify-content: center;
       min-height: auto;
-
-
 
       .nav_image{
         width: 80%;
@@ -315,7 +314,7 @@
   }
 
   .intro{
-    height: 70vh;
+    height: 80vh;
 
     h2{
       font-size: variables.$logoTitleFontSize;
@@ -327,7 +326,7 @@
 
   .bio{
     padding: 2%;
-    //height: 100%;
+    height: 100%;
 
     .bio_card{
       width: 100%;
@@ -346,7 +345,7 @@
           text-align: center;
 
           .bio_title{
-            margin-top: 10%;
+            margin-top: 5%;
             height: 68px;
             img{
               object-position: center;

@@ -154,6 +154,12 @@
           background-color: variables.$orange;
         }
       }
+
+      .cardImage {
+        flex: auto; 
+        height: 100vh; // Full height of the card
+        position: relative; // Required for Next.js Image with layout="fill"
+      }
     }
   }
 }
