@@ -53,8 +53,8 @@
     display: grid;
     grid-template-columns: repeat(2, 2fr); // 3 equally spaced columns
     gap: 4rem;
+    padding: 0 5%;
     padding-bottom: 3%;
-    max-width: 1020px;
   }
 }
 

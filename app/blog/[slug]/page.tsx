@@ -68,7 +68,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
               title={article.title}
               link={`/blog/${article.slug}`}
               alt={article.featuredImage ? article.featuredImage.node.altText : "Category Image Placeholder"}
-              size='350px'
+              size='400px'
             />
           ))}
         </div>

@@ -25,7 +25,7 @@ const Tile = ({ src, title, link, alt, size }: TileProps) => {
           />
         </div>
       </div>
-      <div className={styles.image} style={{ width: size, height: size }}>
+      <div className={styles.image} style={size ? { width: size, height: size, paddingTop: 0 } : undefined}>
         <Image
           src={src}
           alt={alt}

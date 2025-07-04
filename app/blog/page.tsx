@@ -36,7 +36,7 @@ export default async function Blog() {
                             title={post.title}
                             link={`/blog/${post.slug}`}
                             alt={post.featuredImage ? post.featuredImage.node.altText : "Blog Image Placeholder"}
-                            size='360px'
+                            size='400px'
                         ></Tile>
                     ))}
                 </div>
