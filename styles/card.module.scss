@@ -158,6 +158,7 @@
       .cardImage {
         flex: auto; 
         height: 100vh; // Full height of the card
+        width: 100vw;
         position: relative; // Required for Next.js Image with layout="fill"
       }
     }
