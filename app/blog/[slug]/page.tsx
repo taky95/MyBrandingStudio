@@ -34,7 +34,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
       <section className={styles.hero}>
         <div className={styles.hero_background}>
           <Image
-            src={"/sample1.jpg"}
+            src={"/Blog-header.jpg"}
             priority
             alt="slider"
             fill

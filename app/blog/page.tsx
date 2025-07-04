@@ -20,7 +20,7 @@ export default async function Blog() {
             <section className={styles.hero}>
                 <div className={styles.hero_background}>
                     <Image
-                        src={"/sample1.jpg"}
+                        src={"/Blog-header.jpg"}
                         priority
                         alt="slider"
                         fill
