@@ -12,6 +12,8 @@ interface BlogPostPageProps {
   params: Promise<{slug: string }>
 }
 
+export const revalidate = 60 //60*60 for 1 hour
+
 export default async function BlogPostPage({ params }: BlogPostPageProps) {
   const { slug } = await params;
   const { data } = await client.query({

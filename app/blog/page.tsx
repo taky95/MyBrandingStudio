@@ -7,6 +7,8 @@ import Tile from "@/components/Tile";
 import DefaultButton, { BannerButton } from "@/components/Button";
 import { FadeInOnScroll } from "@/components/FadeIn";
 
+export const revalidate = 60
+
 export default async function Blog() {
     const { data } = await client.query({ 
         query: GET_POSTS,

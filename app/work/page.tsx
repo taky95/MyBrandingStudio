@@ -6,6 +6,8 @@ import client from '@/lib/apollo-client';
 import SlideshowGallery from "@/components/SlideshowGallery";
 import DefaultButton from "@/components/Button";
 
+export const revalidate = 60 
+
 export default async function Work() {
     const { data } = await client.query({ 
         query: GET_WORKS,
