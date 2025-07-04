@@ -51,7 +51,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
               src={post.featuredImage ? post.featuredImage.node.sourceUrl : "/sample1.jpg"}
               alt={post.featuredImage ? post.featuredImage.node.altText : "Blog Image"}
               fill
-              sizes="(max-width: 768px) 300px, 300px"
+              sizes="100vw"
             />
           </div>
         :<></>}

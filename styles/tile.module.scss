@@ -17,6 +17,8 @@
     flex: auto;
     color: variables.$white;
     transition: all 0.3s ease-in-out;
+    max-width: 100%; // prevent overflow
+    word-wrap: break-word;
   }
 
   .link{

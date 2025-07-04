@@ -16,7 +16,7 @@ const Tile = ({ src, title, link, alt, size }: TileProps) => {
   
   return(
     <Link href={link} className={styles.tile} >
-      <h3>{title}</h3>
+      <h3 style={size ? {width: size} : undefined}>{title}</h3>
       <div className={styles.link}>
         Read more
         <div className={styles.arrow} >
@@ -30,7 +30,7 @@ const Tile = ({ src, title, link, alt, size }: TileProps) => {
           src={src}
           alt={alt}
           fill
-          sizes="(max-width: 768px) 300px, 300px"
+          sizes={size ? size : "100vw"}
         />
       </div>
     </Link>
