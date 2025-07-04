@@ -66,3 +66,20 @@
     margin-left:5%;
   }
 }
+
+@media screen and (max-width:30em) {
+
+  .bannerButton {
+    flex-direction: column;
+    padding: 4% 0;
+    font-size: variables.$subTitleFontSize;
+
+    .btn {
+      margin: 1% 0;
+    }
+
+    button{
+      padding: 5px 30px;
+    }
+  }
+}
