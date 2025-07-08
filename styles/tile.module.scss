@@ -75,7 +75,10 @@
 
 @media screen and (max-width:30em) {
   .tile{
-    padding: 5%;
+    transition: none;
+    padding: 0%;
+    width: 90vw;
+
     .link{
       align-items: center;
 
@@ -90,8 +93,7 @@
       transition: none;
     }
 
-
-    &.hover{
+    &:hover{
       .link{
         .arrow img{
           transform: none;
