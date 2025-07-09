@@ -254,6 +254,10 @@
     }
   }
 
+  .desc{
+    font-size: variables.$mobileFontSize;
+  }
+
   .list{
     .works{
       grid-template-columns: repeat(2, 1fr); // 3 equally spaced columns
@@ -265,7 +269,17 @@
         min-height: 50px;
         padding: 5%;
         transition: none;
-        justify-content: center;
+        justify-content: space-around;
+
+        h2{ 
+          font-size: variables.$subTitleFontSize;
+        }
+        
+        .works_arrow{
+          width: 40px;
+          min-width: 40px;
+          height: 16px;
+        }
       }
 
       .gallery_modal{
