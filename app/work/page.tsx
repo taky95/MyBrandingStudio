@@ -26,7 +26,7 @@ export default async function Work() {
                         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 100vw"
                     />
                 </div>
-                <h1>Work</h1>
+                <h1>WORK</h1>
             </section>
             <section className={styles.desc}>
                 <p>
