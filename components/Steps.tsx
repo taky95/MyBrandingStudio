@@ -35,7 +35,7 @@ const AccordionMenu: React.FC<Steps> = ({ steps }) => {
               className={styles.steps_title}
               onMouseEnter={() => toggleAccordion(index)}
             >
-              Step {index}: {step.stepField.title}
+              {index!=0?'Step '+index:''} {step.stepField.title}
             </div>
             <div className={styles.steps_content}>
               <div className={styles.steps_image}>
