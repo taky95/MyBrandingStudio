@@ -32,7 +32,6 @@ const Footer = async (): Promise<React.JSX.Element> => {
                     }} 
                 />
                 <div className={styles.footer_content}>
-                    <h2>Let&#39;s make your brand shine!</h2>
                     <div className={styles.footer_menu}>
                         <div className={styles.footer_link}>
                             <ul>
@@ -81,7 +80,6 @@ const Footer = async (): Promise<React.JSX.Element> => {
                     }} 
                 />
                 <div className={styles.footer_content}>
-                    <h2>Let&#39;s make your brand shine!</h2>
                     <div className={styles.footer_menu}>
                         <div className={styles.footer_link}>
                             <ul>
