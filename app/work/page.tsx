@@ -19,7 +19,7 @@ export default async function Work() {
             <section className={styles.hero}>
                 <div className={styles.hero_background}>
                     <Image
-                        src={"/sample1.jpg"}
+                        src={"/work-header.jpg"}
                         priority
                         alt="slider"
                         fill
