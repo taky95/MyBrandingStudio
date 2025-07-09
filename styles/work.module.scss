@@ -42,7 +42,7 @@
 
 .desc{
   background-color: variables.$graygreen;
-  font-size: variables.$descFontSize;
+  font-size: variables.$baseFontSize;
   padding: 4% 5%;
   text-align: center;
 }
@@ -236,7 +236,8 @@
   }
 
   p{
-    margin-bottom: 16px;;
+    margin-bottom: 16px;
+    font-family: variables.$baseFont;
   }
 
   a{
