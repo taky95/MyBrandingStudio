@@ -70,14 +70,14 @@ export default function SlideshowModal({
               className={styles.gallery_close}
               aria-label="Close"
             >
-              ×
+              x
             </button>
 
             <Slider {...settings} initialSlide={workIndex}>
               {works.map((work: Works, i) => (
                 <div key={i} className={styles.gallery}>
                   <h2 className={styles.gallery_title}>{work.worksField.title}</h2>
-                  <p className={styles.gallery_desc}>{work.worksField.description}</p>
+                  <div className={styles.gallery_desc} dangerouslySetInnerHTML={{ __html: work.worksField.description }} />
                   <div className={styles.gallery_image}>
                     <Image
                       src={work.worksField.image.node.sourceUrl}

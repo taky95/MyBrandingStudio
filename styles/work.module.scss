@@ -168,10 +168,9 @@
 
         .gallery_desc{
           color: black;
-          font-size: 1rem;
-          font-family: variables.$titleFont;
+          font-size: variables.$mobileFontSize;
+          font-family: variables.$baseFont;
           margin-bottom: 16px;
-          text-align: center;
         }
 
         .gallery_image{
