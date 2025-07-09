@@ -7,19 +7,21 @@ export function FixBackgroundText() {
     const blocks = document.querySelectorAll('.has-background');
 
     blocks.forEach((block) => {
-      // If the block only has a text node (no child elements)
-      if (
-        block.childNodes.length === 1 &&
-        block.firstChild?.nodeType === Node.TEXT_NODE
-      ) {
-        const wrapper = document.createElement('div');
-        wrapper.className = 'inner-background-wrapper';
-        wrapper.textContent = block.textContent || '';
-        block.textContent = '';
-        block.appendChild(wrapper);
+      // Skip if it already contains our wrapper
+      if (block.querySelector('.inner-background-wrapper')) return;
+
+      // Create a wrapper and move all child nodes into it
+      const wrapper = document.createElement('div');
+      wrapper.className = 'inner-background-wrapper';
+
+      // Move all children into the wrapper
+      while (block.firstChild) {
+        wrapper.appendChild(block.firstChild);
       }
+
+      block.appendChild(wrapper);
     });
   }, []);
 
-  return null; // This component just runs JS on mount
+  return null;
 }
