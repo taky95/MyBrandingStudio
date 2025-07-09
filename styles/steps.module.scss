@@ -122,19 +122,30 @@
   
   .accordionItem.active .steps_content {
     flex-direction: column;
+    padding: 10% 0;
 
     .steps_image{
       display: inline-block; // Change to inline-block for better layout
-      height: 150px;
       width: 100%;
       margin: 0;
       margin-bottom: 1rem;
 
+      .imageWrapper {
+        width: 100%;
+        padding-top: 70%; // Maintain 1:1 aspect ratio (or adjust as needed)
+        height: auto; // Let height be determined by aspect
+
+        img {
+          object-fit: contain; // Or 'cover' if you'd prefer filling the space
+          object-position: center;
+        }
+      }
     }
 
     .steps_text{
       padding-left: 20px;
       padding-right: 20px;
+      width: 100%;
 
       h2 {
         font-size: variables.$baseFontSize;
