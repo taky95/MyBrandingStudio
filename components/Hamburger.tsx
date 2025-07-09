@@ -23,9 +23,9 @@ const HamburgerMenu = () :React.JSX.Element => {
                         <Link href="/work" >Work</Link>
                     </li>
                     <hr/>
-                    <li>
+                    {/*<li>
                         <Link href="/program" >1:1 Program</Link>
-                    </li>
+                    </li>*/}
                     <hr/>
                     <li>
                         <Link href="/blog" >Blog</Link>
