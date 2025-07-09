@@ -1,0 +1,89 @@
+@use 'variables';
+@use 'sass:color';
+
+.contact{
+  display: flex;
+  background-image: url('/contact-bg.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 0 auto;
+
+  .image{
+    position: relative;
+    width: 100%; // full screen width or container width
+    height: 400px; 
+    margin: 5%;
+    aspect-ratio: 1/1;
+    
+    img{
+      object-fit: cover;
+      aspect-ratio: 1/1;
+    }
+  }
+
+  .intro{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2rem;
+
+    h2{
+      font-size: variables.$logoTitleFontSize;
+      font-family: variables.$titleFont;
+      font-weight: 400;
+      color: variables.$white;
+      margin-bottom: 1rem;
+    }
+
+    h3{
+      font-size: 60px;
+      font-family: variables.$decorativeFont;
+      color: variables.$lightorange;
+      margin-top: 1rem;
+      align-self: center;
+    }
+
+    p{
+      font-family: variables.$baseFont;
+      font-size: variables.$baseFontSize;
+    };
+
+    .social{
+      display: flex;
+      align-items: center;
+      width: 100%; 
+      margin-top: 1rem;
+
+      ul{
+        list-style: none;
+        display: flex;
+        justify-content: space-evenly;
+        gap: 1rem;
+      }
+
+      a{
+        color: variables.$white;
+        font-size: variables.$logoTitleFontSize;
+      }
+    }
+  }
+}
+
+@media screen and (max-width:30em) {
+  .contact{
+    flex-direction: column;
+    justify-content: center;
+    
+
+    .image{
+      width: 100%;
+      height: 80vh; 
+      margin: 0;
+    }
+
+    .intro{
+      padding: 2rem 3rem;
+    }
+
+  }
+}
