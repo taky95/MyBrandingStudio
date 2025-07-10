@@ -21,7 +21,9 @@ export default async function Contact() {
                     <p>
                         While you focus on what you do bset, I&apos;ll guide the strategy, branding, and marketing to rbing your idea to life. With the right focus, we&apos;ll build something great together. 
                     </p>
-                    <h3>Let&apos;s do it!</h3>
+                    <div className={styles.contact_title}>
+                        <Image src='/contact-title.png' alt='intro-title' fill/>
+                    </div>
                     <p>marinayaylabranding@gmail.com</p>
                     <p>+1(403)4708167</p>
                     <div className={styles.social}>
