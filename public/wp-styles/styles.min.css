@@ -29,7 +29,7 @@
 
 /* Inner wrapper to align text back to content width */
 .has-background > * {
-  max-width: 800px;   /* Match your content width */
+  max-width: 1200px;   /* Match your content width */
   display: block;
   padding-left: 18.5%;
 }
