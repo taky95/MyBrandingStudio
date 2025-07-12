@@ -2,7 +2,7 @@
 @use 'sass:color';
 
 .cardSlider {
-  max-width: 840px;
+  max-width: 640px;
   min-width: 500px;
   height: auto; 
   margin: 0 auto; 
@@ -46,7 +46,7 @@
     color: variables.$black;
 
     .cardImage {
-      flex: 0 0 40%; // Image takes 30% of the card's width
+      flex: 0 0 50%;
       height: 100%; // Full height of the card
       position: relative; // Required for Next.js Image with layout="fill"
 
@@ -59,10 +59,14 @@
     }
 
     .cardContent {
-      flex: 0 0 60%; // Content takes 70% of the card's width
-      padding: 50px; // Add padding around the content
+      flex: 0 0 50%;
+      padding: 36px;
       text-align: left; // Align text to the left
       position: relative;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      height: 100%;
 
       h1 {
         font-size: variables.$titleFontSize;
@@ -88,8 +92,8 @@
         transition: background-color 0.3s ease;
         position:absolute;
         margin-top: 10px;
-        bottom: -25px;
-        right: -20px;
+        right: -20%;
+        bottom: 12%;
         z-index: 5;
 
         &:hover {
