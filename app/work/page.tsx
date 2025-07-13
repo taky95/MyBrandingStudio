@@ -22,7 +22,7 @@ export default async function Work() {
         console.error("WordPress fetch failed:", error);
     }
 
-    const isError = !data;
+    const isError = !data || !data.works || data.works.worksField
     if (isError) {
         return (
         <Error />
