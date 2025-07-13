@@ -20,13 +20,13 @@ export default function SlideshowGallery({ data }: { data: WorksProps }) {
         return (
           <div className={styles.works_content} key={index} onClick={() => { setModalOpen(true); setWorkIndex(index); }}>
             <Image
-              src={work.worksField.linkImage.node.sourceUrl}
-              alt={work.worksField.linkTitle}
+              src={work.worksField.catImage.node.sourceUrl}
+              alt={work.worksField.catTitle}
               className={styles.works_image}
               fill
               sizes="(max-width: 768px) 100vw"
             />
-            <h2>{work.worksField.linkTitle}</h2>
+            <h2>{work.worksField.catTitle}</h2>
             <div className={styles.works_arrow} >
               <Image src="/arrow.png" alt="arrow" fill 
                 sizes="(max-width: 768px) 40px, 60px"

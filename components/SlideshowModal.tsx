@@ -17,6 +17,15 @@ interface SlideshowModalProps {
   workIndex: number;
 }
 
+interface imageProps {
+  sourceUrl: string;
+  altText: string;
+  mediaDetails: {
+    width: number;
+    height: number;
+  }
+}
+
 export default function SlideshowModal({
   isOpen,
   onClose,
@@ -44,6 +53,18 @@ export default function SlideshowModal({
     adaptiveHeight: true,
   };
 
+  const work = works[workIndex].worksField;
+  const images = []
+  const links: (string)[] = []
+  if (works[workIndex].worksField.image1) images.push(works[workIndex].worksField.image1.node);
+  if (works[workIndex].worksField.image2) images.push(works[workIndex].worksField.image2.node);
+  if (works[workIndex].worksField.image3) images.push(works[workIndex].worksField.image3.node);
+  if (works[workIndex].worksField.image4) images.push(works[workIndex].worksField.image4.node);
+  if (works[workIndex].worksField.link1) links.push(works[workIndex].worksField.link1);
+  if (works[workIndex].worksField.link2) links.push(works[workIndex].worksField.link2);
+  if (works[workIndex].worksField.link3) links.push(works[workIndex].worksField.link3);
+  if (works[workIndex].worksField.link4) links.push(works[workIndex].worksField.link4);
+  
   return (
     <AnimatePresence>
       {isOpen && (
@@ -72,24 +93,25 @@ export default function SlideshowModal({
             >
               x
             </button>
-
-            <Slider {...settings} initialSlide={workIndex}>
-              {works.map((work: Works, i) => (
-                <div key={i} className={styles.gallery}>
-                  <h2 className={styles.gallery_title}>{work.worksField.title}</h2>
-                  <div className={styles.gallery_desc} dangerouslySetInnerHTML={{ __html: work.worksField.description }} />
-                  <div className={styles.gallery_image}>
-                    <Image
-                      src={work.worksField.image.node.sourceUrl}
-                      alt={work.worksField.title}
-                      width={work.worksField.image.node.mediaDetails.width}
-                      height={work.worksField.image.node.mediaDetails.height}
-                      style={{ width: '100%', height: '100%' }}
-                    />
+            <div className={styles.gallery}>
+              <h2 className={styles.gallery_title}>{work.catTitle}</h2>
+              <div className={styles.gallery_desc} dangerouslySetInnerHTML={{ __html: work.description }} />
+              <Slider {...settings} initialSlide={0}>
+                {images.map((image: imageProps, i) => (
+                  <div key={i} className={styles.gallery_image}>
+                    <a href={links[i]} target="_blank" rel="noopener noreferrer">
+                      <Image
+                        src={image.sourceUrl}
+                        alt={work.catTitle}
+                        width={image.mediaDetails.width}
+                        height={image.mediaDetails.height}
+                        style={{ width: '100%', height: '100%' }}
+                      />
+                    </a>
                   </div>
-                </div>
-              ))}
-            </Slider>
+                ))}                
+              </Slider>
+            </div>
           </motion.div>
         </>
       )}

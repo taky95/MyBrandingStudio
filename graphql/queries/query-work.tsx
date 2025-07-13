@@ -5,16 +5,15 @@ query GetWorks {
   works{
     nodes{
       worksField{
-        linkTitle
-        linkImage{
+        catTitle
+        catImage{
           node{
             sourceUrl
             altText
           }
         }
-        title
         description
-        image{
+        image1{
           node{
             sourceUrl
             altText
@@ -24,6 +23,40 @@ query GetWorks {
             } 
           }
         }
+        link1
+        image2{
+          node{
+            sourceUrl
+            altText
+            mediaDetails{
+              width
+              height
+            } 
+          }
+        }
+        link2
+        image3{
+          node{
+            sourceUrl
+            altText
+            mediaDetails{
+              width
+              height
+            } 
+          }
+        }
+        link3
+        image4{
+          node{
+            sourceUrl
+            altText
+            mediaDetails{
+              width
+              height
+            } 
+          }
+        }
+        link4
       }
     }
   } 
@@ -31,16 +64,15 @@ query GetWorks {
 
 export interface Works {
   worksField:{
-    linkTitle: string;
-    linkImage: {
+    catTitle: string;
+    catImage: {
       node: {
         sourceUrl: string;
         altText: string;
       }
     }
-    title: string;
     description: string;
-    image: {
+    image1: {
       node: {
         sourceUrl: string;
         altText: string;
@@ -50,5 +82,39 @@ export interface Works {
         }
       }
     }
+    link1: string;
+    image2: {
+      node: {
+        sourceUrl: string;
+        altText: string;
+        mediaDetails: {
+          width: number;
+          height: number;
+        }
+      }
+    }
+    link2: string;
+    image3: {
+      node: {
+        sourceUrl: string;
+        altText: string;
+        mediaDetails: {
+          width: number;
+          height: number;
+        }
+      }
+    }
+    link3: string;
+    image4: {
+      node: {
+        sourceUrl: string;
+        altText: string;
+        mediaDetails: {
+          width: number;
+          height: number;
+        }
+      }
+    }
+    link4: string;
   }
 }

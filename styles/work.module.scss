@@ -130,7 +130,6 @@
       max-height: 90vh; /* 🧠 Prevents overflowing viewport */
       overflow-y: auto;  /* Enables scrolling if needed */
       overflow-x: hidden;
-      padding: 24px;
       background: white;
       border-radius: 1px;
       transform: translate(-50%, -50%);
@@ -148,6 +147,7 @@
         border: none;
         color: #666;
         cursor: pointer;
+        z-index: 1001;
       }
 
       .gallery{
@@ -156,7 +156,7 @@
         position: relative;
         display: flex;
         flex-direction: column;
-        padding: 0 8%;
+        padding: 2% 8%;
 
         .gallery_title{
           margin-bottom: 16px;
@@ -210,11 +210,11 @@
       }
 
       :global(.slick-prev) {
-        left: -10px;
+        left: -55px;
       }
 
       :global(.slick-next) {
-        right: 30px;
+        right: -15px;
       }
     }
   }
@@ -284,18 +284,22 @@
 
       .gallery_modal{
         overflow-y: auto;
+
+        .gallery{
+          max-width: 18em;
+        }
         
         :global(.slick-prev),
         :global(.slick-next) {
-          top: 65%;
+          top: 40%;
         }
 
         :global(.slick-prev) {
-          left: -30px;
+          left: -50px;
         }
 
         :global(.slick-next) {
-          right: 10px;
+          right: -6px;
         }
       }
     }
