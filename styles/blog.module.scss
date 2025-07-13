@@ -64,6 +64,13 @@
   padding: 50px 20%; 
   color: variables.$white;
   background-color: variables.$blackgreen;
+  overflow: hidden;
+  
+  article{
+    &>p{
+      padding: .44rem 0; 
+    }
+  }
 
   .article_image{
     position: relative;

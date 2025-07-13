@@ -29,14 +29,19 @@
 
 /* Inner wrapper to align text back to content width */
 .has-background > * {
-  max-width: 1200px;   /* Match your content width */
+  max-width: 2200px;   /* Match your content width */
   display: block;
-  padding-left: 18.5%;
+  padding-left: 20%;
+  padding-right: 20%;
 }
 
 @media screen and (max-width:30em) {
   .has-background > * {
     max-width: 30em; 
     padding-left: 0;
+    padding-right: 0;
+  }
+  p.has-background > * {
+    padding: 0 10%;
   }
 }
