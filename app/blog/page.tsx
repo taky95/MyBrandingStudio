@@ -1,7 +1,7 @@
 import Image from "next/image";
 import styles from "@/styles/blog.module.scss";
 
-import { GET_POSTS, Post } from '../../graphql/queries/query-blog';
+import { GET_ALL_POSTS, Post } from '../../graphql/queries/query-blog';
 import client from '@/lib/apollo-client'; // Import the Apollo Client instance
 import Tile from "@/components/Tile";
 import DefaultButton, { BannerButton } from "@/components/Button";
@@ -15,7 +15,7 @@ export default async function Blog() {
 
     try {
         const res = await client.query({ 
-            query: GET_POSTS,
+            query: GET_ALL_POSTS,
             fetchPolicy: "no-cache", // Disable caching
         });
         posts = res.data.posts.nodes;

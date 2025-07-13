@@ -26,12 +26,13 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
       variables: { slug },
       fetchPolicy: 'no-cache',
     });
+    post = res.data.post;
 
     const res2 = await client.query({
       query: GET_RECENT_POSTS,
+      variables: { ID: post.id },
       fetchPolicy: 'no-cache',
     });
-    post = res.data.post;
     posts = res2.data.posts.nodes;
   
   }catch (error) {

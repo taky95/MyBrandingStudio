@@ -1,6 +1,6 @@
 import { gql } from '@apollo/client';
 
-export const GET_POSTS = gql`
+export const GET_ALL_POSTS = gql`
 query GetAllPosts {
   posts(first: 10, where: { orderby: { field: DATE, order: DESC } }) {
     nodes {
@@ -19,8 +19,8 @@ query GetAllPosts {
 }`
 
 export const GET_RECENT_POSTS = gql`
-query GetAllPosts {
-  posts(first: 2, where: { orderby: { field: DATE, order: DESC } }) {
+query GetRecentPosts($ID: ID) {
+  posts(first: 2, where: { orderby: { field: DATE, order: DESC }, notIn: [$ID] }) {
     nodes {
       title
       slug
@@ -42,6 +42,7 @@ query GetPostBySlug($slug: ID!) {
     title
     content
     date
+    id
     featuredImage {
       node {
         sourceUrl
