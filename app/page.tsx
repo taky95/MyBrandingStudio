@@ -8,24 +8,45 @@ import Card from "@/components/Card";
 import Steps from "@/components/Steps";
 import DefaultButton from "@/components/Button";
 import Tile from "@/components/Tile";
+import Error from "@/components/Error";
 import { FadeInOnScroll } from "@/components/FadeIn";
 import { Post } from "@/graphql/queries/query-blog";
 
 export const revalidate = 60;
 
 export default async function Home() {
-  const { data } = await client.query({ 
-    query: WP_QUERY,
-    fetchPolicy: "no-cache", // Disable caching
-  });
+  let heroCards = [];
+  let nav = [];
+  let intro = null;
+  let steps = [];
+  let resources = [];
+  let bio = null;
+  let heroImage = null;
 
-  const heroCards = data.heroCards.nodes
-  const nav =data.navItems.nodes
-  const intro = data.introductions.nodes[0].introField
-  const steps = data.steps.nodes
-  const resources = data.posts.nodes
-  const bio = data.bios.nodes[0].bioField
-  const heroImage = data.heroImages.nodes[0].heroImageField.image.node.sourceUrl
+  try {
+    const res = await client.query({ 
+      query: WP_QUERY,
+      fetchPolicy: "no-cache", // Disable caching
+    });
+    const data = res.data;
+    heroCards = data.heroCards.nodes
+    nav =data.navItems.nodes
+    intro = data.introductions.nodes[0].introField
+    steps = data.steps.nodes
+    resources = data.posts.nodes
+    bio = data.bios.nodes[0].bioField
+    heroImage = data.heroImages.nodes[0].heroImageField.image.node.sourceUrl
+  }catch (error) {
+    console.error("WordPress fetch failed:", error);
+  }
+
+  const isError = !heroImage || !intro || !bio || !nav || !steps || !resources;
+  if (isError) {
+    return (
+      <Error />
+    );
+  }
+
   return (
     <>
       <section className={styles.hero}>

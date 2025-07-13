@@ -8,11 +8,21 @@ import Instagram from './Instagram';
 import { instagram } from "@/data";
 
 const Footer = async (): Promise<React.JSX.Element> => {
-    const { data } = await client.query({ 
-        query: WP_QUERY,
-        fetchPolicy: "no-cache"
-    });
-    const logoUrl= data.logos.nodes[1].logoField.image.node.sourceUrl
+    let logoUrl = '/sample1.jpg';
+
+    try {
+        const res = await client.query({ 
+            query: WP_QUERY,
+            fetchPolicy: "no-cache"
+        });
+        const logoNode = res.data?.logos?.nodes[1]?.logoField?.image?.node;
+        if (logoNode?.sourceUrl) {
+            logoUrl = logoNode.sourceUrl;
+        }
+    } catch (error) {
+        console.error('Failed to load logo:', error);
+    }
+    
     return (
         <footer className={styles.footer}>
             <div className={styles.socialmedia}>

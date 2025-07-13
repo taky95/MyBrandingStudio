@@ -6,11 +6,21 @@ import { WP_QUERY } from '../graphql/queries/query';
 import HamburgerMenu from './Hamburger';
 
 const Header = async (): Promise<React.JSX.Element> => {
-    const { data } = await client.query({ 
-        query: WP_QUERY,
-        fetchPolicy: "no-cache"
-    });
-    const logoUrl= data.logos.nodes[0].logoField.image.node.sourceUrl
+    let logoUrl = '/sample1.jpg';
+
+    try {
+        const res = await client.query({ 
+            query: WP_QUERY,
+            fetchPolicy: "no-cache"
+        });
+        const logoNode = res.data?.logos?.nodes[0]?.logoField?.image?.node;
+        if (logoNode?.sourceUrl) {
+            logoUrl = logoNode.sourceUrl;
+        }
+    } catch (error) {
+        console.error('Failed to load logo:', error);
+    }
+    
     return (
         <header>
             <nav className={styles.menuBar}>

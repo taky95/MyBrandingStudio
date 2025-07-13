@@ -6,6 +6,7 @@ import client from '@/lib/apollo-client'; // Import the Apollo Client instance
 import { FixBackgroundText } from "@/components/FixBackgroundText";
 import DefaultButton, { BannerButton } from "@/components/Button";
 import Tile from "@/components/Tile";
+import Error from "@/components/Error";
 import {FadeInOnScroll} from "@/components/FadeIn";
 
 interface BlogPostPageProps {
@@ -16,19 +17,34 @@ export const revalidate = 60 //60*60 for 1 hour
 
 export default async function BlogPostPage({ params }: BlogPostPageProps) {
   const { slug } = await params;
-  const { data } = await client.query({
-    query: GET_POST_BYSLUG,
-    variables: { slug },
-    fetchPolicy: 'no-cache',
-  });
+  let posts = [];
+  let post = null;
 
-  const data2 = await client.query({
-    query: GET_RECENT_POSTS,
-    fetchPolicy: 'no-cache',
-  });
+  try {
+    const res = await client.query({
+      query: GET_POST_BYSLUG,
+      variables: { slug },
+      fetchPolicy: 'no-cache',
+    });
 
-  const post = data.post;
-  const posts = data2.data.posts.nodes;
+    const res2 = await client.query({
+      query: GET_RECENT_POSTS,
+      fetchPolicy: 'no-cache',
+    });
+    post = res.data.post;
+    posts = res2.data.posts.nodes;
+  
+  }catch (error) {
+      console.error("WordPress fetch failed:", error);
+  }
+
+  const isError = !post || !posts || posts.length === 0;
+  if (isError) {
+      return (
+      <Error />
+      );
+  }
+  
   return (
     <>
       <section className={styles.hero}>

@@ -5,15 +5,30 @@ import { GET_WORKS } from '../../graphql/queries/query-work';
 import client from '@/lib/apollo-client';
 import SlideshowGallery from "@/components/SlideshowGallery";
 import DefaultButton from "@/components/Button";
+import Error from "@/components/Error";
 
 export const revalidate = 60 
 
 export default async function Work() {
-    const { data } = await client.query({ 
-        query: GET_WORKS,
-        fetchPolicy: "no-cache", // Disable caching
-    });
+    let data = null
+    
+    try {
+        const res = await client.query({ 
+            query: GET_WORKS,
+            fetchPolicy: "no-cache", // Disable caching
+        });
+        data = res.data;
+    }catch (error) {
+        console.error("WordPress fetch failed:", error);
+    }
 
+    const isError = !data;
+    if (isError) {
+        return (
+        <Error />
+        );
+    }
+    
     return (
         <>
             <section className={styles.hero}>

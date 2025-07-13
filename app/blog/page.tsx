@@ -6,15 +6,30 @@ import client from '@/lib/apollo-client'; // Import the Apollo Client instance
 import Tile from "@/components/Tile";
 import DefaultButton, { BannerButton } from "@/components/Button";
 import { FadeInOnScroll } from "@/components/FadeIn";
+import Error from "@/components/Error";
 
 export const revalidate = 60
 
 export default async function Blog() {
-    const { data } = await client.query({ 
-        query: GET_POSTS,
-        fetchPolicy: "no-cache", // Disable caching
-    });
-    const posts = data.posts.nodes;
+    let posts = [];
+
+    try {
+        const res = await client.query({ 
+            query: GET_POSTS,
+            fetchPolicy: "no-cache", // Disable caching
+        });
+        posts = res.data.posts.nodes;
+    } catch (error) {
+        console.error("WordPress fetch failed:", error);
+    }
+    
+    const isError = !posts || posts.length === 0;
+    if (isError) {
+        return (
+        <Error />
+        );
+    }
+    
     return (
         <>
             <section className={styles.hero}>

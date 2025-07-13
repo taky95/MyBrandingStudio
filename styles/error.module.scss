@@ -1,0 +1,25 @@
+@use 'variables';
+@use 'sass:color';
+
+.errorContainer{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  text-align: center;
+  color: variables.$white;
+  background-image: url('/contact-bg.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  h1{
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+
+  p{
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+  }
+}
