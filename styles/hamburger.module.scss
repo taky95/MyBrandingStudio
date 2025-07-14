@@ -92,16 +92,16 @@
 
             .navList {
                 list-style: none;
-                margin-top: 15%;
+                margin-top: 40%;
                 padding-left: 0;
                 display: block;
 
                 li{
-                    padding: 0 0 40px 0;
+                    padding: 0 0 60px 0;
                     position: relative;
 
                     a{
-                        font-size: 16px;
+                        font-size: variables.$subTitleFontSize;
                         display: block;
                         text-align: center;
                     }
@@ -113,7 +113,7 @@
                     color: variables.$white;
                     background-image: linear-gradient(90deg,rgba(7, 8, 8, 1) 0%, rgba(240, 240, 240, 1) 50%, rgba(7, 8, 8, 1) 100%);
                     margin: auto;
-                    top: -32px;
+                    top: -50px;
                     border: 0 none;
                     position: relative;
                 }
