@@ -101,7 +101,7 @@
         }
       }
 
-      &:hover{
+      &:hover, &:active{
         .works_image{
           transform: scale(1.07);
         }

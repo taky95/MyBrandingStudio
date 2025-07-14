@@ -55,7 +55,7 @@
     }
   }
 
-  &:hover{
+  &:hover, &:active{
     h3{
       color: color.adjust(variables.$white, $lightness: -30%);
     }

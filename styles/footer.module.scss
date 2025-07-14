@@ -73,7 +73,7 @@
             font-size: variables.$mobileFontSize;
             transition: all 0.3s ease-in-out;
 
-            &:hover{
+            &:hover, &:active{
               color: color.adjust(variables.$white, $lightness: -20%);
               transform: scale(1.1);
             }
@@ -158,7 +158,7 @@
             font-size: variables.$descFontSize;
             transition: all 0.3s ease-in-out;
 
-            &:hover{
+            &:hover, &:active{
               color: color.adjust(variables.$white, $lightness: -20%);
               transform: scale(1.1);
             }

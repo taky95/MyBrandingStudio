@@ -32,19 +32,15 @@
       background-color: variables.$white;
     }
 
-    &:hover, &:focus {
+    &:hover, &:focus, &:active {
       color: variables.$orange;
     }
 
-    &:hover:before, &:focus:before {
+    &:hover:before, &:focus:before, &:active:before {
       transition: 0.5s all ease;
       left: 0;
       right: 0;
       opacity: 1;
-    }
-
-    &:active {
-      transform: scale(0.9);
     }
   }
 }

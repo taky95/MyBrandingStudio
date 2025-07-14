@@ -96,7 +96,7 @@
         bottom: 12%;
         z-index: 5;
 
-        &:hover {
+        &:hover, &:active {
           background-color: color.adjust(variables.$black, $lightness: 10%);
         }
       }
