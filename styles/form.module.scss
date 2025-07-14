@@ -1,0 +1,163 @@
+@use "sass:color";
+@use 'variables' as *;
+
+.form{
+  font-size: $mobileFontSize;
+  position: relative;
+  z-index: 3;
+  padding: 10%;
+  width: 520px;
+  border: 12px solid $platinum;
+  border-radius: 30px;
+  color: $blackTextColor;
+  background-color: $mainBgColor;
+  
+  form{
+    display: flex;
+    flex-direction: column;
+
+    &.submitted{
+      display: none;
+    }
+  
+    label{
+      margin-top: 20px;
+      margin-bottom: 2px;
+    }
+  
+    input{
+      height: 32px;
+      border: none;
+      border-bottom: 2px solid $chineseSilver;
+      border-radius: 4px;
+      
+      &::placeholder{
+        color: $chineseSilver;
+      }
+
+      &[type=checkbox]{
+        width: 24px;
+        height: 24px;
+        margin-right: 12px;
+        accent-color: color.adjust(green, $lightness: -0.5%);
+      }
+    }
+
+    select{
+      border: none;
+      border-bottom: 2px solid $chineseSilver;
+      height: 46px;
+      border-radius: 4px;
+      color: $eerieBlack;
+      background-color: white;
+      font-size: $descFontSize;
+    }
+
+    textarea{
+      border: none;
+      border-bottom: 2px solid $chineseSilver;
+      height: 100px;
+      border-radius: 4px;
+    }
+
+    .privacy{
+      margin-top: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: $descFontSize;
+
+      a{
+        color: $accentColor;
+      }
+      
+      label{
+        margin: 0;
+      }
+    }
+
+    .warninig{
+      color: red;
+      font-size: $descFontSize;
+    }
+
+    button[type=submit]{
+      width: 30%;
+      height: 50px;
+      color: $subTextColor;
+      background-color: $puceRed;
+      font-size: $descFontSize;
+      margin-top: 20px;
+      align-self: center;
+      touch-action: manipulation;
+      border: none;
+      border-radius: 2px;
+      transition: background-color ease .5s, color ease .5s;
+      
+      &.disabledBtn{
+        cursor: not-allowed;
+        color: color.adjust($subTextColor, $lightness: -30%);
+        background-color: color.adjust($puceRed, $lightness: -10%);
+
+        &:hover{
+          color: color.adjust($subTextColor, $lightness: -30%);
+          background-color: color.adjust($puceRed, $lightness: -10%);
+        }
+      }
+
+      &:hover{
+        color: color.adjust($subTextColor, $lightness: 10%);
+        background-color: color.adjust($puceRed, $lightness: 5%);
+      }
+
+      &:active{
+        color: color.adjust($subTextColor, $lightness: 10%);
+        background-color: color.adjust($puceRed, $lightness: 5%);
+      }
+    }
+  }
+}
+
+.response{
+  padding: 5%;
+
+  p{
+    text-align: center;
+    margin: 16px 0 16px 0;
+  }
+}
+
+.popup{
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  background: #FFF;
+  padding: 25px;
+  width: auto;
+  height: 94%;
+  overflow-y: scroll;
+  z-index: 5;
+  border-radius: 30px;
+  
+  a{
+    float: right;
+    color: $mainTextColor;
+    text-decoration: none;
+    display: flex;
+  }
+}
+
+@media screen and (max-width:60em) {
+  .form{
+    width: 420px;
+  }
+}
+
+@media screen and (max-width:30em) {
+  .form{
+    padding: 2%;
+    position: relative;
+    margin: 0;
+    width: 100%;
+  }
+}
