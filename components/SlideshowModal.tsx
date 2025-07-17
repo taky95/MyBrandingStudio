@@ -20,10 +20,10 @@ interface SlideshowModalProps {
 interface imageProps {
   sourceUrl: string;
   altText: string;
-  mediaDetails: {
+  mediaDetails?: {
     width: number;
     height: number;
-  }
+  } | null;
 }
 
 export default function SlideshowModal({
@@ -54,16 +54,29 @@ export default function SlideshowModal({
   };
 
   const work = works[workIndex].worksField;
-  const images = []
-  const links: (string)[] = []
-  if (works[workIndex].worksField.image1) images.push(works[workIndex].worksField.image1.node);
-  if (works[workIndex].worksField.image2) images.push(works[workIndex].worksField.image2.node);
-  if (works[workIndex].worksField.image3) images.push(works[workIndex].worksField.image3.node);
-  if (works[workIndex].worksField.image4) images.push(works[workIndex].worksField.image4.node);
-  if (works[workIndex].worksField.link1) links.push(works[workIndex].worksField.link1);
-  if (works[workIndex].worksField.link2) links.push(works[workIndex].worksField.link2);
-  if (works[workIndex].worksField.link3) links.push(works[workIndex].worksField.link3);
-  if (works[workIndex].worksField.link4) links.push(works[workIndex].worksField.link4);
+  const images: imageProps[] = [];
+  const links: string[] = [];
+  const uploadLimit = 10;
+
+  for (let i = 1; i <= uploadLimit; i++) {
+    const imageKey = `image${i}` as keyof typeof work;
+    const imageValue = work[imageKey];
+    
+    if (
+      imageValue &&
+      typeof imageValue === 'object'
+    ) {
+      images.push(imageValue.node);
+    }
+  }
+
+  for (let i = 1; i <= uploadLimit; i++) {
+    const linkKey = `link${i}` as keyof typeof work;
+    const linkValue = work[linkKey];
+    if (typeof linkValue === 'string' && linkValue) {
+      links.push(linkValue);
+    }
+  }
   
   return (
     <AnimatePresence>
@@ -103,8 +116,8 @@ export default function SlideshowModal({
                       <Image
                         src={image.sourceUrl}
                         alt={work.catTitle}
-                        width={image.mediaDetails.width}
-                        height={image.mediaDetails.height}
+                        width={image.mediaDetails?image.mediaDetails.width:0}
+                        height={image.mediaDetails?image.mediaDetails.height:0}
                         style={{ width: '100%', height: '100%' }}
                       />
                     </a>
