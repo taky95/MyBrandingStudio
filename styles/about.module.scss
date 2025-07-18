@@ -197,6 +197,20 @@
 }
 
 .career {
+  &>h2{
+    background-image: url('/banner.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+    padding: 2rem 0;
+    font-family: variables.$titleFont;
+    font-size: 3rem;
+    word-spacing: 1rem;
+    letter-spacing: 0.5rem; // Adjust letter spacing for better readability
+    margin-top: 2%;
+    line-height: 2rem;
+  }
+
   .career_content {
     position: relative;
     width: 100%;
@@ -259,6 +273,7 @@
         h3 {
           font-size: 1.5rem;
           margin-bottom: 0.5rem;
+          font-family: variables.$titleFont;
         }
 
         p {
@@ -270,7 +285,7 @@
       &.left {
         justify-content: flex-start; // left side
         .timeline_content {
-          text-align: right;
+          text-align: left;
           margin-right: auto;
           padding-right: 3rem; // space from center
         }
@@ -279,7 +294,7 @@
       &.right {
         justify-content: flex-end; // right side
         .timeline_content {
-          text-align: left;
+          text-align: right;
           margin-left: auto;
           padding-left: 3rem; // space from center
         }
