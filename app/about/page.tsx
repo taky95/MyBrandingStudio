@@ -102,6 +102,7 @@ export default function About() {
               key={index}
             >
               <div className={styles.timeline_content}>
+                <h3>{item.year}</h3>
                 <h3>{item.title}</h3>
                 <p>{item.description}</p>
               </div>
@@ -109,8 +110,8 @@ export default function About() {
                 <Image
                   src={`/path${index + 1}.png`}
                   alt="Milestone"
-                  width={100}
-                  height={100}
+                  width={150}
+                  height={150}
                 />
                 <span className={styles.timeline_line} />
               </div>

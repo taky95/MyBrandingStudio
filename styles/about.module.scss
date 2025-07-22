@@ -225,11 +225,13 @@
     &::before {
       content: "";
       position: absolute;
-      top: 0;
+      top: 5%;
       bottom: 0;
       left: 50%;
       width: 2px;
-      background: variables.$graygreen; // center line
+      height: 68%;
+      padding-top: 50%;
+      background: variables.$green; // center line
       transform: translateX(-50%);
       z-index: 1;
     }
@@ -247,8 +249,8 @@
         top: 0; // aligns to the first item in that block
         left: 50%;
         transform: translateX(-50%);
-        width: 100px;
-        height: 100px;
+        width: 150px;
+        height: 150px;
         border-radius: 50%;
         display: flex;
         justify-content: center;
@@ -263,22 +265,26 @@
         }
 
         .timeline_line {
-          display: none; // remove this if you don't need the horizontal line anymore
+          position: absolute;
+          height: 2px;
+          width: 180%;
+          background-color: variables.$green;
         }
       }
 
       .timeline_content {
         width: 45%;
         background: transparent;
+        padding-top: 3.5rem;
 
         h3 {
-          font-size: 1.5rem;
+          font-size: variables.$titleFontSize;
           margin-bottom: 0.5rem;
           font-family: variables.$titleFont;
         }
 
         p {
-          font-size: 1rem;
+          font-size: variables.$baseFontSize;
           line-height: 1.5;
         }
       }
@@ -290,6 +296,12 @@
           margin-right: auto;
           padding-right: 3rem; // space from center
         }
+
+        .timeline_icon{
+          .timeline_line {
+            right: 150px;
+          }
+        }
       }
 
       &.right {
@@ -298,6 +310,12 @@
           text-align: right;
           margin-left: auto;
           padding-left: 3rem; // space from center
+        }
+
+        .timeline_icon{
+          .timeline_line {
+            left: 150px;
+          }
         }
       }
     }
