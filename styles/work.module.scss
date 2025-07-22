@@ -45,6 +45,10 @@
   font-size: variables.$baseFontSize;
   padding: 4% 5%;
   text-align: center;
+
+  p{
+    margin-bottom: 0.5rem;
+  }
 }
 
 .list{

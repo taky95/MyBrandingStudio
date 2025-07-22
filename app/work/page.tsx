@@ -45,7 +45,10 @@ export default async function Work() {
             </section>
             <section className={styles.desc}>
                 <p>
-                    Every business wants to grow—more visibility, more leads, more loyal customers. But with limited time and resources, it&apos;s not always easy to make that happen. That&apos;s where we step in. We partner with small and medium businesses to bring their marketing to life — through digital campaigns, standout branding, content creation, and advertising across print and digital. We&apos;ll take care of your marketing and branding so you can focus on what matters most: your product, your service, and your customers.
+                    Every business wants to grow—more visibility, more leads, more loyal customers. But with limited time and resources, it&apos;s not always easy to make that happen. That&apos;s where we step in. 
+                </p>
+                <p>
+                  We partner with small and medium businesses to bring their marketing to life — through digital campaigns, standout branding, content creation, and advertising across print and digital. We&apos;ll take care of your marketing and branding so you can focus on what matters most: your product, your service, and your customers.
                 </p>
             </section>
             <section className={styles.list}>
