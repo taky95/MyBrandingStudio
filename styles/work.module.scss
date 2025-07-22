@@ -21,7 +21,7 @@
     font-family: variables.$titleFont;
     font-size: 160px;
     position: absolute;
-    bottom: -50px;
+    bottom: -51px;
     left: 50%;
     transform: translateX(-50%);
     filter: drop-shadow(6px -3px 5px #5e5e5e);
@@ -250,7 +250,7 @@
   .hero{
     h1{
       font-size: 100px; // Adjusted for smaller screens
-      bottom: -30px; // Adjusted for smaller screens
+      bottom: -32px; // Adjusted for smaller screens
     }
   }
 
