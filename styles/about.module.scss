@@ -216,7 +216,7 @@
     width: 100%;
     max-width: 1000px;
     margin: 0 auto;
-    padding: 4rem 1rem;
+    padding: 4rem 1rem 10rem 1rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -229,7 +229,7 @@
       bottom: 0;
       left: 50%;
       width: 2px;
-      height: 68%;
+      height: 60%;
       padding-top: 50%;
       background: variables.$green; // center line
       transform: translateX(-50%);
@@ -276,6 +276,8 @@
         width: 45%;
         background: transparent;
         padding-top: 3.5rem;
+        max-height: 20rem;
+        min-height: 20rem;
 
         h3 {
           font-size: variables.$titleFontSize;
