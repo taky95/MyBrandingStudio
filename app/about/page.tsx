@@ -1,9 +1,25 @@
+"use client";
+
 import { BannerButton } from "@/components/Button";
 import { timelineItems } from "@/data";
 import styles from "@/styles/about.module.scss";
 import Image from "next/image";
+import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
 
 export default function About() {
+  const [isMobile, setIsMobile] = useState(false);
+  const [activeIndex, setActiveIndex] = useState<number | null>(null);
+
+  // Detect mobile screens
+  useEffect(() => {
+    const mq = window.matchMedia("(max-width: 768px)");
+    setIsMobile(mq.matches);
+    const listener = (e: MediaQueryListEvent) => setIsMobile(e.matches);
+    mq.addEventListener("change", listener);
+    return () => mq.removeEventListener("change", listener);
+  }, []);
+
   return (
     <>
       <section className={styles.hero}>
@@ -104,12 +120,15 @@ export default function About() {
         <h2>MY CAREER PATH</h2>
         <div className={styles.career_content}>
           {timelineItems.map((item, index) => (
-            <div
-              className={`${styles.timeline_item} ${
-                index % 2 === 0 ? styles.left : styles.right
-              }`}
-              key={index}
-            >
+              <motion.div
+                key={index}
+                className={`${styles.timeline_item} ${
+                  index % 2 === 0 ? styles.left : styles.right
+                } ${activeIndex === index ? styles.active : ""}`}
+                {...(isMobile && {
+                  onViewportEnter: () => setActiveIndex(index),
+                })}
+              >
               <div className={styles.timeline_content}>
                 <h3>{item.year}</h3>
                 <h3>{item.title}</h3>
@@ -124,7 +143,7 @@ export default function About() {
                 />
                 <span className={styles.timeline_line} />
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
         <div className={styles.career_banner}>

@@ -440,16 +440,32 @@
     }
 
     .career_content{
-      padding: 1rem 0.5rem;
+      padding: 0 0 0;
 
       &::before{
-        left: 15%;
-        height: 86%;
+        display: none;
       }
 
       .timeline_item{
+        overflow: hidden;
         flex-direction: row-reverse;
-        margin-bottom: 1%;
+        margin-bottom: 0%;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+        align-items: stretch;
+        min-height: 360px;
+
+        &.active {
+          background-color: variables.$black; // highlight color
+          color: variables.$white;
+
+          .timeline_icon{
+            background-color: variables.$black;
+
+            .timeline_line{
+              background-color: variables.$orange;
+            }
+          }
+        }
 
         .timeline_content{
           padding: 0;
@@ -465,20 +481,36 @@
           p{
             font-size: variables.$mobileFontSize;
           }
-
         }
+
         .timeline_icon{
           position: relative;
           top:auto;
           left: auto;
           transform: none;
+          transition: background-color 0.3s ease, transform 0.3s ease;
+          height: auto;          
+          padding-left: 1rem;
+
+          img{
+            object-position: top;
+            padding-top: 20%;
+            position: relative; 
+          }
 
           .timeline_line {
-            display: none;
+            position: absolute;
+            top: 130px;
+            left: 56%;
+            width: 2px;
+            height: 60%;
+            background: variables.$green; // center line
+            transition: background-color 0.3s ease, transform 0.3s ease;
           }
         }
 
         &.left {
+
           .timeline_content {
             text-align: left;
             padding: 2rem 1rem 1rem 1rem;
@@ -487,9 +519,16 @@
 
         &.right {
           justify-content: flex-start;
+
           .timeline_content{
             text-align: left;
             padding: 2rem 1rem 1rem 1rem;
+          }
+
+          .timeline_icon{
+            .timeline_line {
+              left: auto;
+            }
           }
         }
       }
