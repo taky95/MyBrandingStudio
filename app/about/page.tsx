@@ -65,6 +65,15 @@ export default function About() {
                 guidance,
               </p>
             </div>
+            <div className={styles.desc_image}>
+              <Image
+                src={"/about-background.jpg"}
+                priority
+                alt="slider"
+                fill
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 100vw"
+              />
+            </div>
             <div className={styles.desc_right}>
               <p>
                 and hands-on support to move your business forward with purpose.
