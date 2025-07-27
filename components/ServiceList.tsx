@@ -4,14 +4,17 @@ import Image from "next/image";
 import styles from "@/styles/services.module.scss";
 import { motion, Variants } from "framer-motion";
 import Link from "next/link";
-import { services_data } from "@/data";
+import { Service } from "../graphql/queries/query-service";
 
-interface Service {
-  title: string;
-  desc: string;
+interface ServiceProps {
+  services: { nodes: Service[] };
 }
 
-export default function ServiceList() {
+export default function ServiceList({
+  services_data,
+}: {
+  services_data: ServiceProps;
+}) {
   // Parent animation (stagger setup)
   const containerVariants = {
     hidden: {},
@@ -39,7 +42,7 @@ export default function ServiceList() {
       initial="hidden"
       animate="visible"
     >
-      {services_data.map((data: Service, index: number) => (
+      {services_data.services.nodes.map((data: Service, index: number) => (
         <motion.div
           key={index}
           className={styles.container}
@@ -47,13 +50,18 @@ export default function ServiceList() {
         >
           <div className={styles.title}>
             <div className={styles.image}>
-              <Image src={`/path${index + 1}.png`} alt="service icon" width={80} height={80} />
+              <Image
+                src={`/path${index + 1}.png`}
+                alt="service icon"
+                width={80}
+                height={80}
+              />
             </div>
-            <h2>{data.title}</h2>
+            <h2>{data.serviceField.title}</h2>
           </div>
           <div
             className={styles.desc}
-            dangerouslySetInnerHTML={{ __html: data.desc }}
+            dangerouslySetInnerHTML={{ __html: data.serviceField.description }}
           />
           <Link href="/contact" className={styles.link}>
             Contact us

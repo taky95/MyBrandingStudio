@@ -66,9 +66,9 @@
   align-items: stretch;
 
   .container {
-    height: 500px;
+    height: 540px;
     padding: 2rem;
-    min-height: 500px;
+    min-height: 580px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -94,6 +94,10 @@
 
     .desc {
       font-size: variables.$mobileFontSize;
+
+      p {
+        margin-bottom: 1rem;
+      }
     }
 
     .link {
@@ -221,8 +225,8 @@
 
     .container {
       padding: 1rem;
-      height: 450px;
-      min-height: 450px;
+      height: 480px;
+      min-height: 500px;
     }
   }
 
