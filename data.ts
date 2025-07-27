@@ -159,3 +159,26 @@ export const timelineItems = [
     description: 'Now, with a wealth of experience across continents and industries, I’m clear about what I love and what I can offer. At MY Branding & Marketing Studio, we combine a passion for strategy with a deep understanding of storytelling, helping clients build brands that resonate and connect with their audience.' 
   },
 ];
+
+export const services_data = [
+  {
+    "title": "DIGITAL MARKETING",
+    "desc": "Whether you're building your business from the ground up or ready to scale, we create marketing strategies that help you reach the right audience, build trust, and drive real results.\n\nFrom paid ads (Google & Meta) to email marketing and social content, every campaign is backed by data, driven by strategy, and built to perform. With smart targeting, compelling creative, and ongoing optimization, we help turn attention into action — and marketing into growth."
+  },
+  {
+    "title": "VIDEO",
+    "desc": "Video is a powerful way to tell your brand’s story.\nWe help bring that story to life—whether you're introducing a new product, showcasing a customer experience, or building a deeper connection with your audience. From planning and scripting to filming and editing, we handle the full production process to create content that’s clear, compelling, and aligned with your brand."
+  },
+  {
+    "title": "BRANDING",
+    "desc": "Starting a new brand? Need a look that feels right? Want your message to actually connect?\n\nBranding doesn’t have to be complicated. With the right visuals and voice, you can build a brand that’s clear, consistent, and easy to recognize. This includes everything from your brand identity and color palette to tone of voice, messaging, and visual style guides. The goal is simple: to create a brand experience that feels authentic and leaves a lasting impression."
+  },
+  {
+    "title": "BUSINESS COLLATERAL",
+    "desc": "Need a presentation for your next pitch? A catalog that showcases your products? Sales materials that close deals?\n\nProfessional business collateral designed to support your brand message and drive sales. From catalogs and brochures to corporate presentations, sales decks, product sheets, and internal documents—each piece clearly communicates your value and engages your audience, helping you make a stronger impact."
+  },
+  {
+    "title": "CONSULTING",
+    "desc": "Get expert guidance across marketing, branding, and strategic outreach. We help you define your brand, reach the right audience, and create a clear path forward—through tailored strategies, thoughtful positioning, and smart, actionable planning aligned with your business goals.\n\nTypical outcomes include brand audits, marketing roadmaps, audience segmentation plans, market research and competitive analysis, campaign strategies, and outreach frameworks designed to drive measurable growth."
+  }
+]
