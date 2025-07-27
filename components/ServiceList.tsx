@@ -40,7 +40,8 @@ export default function ServiceList({
       className={styles.service_card}
       variants={containerVariants}
       initial="hidden"
-      animate="visible"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.4 }}
     >
       {services_data.services.nodes.map((data: Service, index: number) => (
         <motion.div
