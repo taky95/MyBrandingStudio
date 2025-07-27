@@ -5,7 +5,6 @@ import ServiceList from "@/components/ServiceList";
 import Link from "next/link";
 
 export default function Services() {
-
   return (
     <>
       <section className={styles.hero}>
@@ -22,15 +21,21 @@ export default function Services() {
       </section>
       <section className={styles.intro}>
         <p>
-          Running a business means juggling a million tasks—and it’s easy for marketing to fall behind. But if your customers don’t know how great your products or services are, your best ideas won’t get the attention they deserve. Great ideas need smart, consistent execution—and that’s where we’re here to help.
+          Running a business means juggling a million tasks—and it’s easy for
+          marketing to fall behind. But if your customers don’t know how great
+          your products or services are, your best ideas won’t get the attention
+          they deserve. Great ideas need smart, consistent execution—and that’s
+          where we’re here to help.
         </p>
         <p>
-          From branding and marketing strategy to website design, digital campaigns, and compelling content, we’re here to help your business grow and connect with the customers who matter most. You focus on running your business, and we’ll make sure your marketing keeps up every step of the way.
+          From branding and marketing strategy to website design, digital
+          campaigns, and compelling content, we’re here to help your business
+          grow and connect with the customers who matter most. You focus on
+          running your business, and we’ll make sure your marketing keeps up
+          every step of the way.
         </p>
       </section>
-      <section
-        className={styles.list}
-      >
+      <section className={styles.list}>
         <ServiceList />
       </section>
       <section className={styles.banner}>
