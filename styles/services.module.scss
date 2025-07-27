@@ -1,23 +1,23 @@
-@use 'variables';
-@use 'sass:color';
+@use "variables";
+@use "sass:color";
 
-.hero{
+.hero {
   position: relative;
 
-  .hero_background{
+  .hero_background {
     position: relative;
     width: 100%;
     height: 580px;
     overflow: hidden;
 
-    img{
+    img {
       object-fit: cover;
     }
   }
 
-  h1{
+  h1 {
     pointer-events: none;
-    letter-spacing: 12px; 
+    letter-spacing: 12px;
     font-family: variables.$titleFont;
     font-size: 160px;
     position: absolute;
@@ -27,26 +27,180 @@
     filter: drop-shadow(6px -3px 5px #5e5e5e);
   }
 
-    // Shadow affect at the top 
-  &::after { 
-    content: '';
+  // Shadow affect at the top
+  &::after {
+    content: "";
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(180deg, rgba(7,8,8,1) 2%, rgba(255,255,255,0) 30%);
+    background: linear-gradient(
+      180deg,
+      rgba(7, 8, 8, 1) 2%,
+      rgba(255, 255, 255, 0) 30%
+    );
     z-index: 1;
   }
 }
 
-.desc{
+.intro {
   background-color: variables.$graygreen;
   font-size: variables.$mobileFontSize;
   padding: 4% 5%;
   text-align: left;
 
-  p{
+  p {
     margin-bottom: 0.5rem;
   }
 }
+
+.service_card {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); // 3 columns of equal width
+  gap: 0.5rem; // spacing between cards
+  max-width: 1200px; // optional container width
+  margin: 0 auto;
+  padding: 2rem;
+  color: variables.$black;
+  align-items: stretch;
+
+  .container {
+    height: 500px;
+    padding: 2rem;
+    min-height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .title {
+      display: flex;
+      align-items: center;
+      .image {
+        position: relative;
+        margin: 1%;
+
+        img {
+          object-fit: contain;
+          object-position: center;
+        }
+      }
+      h2 {
+        font-family: variables.$titleFont;
+        font-size: variables.$subTitleFontSize;
+        margin-left: 1rem;
+      }
+    }
+
+    .desc {
+      font-size: variables.$mobileFontSize;
+    }
+
+    .link {
+      display: flex;
+      align-items: center;
+      font-size: variables.$mobileFontSize;
+      font-family: variables.$titleFont;
+      color: variables.$black;
+      font-weight: 400;
+      transition: all 0.2s ease;
+
+      .arrow {
+        margin-left: 1rem;
+        position: relative;
+        width: 40px;
+        height: 20px;
+        transition: all 0.2s ease;
+        img {
+          object-fit: contain;
+        }
+      }
+
+      &:hover{
+        color: rgba(variables.$black, 0.6);
+        .arrow{
+          transform: translateX(5px);
+        }
+
+      }
+    }
+
+    hr {
+      width: 85%;
+      height: 3px;
+      border: none;
+      background: linear-gradient(
+        90deg,
+        variables.$lightorange,
+        variables.$orange
+      );
+      margin: 1rem 0;
+    }
+  }
+}
+
+.banner {
+  height: 740px;
+  padding: 3% 0;
+
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url("/services-header.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 560px;
+    .image_container {
+      .image {
+        position: relative;
+        width: 640px;
+        height: 640px;
+
+        img {
+          object-fit: cover;
+          transition: all 0.5s ease;
+        }
+
+        &:hover{
+          img{
+            opacity: 0.6;
+            filter: brightness(1.2) saturate(1.2);
+          }
+          
+        }
+      }
+    }
+
+    .title_container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      min-width: 500px;
+      .title_images {
+        .title {
+          position: relative;
+          width: 300px;
+          height: 100px;
+          margin-bottom: 1rem;
+          img {
+            object-fit: contain;
+            pointer-events: none;
+            user-select: none;
+          }
+        }
+      }
+
+      a {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        button {
+          width: 60%;
+        }
+      }
+    }
+  }
+}
+
