@@ -5,6 +5,7 @@ import styles from "@/styles/services.module.scss";
 import { motion, Variants } from "framer-motion";
 import Link from "next/link";
 import { Service } from "../graphql/queries/query-service";
+import useIsMobile from "../components/IsMobile";
 
 interface ServiceProps {
   services: { nodes: Service[] };
@@ -35,49 +36,100 @@ export default function ServiceList({
     },
   };
 
+  const isMobile = useIsMobile();
+
   return (
-    <motion.div
-      className={styles.service_card}
-      variants={containerVariants}
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, amount: 0.4 }}
-    >
-      {services_data.services.nodes.map((data: Service, index: number) => (
+    <>
+      {isMobile ? (
+        <div className={styles.service_card}>
+          {services_data.services.nodes.map((data, index) => (
+            <motion.div
+              key={index}
+              className={styles.container}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.4 }}
+              transition={{ duration: 0.6, ease: "easeOut" }}
+            >
+              <div className={styles.title}>
+                <div className={styles.image}>
+                  <Image
+                    src={`/path${index + 1}.png`}
+                    alt="service icon"
+                    width={80}
+                    height={80}
+                  />
+                </div>
+                <h2>{data.serviceField.title}</h2>
+              </div>
+              <div
+                className={styles.desc}
+                dangerouslySetInnerHTML={{
+                  __html: data.serviceField.description,
+                }}
+              />
+              <Link href="/contact" className={styles.link}>
+                Contact us
+                <div className={styles.arrow}>
+                  <Image
+                    src="/arrow.png"
+                    alt="arrow"
+                    fill
+                    sizes="(max-width: 768px) 40px, 60px"
+                  />
+                </div>
+              </Link>
+              <hr />
+            </motion.div>
+          ))}
+        </div>
+      ) : (
         <motion.div
-          key={index}
-          className={styles.container}
-          variants={childVariants}
+          className={styles.service_card}
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.4 }}
         >
-          <div className={styles.title}>
-            <div className={styles.image}>
-              <Image
-                src={`/path${index + 1}.png`}
-                alt="service icon"
-                width={80}
-                height={80}
+          {services_data.services.nodes.map((data, index) => (
+            <motion.div
+              key={index}
+              className={styles.container}
+              variants={childVariants}
+            >
+              <div className={styles.title}>
+                <div className={styles.image}>
+                  <Image
+                    src={`/path${index + 1}.png`}
+                    alt="service icon"
+                    width={80}
+                    height={80}
+                  />
+                </div>
+                <h2>{data.serviceField.title}</h2>
+              </div>
+              <div
+                className={styles.desc}
+                dangerouslySetInnerHTML={{
+                  __html: data.serviceField.description,
+                }}
               />
-            </div>
-            <h2>{data.serviceField.title}</h2>
-          </div>
-          <div
-            className={styles.desc}
-            dangerouslySetInnerHTML={{ __html: data.serviceField.description }}
-          />
-          <Link href="/contact" className={styles.link}>
-            Contact us
-            <div className={styles.arrow}>
-              <Image
-                src="/arrow.png"
-                alt="arrow"
-                fill
-                sizes="(max-width: 768px) 40px, 60px"
-              />
-            </div>
-          </Link>
-          <hr />
+              <Link href="/contact" className={styles.link}>
+                Contact us
+                <div className={styles.arrow}>
+                  <Image
+                    src="/arrow.png"
+                    alt="arrow"
+                    fill
+                    sizes="(max-width: 768px) 40px, 60px"
+                  />
+                </div>
+              </Link>
+              <hr />
+            </motion.div>
+          ))}
         </motion.div>
-      ))}
-    </motion.div>
+      )}
+    </>
   );
 }
