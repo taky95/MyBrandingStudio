@@ -64,6 +64,7 @@
   padding: 2rem;
   color: variables.$black;
   align-items: stretch;
+  overflow: hidden;
 
   .container {
     height: 540px;
@@ -145,6 +146,7 @@
 .banner {
   height: 740px;
   padding: 3% 0;
+  overflow: hidden;
 
   .container {
     display: flex;
@@ -209,7 +211,7 @@
 @media screen and (max-width: 30em) {
   .hero {
     .hero_background {
-      height: 92vh;
+      height: 580px;
     }
 
     h1 {
