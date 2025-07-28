@@ -56,9 +56,9 @@ const Footer = async (): Promise<React.JSX.Element> => {
                                 </li>
                             </ul>
                             <ul>
-                                <li>
+                                {/*<li>
                                     <Link href="/program" >1:1 Program</Link>
-                                </li>
+                                </li>*/}
                                 <li>
                                     <Link href="/blog" >Blog</Link>
                                 </li>
@@ -69,9 +69,9 @@ const Footer = async (): Promise<React.JSX.Element> => {
                         </div>
                         <div className={styles.footer_social}>
                             <ul>
-                            <li><a href="#"><FaFacebookF /></a></li>
-                            <li><a href="#"><FaLinkedin /></a></li>
-                            <li><a href="#"><FaInstagram /></a></li>
+                            <li><a href="https://www.facebook.com/profile.php?id=61564442412328 "><FaFacebookF /></a></li>
+                            <li><a href="https://www.linkedin.com/in/marina-yayla/"><FaLinkedin /></a></li>
+                            <li><a href="https://www.instagram.com/mypersonalbrandingstudio/"><FaInstagram /></a></li>
                             </ul>
                         </div>                
                     </div>
@@ -104,9 +104,9 @@ const Footer = async (): Promise<React.JSX.Element> => {
                                 </li>
                             </ul>
                             <ul>
-                                <li>
+                                {/*<li>
                                     <Link href="/program" >1:1 Program</Link>
-                                </li>
+                                </li>*/}
                                 <li>
                                     <Link href="/blog" >Blog</Link>
                                 </li>
@@ -117,9 +117,9 @@ const Footer = async (): Promise<React.JSX.Element> => {
                         </div>
                         <div className={styles.footer_social}>
                             <ul>
-                            <li><a href="#"><FaFacebookF /></a></li>
-                            <li><a href="#"><FaLinkedin /></a></li>
-                            <li><a href="#"><FaInstagram /></a></li>
+                            <li><a href="https://www.facebook.com/profile.php?id=61564442412328 "><FaFacebookF /></a></li>
+                            <li><a href="https://www.linkedin.com/in/marina-yayla/"><FaLinkedin /></a></li>
+                            <li><a href="https://www.instagram.com/mypersonalbrandingstudio/"><FaInstagram /></a></li>
                             </ul>
                         </div>                
                     </div>
