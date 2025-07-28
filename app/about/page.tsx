@@ -4,21 +4,15 @@ import { BannerButton } from "@/components/Button";
 import { timelineItems } from "@/data";
 import styles from "@/styles/about.module.scss";
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useState } from "react";
+import useIsMobile from "@/components/IsMobile";
 import { TimelineItem } from "@/components/TimeLine";
 
 export default function About() {
-  const [isMobile, setIsMobile] = useState(false);
+  const isMobile = useIsMobile();
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
-
+  
   // Detect mobile screens
-  useEffect(() => {
-    const mq = window.matchMedia("(max-width: 768px)");
-    setIsMobile(mq.matches);
-    const listener = (e: MediaQueryListEvent) => setIsMobile(e.matches);
-    mq.addEventListener("change", listener);
-    return () => mq.removeEventListener("change", listener);
-  }, []);
 
   return (
     <>
