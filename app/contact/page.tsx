@@ -11,7 +11,7 @@ export default async function Contact() {
             <section className={styles.contact}>
                 <div className={styles.image}>
                     <Image
-                        src="/sample1.jpg"
+                        src="/contact-profile.jpg"
                         alt="contact"
                         fill
                     />
