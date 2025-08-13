@@ -56,7 +56,7 @@
       h2 {
         font-size: variables.$logoTitleFontSize;
         margin-bottom: 1rem;
-        font-weight:400;
+        font-weight: 400;
       }
 
       hr {
@@ -170,7 +170,7 @@
       gap: 2rem;
       padding: 0 2.5rem;
 
-      .desc_image{
+      .desc_image {
         display: none;
       }
 
@@ -202,8 +202,8 @@
 }
 
 .career {
-  &>h2{
-    background-image: url('/banner.png');
+  & > h2 {
+    background-image: url("/banner.png");
     background-repeat: no-repeat;
     background-size: cover;
     text-align: center;
@@ -305,7 +305,7 @@
           padding-right: 3rem; // space from center
         }
 
-        .timeline_icon{
+        .timeline_icon {
           .timeline_line {
             right: 150px;
           }
@@ -320,7 +320,7 @@
           padding-left: 3rem; // space from center
         }
 
-        .timeline_icon{
+        .timeline_icon {
           .timeline_line {
             left: 150px;
           }
@@ -330,29 +330,29 @@
   }
 }
 
-@media screen and (max-width:30em) {
-  .hero{
+@media screen and (max-width: 30em) {
+  .hero {
     height: 92vh;
 
-    .hero_background{
+    .hero_background {
       display: none;
-    } 
+    }
 
-    .hero_content{
+    .hero_content {
       position: relative;
       //top: 0;
-      
-      .hero_image{
+
+      .hero_image {
         height: 92vh; // Adjusted height for smaller screens
         left: 0; // Center the image
         top: -50px; // Adjusted position for smaller screens
 
-        img{
+        img {
           object-fit: cover;
         }
       }
 
-      .hero_text{
+      .hero_text {
         position: absolute;
         top: auto;
         bottom: 14vh; // Adjusted for smaller screens
@@ -363,24 +363,24 @@
         z-index: 2;
         background-color: rgba(variables.$white, 0.8);
         padding: 3rem 1rem;
-        
-        p{
+
+        p {
           word-spacing: 6px;
         }
 
-        hr{
-          margin:0;
+        hr {
+          margin: 0;
         }
       }
     }
   }
 
-  .intro{
-    .intro_background{
+  .intro {
+    .intro_background {
       display: none;
     }
 
-    .intro_content{
+    .intro_content {
       position: relative;
       width: 100vw;
       padding: 0;
@@ -392,30 +392,30 @@
 
       & > h2 {
         font-size: variables.$titleFontSize;
-        word-spacing: 0; 
-        letter-spacing: 0.2rem; 
+        word-spacing: 0;
+        letter-spacing: 0.2rem;
         margin-top: 0;
       }
 
       & > p {
-        padding: 0 2rem; 
-        font-size: variables.$mobileFontSize; 
+        padding: 0 2rem;
+        font-size: variables.$mobileFontSize;
         line-height: 1.5rem;
       }
 
-      .desc{
-        flex-direction: column; 
-        align-items: center; 
+      .desc {
+        flex-direction: column;
+        align-items: center;
         position: relative;
         gap: 0;
 
-        .desc_image{
-          display: block; 
+        .desc_image {
+          display: block;
           position: relative;
           width: 100vw;
           height: 140px;
           overflow: hidden;
-          margin: 0.5rem 0; 
+          margin: 0.5rem 0;
           flex: auto;
 
           img {
@@ -425,29 +425,29 @@
         }
       }
 
-      &> hr:not(:first-of-type){
+      & > hr:not(:first-of-type) {
         display: none;
       }
     }
   }
 
-  .career{
-    .mobile_background{
+  .career {
+    .mobile_background {
       position: fixed;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
-      background-image: url('/about-mobile-background.jpg');
+      background-image: url("/about-mobile-background.jpg");
       background-size: cover;
       background-position: center;
       z-index: -1; /* Puts it behind everything */
     }
-    
-    &>h2{
+
+    & > h2 {
       font-size: variables.$logoTitleFontSize;
-      word-spacing: 0rem; 
-      letter-spacing: 0.1rem; 
+      word-spacing: 0rem;
+      letter-spacing: 0.1rem;
       margin-top: 30rem;
       margin-bottom: -1%;
       padding-bottom: 0;
@@ -456,14 +456,14 @@
       color: lighten(variables.$black, 25%);
     }
 
-    .career_content{
+    .career_content {
       padding: 0 0 0;
 
-      &::before{
+      &::before {
         display: none;
       }
 
-      .timeline_item{
+      .timeline_item {
         overflow: hidden;
         flex-direction: row-reverse;
         margin-bottom: -1%;
@@ -476,7 +476,7 @@
         &:nth-child(2n) {
           margin-bottom: 15rem;
         }
-/*
+        /*
         &.active {
           background-color: variables.$black; // highlight color
           color: variables.$white;
@@ -490,14 +490,14 @@
           }
         }
 */
-        &.active{
-          .timeline_content{
+        &.active {
+          .timeline_content {
             opacity: 1;
             transition: opacity 0.3s ease-in;
           }
         }
 
-        .timeline_content{
+        .timeline_content {
           padding: 0;
           width: 100%;
           height: 100%;
@@ -505,31 +505,31 @@
           min-height: auto;
           opacity: 0.6;
 
-          h3{
+          h3 {
             font-size: variables.$subTitleFontSize;
             text-align: center;
-            color: lighten(variables.$black, 25%)
+            color: lighten(variables.$black, 25%);
           }
 
-          p{
+          p {
             font-size: variables.$mobileFontSize;
           }
         }
 
-        .timeline_icon{
+        .timeline_icon {
           position: relative;
-          top:auto;
+          top: auto;
           left: auto;
           transform: none;
           transition: background-color 0.3s ease, transform 0.3s ease;
-          height: auto;          
+          height: auto;
           padding-left: 1rem;
           display: none;
 
-          img{
+          img {
             object-position: top;
             padding-top: 20%;
-            position: relative; 
+            position: relative;
           }
 
           .timeline_line {
@@ -544,7 +544,6 @@
         }
 
         &.left {
-
           .timeline_content {
             text-align: left;
             padding: 0.5rem 1rem 0.5rem 1rem;
@@ -554,12 +553,12 @@
         &.right {
           justify-content: flex-start;
 
-          .timeline_content{
+          .timeline_content {
             text-align: left;
             padding: 0.5rem 1rem 0.5rem 1rem;
           }
 
-          .timeline_icon{
+          .timeline_icon {
             .timeline_line {
               left: auto;
             }
