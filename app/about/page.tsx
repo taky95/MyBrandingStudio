@@ -111,6 +111,7 @@ export default function About() {
         </div>
       </section>
       <section className={styles.career}>
+        {isMobile && (<div className={styles.mobile_background}></div>)}
         <h2>MY CAREER PATH</h2>
         <div className={styles.career_content}>
             {timelineItems.map((item, index) => (
