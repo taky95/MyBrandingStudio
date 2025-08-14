@@ -71,7 +71,7 @@ const Instagram: React.FC<InstagramProps> = ({ instagram }) => {
       <Slider {...settings}>
         {instagram.map((data, index) => (
           <div key={index} className={styles.slider_item}>
-            <Image src={data.media_url} alt={data.caption} width={250} height={250} />
+            <Image src={data.media_url} alt={data.caption} width={250} height={250} unoptimized />
           </div>
         ))}
       </Slider>
