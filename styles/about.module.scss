@@ -469,7 +469,7 @@
         margin-bottom: -1%;
         transition: background-color 0.3s ease, transform 0.3s ease;
         align-items: stretch;
-        //min-height: 360px;
+        min-height: 360px;
         background-color: variables.$white; /* optional for readability */
         padding: 1rem;
 
@@ -524,7 +524,6 @@
           transition: background-color 0.3s ease, transform 0.3s ease;
           height: auto;
           padding-left: 1rem;
-          display: none;
 
           img {
             object-position: top;
