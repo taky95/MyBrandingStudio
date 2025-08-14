@@ -3,9 +3,8 @@ import '@/styles/global.scss';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { Roboto, Sacramento, Libre_Bodoni} from 'next/font/google';
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
+
 import { SpeedInsights } from "@vercel/speed-insights/next"
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { Analytics } from "@vercel/analytics/next"
 
 const roboto = Roboto({
