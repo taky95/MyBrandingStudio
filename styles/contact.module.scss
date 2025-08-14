@@ -95,8 +95,15 @@
 
     .image{
       width: 100%;
-      height: 80vh; 
+      height: 60vh; 
       margin: 0;
+      background-image: url("/about-mobile-background.jpg");
+      background-size: cover;
+      background-position: top;
+
+      img{
+        display: none;
+      }
     }
 
     .intro{
