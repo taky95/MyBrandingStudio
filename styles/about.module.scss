@@ -453,7 +453,7 @@
       padding-bottom: 0;
       background-image: none;
       background-color: variables.$white;
-      color: lighten(variables.$black, 25%);
+      color: color.adjust(variables.$black, $lightness: 25%);
     }
 
     .career_content {
@@ -508,7 +508,7 @@
           h3 {
             font-size: variables.$subTitleFontSize;
             text-align: center;
-            color: lighten(variables.$black, 25%);
+            color: color.adjust(variables.$black, $lightness: 25%);
           }
 
           p {
