@@ -7,9 +7,18 @@
   position: relative;
   align-content: center;
   margin-bottom: -5px;
+  transition: all 0.3s ease;
+
+  &:hover{
+    opacity: 0.9;
+  }
 
   .slider_item{
     position: relative;
+
+    img{
+      object-fit: cover;
+    }
   }
 
 }

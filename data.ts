@@ -1,32 +1,3 @@
-export const instagram = [
-    {
-    caption:'1:1 Program',
-    timestamp: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    media_url: 'https://picsum.photos/400/400?1',
-  },
-  {
-    caption:'Sales & Growth',
-    timestamp: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    media_url: 'https://picsum.photos/400/400?1',
-  },
-  {
-    caption:'Marketing',
-    timestamp: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    media_url: 'https://picsum.photos/400/400?1',
-
-  },
-  {
-    caption:'Branding',
-    timestamp: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    media_url: 'https://picsum.photos/400/400?1',
-  },
-  {
-    caption:'Mindset',
-    timestamp: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    media_url: 'https://picsum.photos/400/400?1',
-  },
-]
-
 export const timelineItems = [
   { 
     year: '2006',

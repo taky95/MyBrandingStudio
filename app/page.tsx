@@ -112,7 +112,7 @@ export default async function Home() {
               </div>
               <div className={styles.bio_picture} >
                 <Image
-                  src="/sample2.jpg"
+                  src="/contact-profile.jpg"
                   alt="bio_picture"
                   fill
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
