@@ -11,6 +11,7 @@ export interface InstagramPost {
   media_type: 'IMAGE' | 'VIDEO' | 'CAROUSEL_ALBUM';
   media_url: string;
   timestamp: string;
+  permalink: string;
 }
 
 export async function GET(request: Request) {
@@ -25,7 +26,7 @@ export async function GET(request: Request) {
 
   try {
     const igRes = await fetch(
-      `https://graph.instagram.com/v23.0/me/media?fields=id,caption,media_type,media_url,timestamp&limit=${limit}&access_token=${ACCESS_TOKEN}`
+      `https://graph.instagram.com/v23.0/me/media?fields=id,caption,media_type,media_url,timestamp,permalink&limit=${limit}&access_token=${ACCESS_TOKEN}`
     );
     const igData = await igRes.json();
 
@@ -50,6 +51,7 @@ export async function GET(request: Request) {
             media_type: c.media_type,
             media_url: c.media_url,
             timestamp: carousel.timestamp,
+            permalink: carousel.permalink,
           }))
         );
       }
