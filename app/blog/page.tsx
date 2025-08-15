@@ -74,13 +74,7 @@ export default async function Blog() {
           <div className={styles.title_container}>
             <div className={styles.title_images}>
               <div className={styles.title}>
-                <Image src="/services-title1.png" alt="service icon" fill />
-              </div>
-              <div className={styles.title}>
-                <Image src="/services-title2.png" alt="service icon" fill />
-              </div>
-              <div className={styles.title}>
-                <Image src="/services-title3.png" alt="service icon" fill />
+                <Image src="/services-title.png" alt="service icon" fill />
               </div>
             </div>
             <DefaultButton src="/work">View my Portfolio</DefaultButton>
