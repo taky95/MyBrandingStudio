@@ -28,7 +28,7 @@ export default function About() {
         </div>
         <div className={styles.hero_content}>
           <div className={styles.hero_image}>
-            <Image src={"/profile.jpg"} alt="about" fill />
+            <Image src={"/about-profile.png"} alt="about" fill />
           </div>
           <div className={styles.hero_text}>
             <h2>Hey,</h2>
