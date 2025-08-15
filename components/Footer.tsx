@@ -18,7 +18,7 @@ const Footer = async (): Promise<React.JSX.Element> => {
       : "http://localhost:3000";
 
   try {
-    const res = await fetch(`${baseUrl}/api/instagram?limit=5`, {
+    const res = await fetch(`${baseUrl}/api/instagram?limit=8`, {
       cache: "no-store",
     });
     images = await res.json();
