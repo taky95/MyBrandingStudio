@@ -22,8 +22,8 @@
 
   .image{
     position: relative;
-    width: 25rem;
-    height: 25rem; // full screen width or container width
+    width: 30rem;
+    height: 30rem; // full screen width or container width
     margin: 5%;
     aspect-ratio: 1 / 1; // Ensures a square container
     
@@ -35,8 +35,9 @@
   .intro{
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    padding: 2rem;
+    justify-content: space-between;
+    padding: 5% 2rem;
+    max-width: 58ch;
 
     h2{
       font-size: variables.$logoTitleFontSize;
@@ -49,9 +50,9 @@
     .contact_title{
       margin-top: 1rem;
       width: 100%;
-      height: 100px;
+      height: 120px;
       position: relative;
-      margin-bottom: 5px;;
+      margin-bottom: 1rem;
 
       img{
         object-fit: contain;
