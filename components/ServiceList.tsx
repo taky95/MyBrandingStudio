@@ -114,17 +114,6 @@ export default function ServiceList({
                   __html: data.serviceField.description,
                 }}
               />
-              <Link href="/contact" className={styles.link}>
-                Contact us
-                <div className={styles.arrow}>
-                  <Image
-                    src="/arrow.png"
-                    alt="arrow"
-                    fill
-                    sizes="(max-width: 768px) 40px, 60px"
-                  />
-                </div>
-              </Link>
               <hr />
             </motion.div>
           ))}
