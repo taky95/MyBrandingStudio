@@ -86,17 +86,17 @@ const Footer = async (): Promise<React.JSX.Element> => {
             <div className={styles.footer_social}>
               <ul>
                 <li>
-                  <a href="https://www.facebook.com/profile.php?id=61564442412328 ">
+                  <a href="https://www.facebook.com/profile.php?id=61564442412328 " target="_blank" rel="noopener noreferrer">
                     <FaFacebookF />
                   </a>
                 </li>
                 <li>
-                  <a href="https://www.linkedin.com/in/marina-yayla/">
+                  <a href="https://www.linkedin.com/in/marina-yayla/" target="_blank" rel="noopener noreferrer">
                     <FaLinkedin />
                   </a>
                 </li>
                 <li>
-                  <a href="https://www.instagram.com/mypersonalbrandingstudio/">
+                  <a href="https://www.instagram.com/mypersonalbrandingstudio/" target="_blank" rel="noopener noreferrer">
                     <FaInstagram />
                   </a>
                 </li>
@@ -146,17 +146,17 @@ const Footer = async (): Promise<React.JSX.Element> => {
             <div className={styles.footer_social}>
               <ul>
                 <li>
-                  <a href="https://www.facebook.com/profile.php?id=61564442412328 ">
+                  <a href="https://www.facebook.com/profile.php?id=61564442412328" target="_blank" rel="noopener noreferrer">
                     <FaFacebookF />
                   </a>
                 </li>
                 <li>
-                  <a href="https://www.linkedin.com/in/marina-yayla/">
+                  <a href="https://www.linkedin.com/in/marina-yayla/" target="_blank" rel="noopener noreferrer">
                     <FaLinkedin />
                   </a>
                 </li>
                 <li>
-                  <a href="https://www.instagram.com/mypersonalbrandingstudio/">
+                  <a href="https://www.instagram.com/mypersonalbrandingstudio/" target="_blank" rel="noopener noreferrer">
                     <FaInstagram />
                   </a>
                 </li>
