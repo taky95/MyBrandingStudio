@@ -102,7 +102,7 @@ export default async function Home() {
             <div className={styles.bio_content}>
               <div className={styles.bio_text}>
                 <div className={styles.bio_title}>
-                  <Image src='/bio-title.png' alt='bio-title' fill/>
+                  <Image src='/bio-title.png' alt='bio-title' fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 100vw"/>
                 </div>
                 <h2>{bio.heading}</h2>
                 <h3>{bio.subHeading1}</h3>
