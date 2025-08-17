@@ -19,7 +19,7 @@ export default async function Contact() {
                 <div className={styles.intro}>
                     <h2>Have a business idea or project in mind?</h2>
                     <p>
-                        While you focus on what you do bset, I&apos;ll guide the strategy, branding, and marketing to rbing your idea to life. With the right focus, we&apos;ll build something great together. 
+                        While you focus on what you do best, I&apos;ll guide the strategy, branding, and marketing to bring your idea to life. With the right focus, we&apos;ll build something great together. 
                     </p>
                     <div className={styles.contact_title}>
                         <Image src='/contact-title.png' alt='intro-title' fill/>
