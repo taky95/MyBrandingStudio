@@ -5,7 +5,7 @@ import Link from "next/link";
 import { WP_QUERY, NavItem } from '../graphql/queries/query';
 import client from '@/lib/apollo-client'; // Import the Apollo Client instance
 import Card from "@/components/Card";
-import Steps from "@/components/Steps";
+//import Steps from "@/components/Steps";
 import DefaultButton from "@/components/Button";
 import Tile from "@/components/Tile";
 import Error from "@/components/Error";
@@ -93,9 +93,9 @@ export default async function Home() {
         </div>
         <p>{intro.description}</p>
       </section>
-      <section className={styles.steps}>
+      {/*<section className={styles.steps}>
         <Steps steps={steps}/>
-      </section>
+      </section>*/}
       <section className={styles.bio}>
         <FadeInOnScroll delay={200} once={true}>
           <div className={styles.bio_card}>
