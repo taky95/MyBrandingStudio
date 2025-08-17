@@ -68,13 +68,13 @@ export default async function Blog() {
         <div className={styles.container}>
           <Link href="/" className={styles.image_container}>
             <div className={styles.image}>
-              <Image src="/services-banner.png" alt="service icon" fill />
+              <Image src="/services-banner.png" alt="service icon" fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 100vw"/>
             </div>
           </Link>
           <div className={styles.title_container}>
             <div className={styles.title_images}>
               <div className={styles.title}>
-                <Image src="/services-title.png" alt="service icon" fill />
+                <Image src="/services-title.png" alt="service icon" fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 100vw"/>
               </div>
             </div>
             <DefaultButton src="/work">View my Portfolio</DefaultButton>

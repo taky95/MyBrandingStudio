@@ -77,7 +77,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                   : "Blog Image"
               }
               fill
-              sizes="100vw"
+              sizes="(max-width: 768px) 450px, 900px"
             />
           </div>
         ) : (
@@ -115,13 +115,13 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
         <div className={styles.container}>
           <Link href="/" className={styles.image_container}>
             <div className={styles.image}>
-              <Image src="/services-banner.png" alt="service icon" fill />
+              <Image src="/services-banner.png" alt="service icon" fill sizes="(max-width: 768px) 100vw, 900px"/>
             </div>
           </Link>
           <div className={styles.title_container}>
             <div className={styles.title_images}>
               <div className={styles.title}>
-                <Image src="/services-title.png" alt="service icon" fill />
+                <Image src="/services-title.png" alt="service icon" fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 100vw"/>
               </div>
             </div>
             <DefaultButton src="/work">View my Portfolio</DefaultButton>
