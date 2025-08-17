@@ -29,9 +29,9 @@ export default async function Contact() {
                     <p>+1(403)4708167</p>
                     <div className={styles.social}>
                         <ul>
-                            <li><a href="https://www.facebook.com/profile.php?id=61564442412328 "><FaFacebookF /></a></li>
-                            <li><a href="https://www.linkedin.com/in/marina-yayla/"><FaLinkedin /></a></li>
-                            <li><a href="https://www.instagram.com/mypersonalbrandingstudio/"><FaInstagram /></a></li>
+                            <li><a href="https://www.facebook.com/profile.php?id=61564442412328" target="_blank" rel="noopener noreferrer" ><FaFacebookF /></a></li>
+                            <li><a href="https://www.linkedin.com/in/marina-yayla/" target="_blank" rel="noopener noreferrer"><FaLinkedin /></a></li>
+                            <li><a href="https://www.instagram.com/mypersonalbrandingstudio/" target="_blank" rel="noopener noreferrer"><FaInstagram /></a></li>
                         </ul>
                     </div>   
                 </div>
