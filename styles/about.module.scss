@@ -9,6 +9,7 @@
     width: 100vw;
     height: 580px;
     overflow: hidden;
+    background-color: variables.$white;
 
     img {
       object-fit: cover;
@@ -169,6 +170,7 @@
       display: flex;
       gap: 2rem;
       padding: 0 2.5rem;
+      position: relative;
 
       .desc_image {
         display: none;
