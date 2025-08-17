@@ -3,7 +3,6 @@
 import Image from "next/image";
 import styles from "@/styles/services.module.scss";
 import { motion, Variants } from "framer-motion";
-import Link from "next/link";
 import { Service } from "../graphql/queries/query-service";
 import useIsMobile from "../components/IsMobile";
 
@@ -68,17 +67,6 @@ export default function ServiceList({
                   __html: data.serviceField.description,
                 }}
               />
-              <Link href="/contact" className={styles.link}>
-                Contact us
-                <div className={styles.arrow}>
-                  <Image
-                    src="/arrow.png"
-                    alt="arrow"
-                    fill
-                    sizes="(max-width: 768px) 40px, 60px"
-                  />
-                </div>
-              </Link>
               <hr />
             </motion.div>
           ))}
