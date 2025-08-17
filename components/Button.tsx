@@ -1,7 +1,10 @@
+"use client";
+
 import React from "react";
 
 import Link from "next/link";
 import styles from "@/styles/button.module.scss";
+import * as gtag from "@/lib/gtag";
 
 interface ButtonProps {
   src: string; 
@@ -12,9 +15,15 @@ const DefaultButton = ({ src, children }: ButtonProps) => {
   
   return(
     <Link href={src} className={styles.defaultButton}>
-      <button>{children}</button>
+      <button
+        onClick={() =>
+          gtag.event({
+            action: "click",
+            params: { label: children?children.toString():"Button Clicked" },
+          })
+        }
+      >{children}</button>
     </Link>
-
   )
 }
 
