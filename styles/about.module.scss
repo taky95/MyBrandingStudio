@@ -274,8 +274,9 @@
         .timeline_line {
           position: absolute;
           height: 2px;
-          width: 180%;
+          width: 0;
           background-color: variables.$green;
+          transition: width 0.5s ease-in;
         }
       }
 
@@ -285,6 +286,8 @@
         padding-top: 3.5rem;
         max-height: 20rem;
         min-height: 20rem;
+        opacity: 0;
+        transition: opacity 0.5s ease-in;
 
         h3 {
           font-size: variables.$titleFontSize;
@@ -296,6 +299,17 @@
         p {
           font-size: variables.$baseFontSize;
           line-height: 1.5;
+        }
+      }
+
+      &.fadeIn{
+        .timeline_content {
+          opacity: 1;
+        }
+        .timeline_icon{
+          .timeline_line {
+            width: 180%;
+          }
         }
       }
 

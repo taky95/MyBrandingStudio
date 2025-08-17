@@ -1,5 +1,5 @@
 import { motion, useInView } from "framer-motion";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import styles from "@/styles/about.module.scss";
 
@@ -20,9 +20,11 @@ interface TimelineItemProps {
 export function TimelineItem({ item, index, isMobile, setActiveIndex, activeIndex }: TimelineItemProps) {
   const ref = useRef(null);
   const isInView = useInView(ref, { margin: "-50% 0px -50% 0px" });
+  const [hasBeenInView, setHasBeenInView] = useState(false);
 
   useEffect(() => {
     if (isInView && isMobile) setActiveIndex(index);
+    if (isInView) setHasBeenInView(true);
   }, [isInView, isMobile, index, setActiveIndex]);
 
   return (
@@ -30,7 +32,8 @@ export function TimelineItem({ item, index, isMobile, setActiveIndex, activeInde
       ref={ref}
       className={`${styles.timeline_item} ${
         index % 2 === 0 ? styles.left : styles.right
-      } ${activeIndex === index ? styles.active : ""}`}
+      } ${activeIndex === index ? styles.active : ""}
+      ${hasBeenInView && !isMobile ? styles.fadeIn : ""}`}
     >
       <div className={styles.timeline_content}>
         <h3>{item.year}</h3>
