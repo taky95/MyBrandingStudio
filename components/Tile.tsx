@@ -30,7 +30,7 @@ const Tile = ({ src, title, link, alt, size }: TileProps) => {
           src={src}
           alt={alt}
           fill
-          sizes={size ? size : "100vw"}
+          sizes={size ? size : "(max-width: 768px) 250px, (max-width: 1200px) 500px"}
         />
       </div>
     </Link>
