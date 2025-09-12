@@ -68,7 +68,7 @@ const Footer = async (): Promise<React.JSX.Element> => {
                   <Link href="/services">Services</Link>
                 </li>
                 <li>
-                  <Link href="/portfolio">Portfolio</Link>
+                  <Link href="/work">Work</Link>
                 </li>
               </ul>
               <ul>
@@ -128,7 +128,7 @@ const Footer = async (): Promise<React.JSX.Element> => {
                   <Link href="/services">Services</Link>
                 </li>
                 <li>
-                  <Link href="/portfolio">Portfolio</Link>
+                  <Link href="/work">Work</Link>
                 </li>
               </ul>
               <ul>
