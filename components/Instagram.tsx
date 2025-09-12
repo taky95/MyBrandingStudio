@@ -30,15 +30,15 @@ const Instagram: React.FC<InstagramProps> = ({ instagram }) => {
         <div className={styles.profile}>
           <div className={styles.profileBorder}>
             <div className={styles.inner}>
-              <Image src={instagram.user.profile_picture_url} alt={instagram.user.username} fill unoptimized />
+              <Image src={instagram?.user?.profile_picture_url||'/sample1.jpg'} alt={instagram?.user?.username||"Instagram"} fill unoptimized />
             </div>
           </div>
           <div className={styles.username}>
             <div className={styles.line1}>
-              {instagram.user.username}
+              {instagram?.user?.username||"mybrandingstudio"}
             </div>
             <div className={styles.line2}>
-              @{instagram.user.username}
+              @{instagram?.user?.username||"mybrandingstudio"}
             </div>
           </div>
         </div>
@@ -50,7 +50,7 @@ const Instagram: React.FC<InstagramProps> = ({ instagram }) => {
       </div>
       <div className={styles.slider} ref={emblaRef}>
         <div className={styles.slider_container}>
-          {instagram.images.map((data, index) => (
+          {instagram?.images?.map((data, index) => (
             <div key={index} className={styles.slider_item}>
               <Link href={data.permalink+'?utm_source=ig_web_copy_link'} target="_blank" rel="noopener noreferrer">
                 <Image src={data.media_url} alt={data.caption} width={200} height={250} unoptimized />

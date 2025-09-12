@@ -18,9 +18,7 @@ const Footer = async (): Promise<React.JSX.Element> => {
       : "http://localhost:3000";
 
   try {
-    const res = await fetch(`${baseUrl}/api/instagram?limit=8`, {
-      cache: "no-store",
-    });
+    const res = await fetch(`${baseUrl}/api/instagram?limit=8`,{ next: { revalidate: 60 } });
     InstagramData = await res.json();
   } catch (error) {
     console.error("Failed to load Instagram Photos:", error);
