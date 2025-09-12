@@ -56,7 +56,6 @@ export default function About() {
           </p>
           <hr />
           <div className={styles.desc}>
-            <div className={styles.desc_left}>
               <p>
                 At my branding and marketing studio, my mission is simple: to
                 help businesses grow in a way that feels clear, manageable, and
@@ -72,9 +71,8 @@ export default function About() {
                 shape your brand story, and build marketing strategies that
                 actually work — not just in theory, but in practice. Whether
                 you’re starting fresh or need a new direction, we offer the
-                guidance,
+                guidance, and hands-on support to move your business forward with purpose.
               </p>
-            </div>
             <div className={styles.desc_image}>
               <Image
                 src={"/about-background.jpg"}
@@ -84,10 +82,6 @@ export default function About() {
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 100vw"
               />
             </div>
-            <div className={styles.desc_right}>
-              <p>
-                and hands-on support to move your business forward with purpose.
-              </p>
               <p>
                 We know the journey isn’t always easy — but you don’t have to do
                 it alone. With the right tools, a clear plan, and a trusted
@@ -104,7 +98,6 @@ export default function About() {
                   fill
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 100vw"
                 />
-              </div>
             </div>
           </div>
           <hr />
