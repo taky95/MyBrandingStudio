@@ -13,7 +13,7 @@ interface InstagramProps {
 }
 
 const Instagram: React.FC<InstagramProps> = ({ instagram }) => {
-  const [emblaRef] = useEmblaCarousel({ loop: true, dragFree: true }, [AutoScroll({speed:1, stopOnInteraction: false})]);
+  const [emblaRef] = useEmblaCarousel({ loop: true, dragFree: true }, [AutoScroll({speed:0.6, stopOnInteraction: false})]);
 
 
   return (

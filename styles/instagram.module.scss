@@ -10,20 +10,14 @@
   background-color: variables.$black;
   padding-top: 1.5rem;
 
-  --slide-height: 20rem;
-  --slide-spacing: 1rem;
-  --slide-size: 12%;
-
   .slider_container {
     display: flex;
     touch-action: pan-y pinch-zoom;
-    margin-left: calc(var(--slide-spacing) * -1);
 
     .slider_item {
       transform: translate3d(0, 0, 0);
-      flex: 0 0 var(--slide-size);
+      flex: 0 0 auto;
       min-width: 0;
-      padding-left: var(--slide-spacing);
       transition: opacity 0.3s ease-in-out;
 
       &:hover, &:focus{
@@ -39,7 +33,7 @@
     }
   }
 }
-
+/*
 @media screen and (max-width: 1600px) {
   .slider {
     .slider_container {
@@ -99,4 +93,4 @@
       }
     }
   }
-}
+}*/
