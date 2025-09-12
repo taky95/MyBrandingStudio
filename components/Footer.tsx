@@ -5,12 +5,12 @@ import { FaFacebookF, FaInstagram, FaLinkedin } from "react-icons/fa";
 import client from "@/lib/apollo-client";
 import { WP_QUERY } from "../graphql/queries/query";
 import Instagram from "./Instagram";
-import { InstagramPost } from "@/app/api/instagram/route";
+//import { InstagramPost } from "@/app/api/instagram/route";
 //import { instagram } from "@/data";
 
 const Footer = async (): Promise<React.JSX.Element> => {
   let logoUrl = "/sample1.jpg";
-  let images: InstagramPost[] = [];
+  let InstagramData;
 
   const baseUrl =
     process.env.NODE_ENV === "production"
@@ -21,7 +21,7 @@ const Footer = async (): Promise<React.JSX.Element> => {
     const res = await fetch(`${baseUrl}/api/instagram?limit=8`, {
       cache: "no-store",
     });
-    images = await res.json();
+    InstagramData = await res.json();
   } catch (error) {
     console.error("Failed to load Instagram Photos:", error);
   }
@@ -42,7 +42,7 @@ const Footer = async (): Promise<React.JSX.Element> => {
   return (
     <footer className={styles.footer}>
       <div className={styles.socialmedia}>
-        <Instagram instagram={images} />
+        <Instagram instagram={InstagramData} />
       </div>
       <span className={styles.footer_line}></span>
       <div className={styles.footer_background}>
@@ -73,8 +73,8 @@ const Footer = async (): Promise<React.JSX.Element> => {
               </ul>
               <ul>
                 {/*<li>
-                                    <Link href="/program" >1:1 Program</Link>
-                                </li>*/}
+                  <Link href="/program" >1:1 Program</Link>
+                </li>*/}
                 <li>
                   <Link href="/blog">Blog</Link>
                 </li>
@@ -133,8 +133,8 @@ const Footer = async (): Promise<React.JSX.Element> => {
               </ul>
               <ul>
                 {/*<li>
-                                    <Link href="/program" >1:1 Program</Link>
-                                </li>*/}
+                  <Link href="/program" >1:1 Program</Link>
+                </li>*/}
                 <li>
                   <Link href="/blog">Blog</Link>
                 </li>

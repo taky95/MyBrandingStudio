@@ -1,6 +1,78 @@
 @use "variables";
 @use "sass:color";
 
+.account {
+  display: flex;
+  background-color: variables.$black;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 0 20rem;
+  padding-top: 0.5rem;
+
+  .profile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .username{
+      margin-left: 1rem;
+      display: flex;
+      flex-direction: column;
+      .line1{
+        text-transform: uppercase;
+      }
+      .line2{
+        margin-top: 0.2rem;
+        font-size: 0.8rem;
+        color: color.scale(variables.$white, $lightness: -30%);
+      }
+    }
+
+    .profileBorder {
+      width: 4rem;
+      height: 4rem;
+      border-radius: 50%;
+      background: linear-gradient(
+        45deg,
+        #feda75,
+        #fa7e1e,
+        #d62976,
+        #962fbf,
+        #4f5bd5
+      );
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      .inner {
+        position: relative;
+        width: calc(100% - 5px); // border thickness
+        height: calc(100% - 5px);
+        border-radius: 50%;
+        overflow: hidden;
+        img {
+          object-fit: contain;
+          border-radius: 50%;
+        }
+      }
+    }
+  }
+
+  .button {
+    button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 5px 10px;
+
+      svg {
+        margin-right: 0.5rem;
+        margin-bottom: 0.2rem;
+      }
+    }
+  }
+}
+
 .slider {
   height: 260px; // Set the container height
   overflow: hidden; // Prevent overflow issues
@@ -20,7 +92,8 @@
       min-width: 0;
       transition: opacity 0.3s ease-in-out;
 
-      &:hover, &:focus{
+      &:hover,
+      &:focus {
         opacity: 0.8;
       }
 

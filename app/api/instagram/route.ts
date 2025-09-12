@@ -37,6 +37,12 @@ export async function GET(request: Request) {
       );
     }
 
+    const userRes = await fetch(
+      `https://graph.instagram.com/v23.0/me?fields=id,username,profile_picture_url&access_token=${ACCESS_TOKEN}`,
+      //{ next: { revalidate: 3600 } } // cache for 1 hour
+    );
+    const user = await userRes.json();
+
     const images: InstagramPost[] = [];
 
     // Handle regular IMAGE and VIDEO posts
@@ -78,9 +84,10 @@ export async function GET(request: Request) {
         }
       }
     }
+    const response = { user, images };
 
-    cache.set(cacheKey, images);
-    return NextResponse.json(images);
+    cache.set(cacheKey, response);
+    return NextResponse.json(response);
   } catch (error) {
     return NextResponse.json(
       { error: "Server error", details: String(error) },

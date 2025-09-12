@@ -9,20 +9,29 @@ import * as gtag from "@/lib/gtag";
 interface ButtonProps {
   src: string; 
   children?: React.ReactNode;
+  newTab?: boolean;
 }
 
-const DefaultButton = ({ src, children }: ButtonProps) => {
+const DefaultButton = ({ src, children, newTab }: ButtonProps) => {
   
   return(
-    <Link href={src} className={styles.defaultButton}>
+    <Link
+      href={src}
+      className={styles.defaultButton}
+      target={newTab ? "_blank" : undefined}
+      rel={newTab ? "noopener noreferrer" : undefined}
+    >
       <button
         onClick={() =>
           gtag.event({
             action: "click",
-            params: { label: children?children.toString():"Button Clicked" },
+            params: { label: children ? children.toString() : "Button Clicked" },
           })
         }
-      >{children}</button>
+        type="button"
+      >
+        {children}
+      </button>
     </Link>
   )
 }
