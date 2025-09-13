@@ -61,7 +61,7 @@ export default async function Services() {
         <ServiceList services_data={data} />
       </section>
       <section className={styles.link}>
-        <DefaultButton src="/contact">Contact us, Let&apos;s Connect</DefaultButton>
+        <DefaultButton src="/contact">Let&apos;s Connect</DefaultButton>
       </section>
       <section className={styles.banner}>
         <div className={styles.container}>
