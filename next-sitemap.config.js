@@ -1,6 +1,6 @@
 /** @type {import('next-sitemap').IConfig} */
 module.exports = {
-  siteUrl: 'https://www.mybrandingstudio.com/',
+  siteUrl: 'https://www.mybrandingstudio.ca/',
   generateRobotsTxt: true, // Generate robots.txt file
   changefreq: 'monthly', // Update frequency for all pages
   sitemapSize: 7000, // Maximum number of URLs per sitemap file
