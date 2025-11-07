@@ -67,6 +67,7 @@ export const metadata = {
   other: {
     "apple-mobile-web-app-status-bar-style": "black-translucent",
   },
+  metadataBase: new URL("https://mybrandingstudio.ca"),
 };
 
 export const viewport = {
