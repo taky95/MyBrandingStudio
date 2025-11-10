@@ -62,7 +62,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
         <h1>BLOG</h1>
       </section>
       <section className={styles.article}>
-        <h1 className="" dangerouslySetInnerHTML={{ __html: post.title }} />
+        <h2 className={styles.title} dangerouslySetInnerHTML={{ __html: post.title }} />
         {post.featuredImage ? (
           <div className={styles.article_image}>
             <Image

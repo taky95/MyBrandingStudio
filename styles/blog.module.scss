@@ -69,6 +69,10 @@
   color: variables.$white;
   background-color: variables.$blackgreen;
   overflow: hidden;
+  
+  .title{
+    font-size: 2em;
+  }
 
   article {
     & > p {

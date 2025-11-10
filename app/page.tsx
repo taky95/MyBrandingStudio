@@ -50,6 +50,7 @@ export default async function Home() {
   return (
     <>
       <section className={styles.hero}>
+        <h1 className={styles.srOnly}>My Branding Studio - Branding & Marketing Strategist</h1>
         <div className={styles.hero_background}>
           <Image
             src={heroImage}

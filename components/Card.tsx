@@ -31,7 +31,7 @@ const Card = ({ cards }: CardProps) => {
         {cards.map((card, index) => (
           <div key={index} className={styles.card}>
             <div className={styles.cardContent}>
-              <h1>{card.cardField.title}</h1>
+              <h2>{card.cardField.title}</h2>
               <p>{card.cardField.description}</p>
               <button>{card.cardField.buttonText}</button>
             </div>
