@@ -1,17 +1,13 @@
 import Image from "next/image";
 import styles from "@/styles/blog.module.scss";
 
-import {
-  GET_POST_BYSLUG,
-  GET_RECENT_POSTS,
-  Post,
-} from "../../../graphql/queries/query-blog";
-import client from "@/lib/apollo-client"; // Import the Apollo Client instance
+import { Post } from "../../../graphql/queries/query-blog";
 import { FixBackgroundText } from "@/components/FixBackgroundText";
 import DefaultButton from "@/components/Button";
 import Tile from "@/components/Tile";
 import Error from "@/components/Error";
 import Link from "next/link";
+import { getPostBySlug, getRecentPosts } from "@/lib/queries/getPosts";
 
 interface BlogPostPageProps {
   params: Promise<{ slug: string }>;
@@ -19,18 +15,8 @@ interface BlogPostPageProps {
 
 export async function generateMetadata({ params }: BlogPostPageProps) {
     const { slug } = await params;
-    let post = null;
-
-    try {
-      const res = await client.query({
-        query: GET_POST_BYSLUG,
-        variables: { slug },
-        fetchPolicy: "no-cache",
-      });
-      post = res.data.post;
-    } catch (error) {
-      console.error("WordPress fetch failed:", error);
-    }
+    const data = await getPostBySlug(slug);
+    const post = data.post;
 
     return {
       title: `${post.title} | My Branding Studio`,
@@ -69,26 +55,10 @@ export const revalidate = 60; //60*60 for 1 hour
 
 export default async function BlogPostPage({ params }: BlogPostPageProps) {
   const { slug } = await params;
-  let posts = [];
-  let post = null;
-
-  try {
-    const res = await client.query({
-      query: GET_POST_BYSLUG,
-      variables: { slug },
-      fetchPolicy: "no-cache",
-    });
-    post = res.data.post;
-
-    const res2 = await client.query({
-      query: GET_RECENT_POSTS,
-      variables: { ID: post.id },
-      fetchPolicy: "no-cache",
-    });
-    posts = res2.data.posts.nodes;
-  } catch (error) {
-    console.error("WordPress fetch failed:", error);
-  }
+  const data = await getPostBySlug(slug);
+  const post = data.post;
+  const data2 = await getRecentPosts(post.id);
+  const posts = data2.posts.nodes;
 
   const isError = !post || !posts || posts.length === 0;
   if (isError) {

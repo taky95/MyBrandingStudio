@@ -1,8 +1,7 @@
 import Image from "next/image";
 import styles from "@/styles/blog.module.scss";
-
-import { GET_ALL_POSTS, Post } from "../../graphql/queries/query-blog";
-import client from "@/lib/apollo-client"; // Import the Apollo Client instance
+import { getAllPosts } from "@/lib/queries/getPosts";
+import { Post } from "../../graphql/queries/query-blog";
 import Tile from "@/components/Tile";
 import DefaultButton from "@/components/Button";
 import Error from "@/components/Error";
@@ -25,18 +24,8 @@ const schema = [{
 export const revalidate = 60;
 
 export default async function Blog() {
-  let posts = [];
-
-  try {
-    const res = await client.query({
-      query: GET_ALL_POSTS,
-      fetchPolicy: "no-cache", // Disable caching
-    });
-    posts = res.data.posts.nodes;
-  } catch (error) {
-    console.error("WordPress fetch failed:", error);
-  }
-
+  const data = await getAllPosts()
+  const posts = data.posts.nodes;
   const isError = !posts || posts.length === 0;
   if (isError) {
     return <Error />;

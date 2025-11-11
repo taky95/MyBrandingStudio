@@ -1,8 +1,6 @@
 import Image from "next/image";
 import styles from "@/styles/work.module.scss";
-
-import { GET_WORKS } from '../../graphql/queries/query-work';
-import client from '@/lib/apollo-client';
+import { getWorks } from "@/lib/queries/getWorks";
 import SlideshowGallery from "@/components/SlideshowGallery";
 import DefaultButton from "@/components/Button";
 import Error from "@/components/Error";
@@ -24,23 +22,10 @@ const schema = [{
 export const revalidate = 60 
 
 export default async function Work() {
-    let data = null
-    
-    try {
-        const res = await client.query({ 
-            query: GET_WORKS,
-            fetchPolicy: "no-cache", // Disable caching
-        });
-        data = res.data;
-    }catch (error) {
-        console.error("WordPress fetch failed:", error);
-    }
-
+    const data = await getWorks()
     const isError = !data || !data.works || data.works.worksField
     if (isError) {
-        return (
-        <Error />
-        );
+      return <Error />;
     }
     
     return (

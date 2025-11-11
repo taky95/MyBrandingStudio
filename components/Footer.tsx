@@ -2,9 +2,8 @@ import styles from "@/styles/footer.module.scss";
 import Link from "next/link";
 import Image from "next/image";
 import { FaFacebookF, FaInstagram, FaLinkedin } from "react-icons/fa";
-import client from "@/lib/apollo-client";
-import { WP_QUERY } from "../graphql/queries/query";
 import Instagram from "./Instagram";
+import { getWpData } from "@/lib/queries/getWpData";
 //import { InstagramPost } from "@/app/api/instagram/route";
 //import { instagram } from "@/data";
 
@@ -24,17 +23,10 @@ const Footer = async (): Promise<React.JSX.Element> => {
     console.error("Failed to load Instagram Photos:", error);
   }
 
-  try {
-    const res = await client.query({
-      query: WP_QUERY,
-      fetchPolicy: "no-cache",
-    });
-    const logoNode = res.data?.logos?.nodes[1]?.logoField?.image?.node;
-    if (logoNode?.sourceUrl) {
-      logoUrl = logoNode.sourceUrl;
-    }
-  } catch (error) {
-    console.error("Failed to load logo:", error);
+  const data = await getWpData();
+  const logoNode = data?.logos?.nodes[1]?.logoField?.image?.node;
+  if (logoNode?.sourceUrl) {
+    logoUrl = logoNode.sourceUrl;
   }
 
   return (

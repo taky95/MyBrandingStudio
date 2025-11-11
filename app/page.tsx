@@ -2,8 +2,7 @@ import Image from "next/image";
 import styles from "@/styles/index.module.scss";
 import Link from "next/link";
 
-import { WP_QUERY, NavItem } from '../graphql/queries/query';
-import client from '@/lib/apollo-client'; // Import the Apollo Client instance
+import { NavItem } from '../graphql/queries/query';
 import Card from "@/components/Card";
 //import Steps from "@/components/Steps";
 import DefaultButton from "@/components/Button";
@@ -11,6 +10,7 @@ import Tile from "@/components/Tile";
 import Error from "@/components/Error";
 import { FadeInOnScroll } from "@/components/FadeIn";
 import { Post } from "@/graphql/queries/query-blog";
+import { getWpData } from "@/lib/queries/getWpData";
 
 const schema = [{
   "@context": "https://schema.org",
@@ -24,30 +24,14 @@ const schema = [{
 export const revalidate = 60;
 
 export default async function Home() {
-  let heroCards = [];
-  let nav = [];
-  let intro = null;
-  let steps = [];
-  let resources = [];
-  let bio = null;
-  let heroImage = null;
-
-  try {
-    const res = await client.query({ 
-      query: WP_QUERY,
-      fetchPolicy: "no-cache", // Disable caching
-    });
-    const data = res.data;
-    heroCards = data.heroCards.nodes
-    nav =data.navItems.nodes
-    intro = data.introductions.nodes[0].introField
-    steps = data.steps.nodes
-    resources = data.posts.nodes
-    bio = data.bios.nodes[0].bioField
-    heroImage = data.heroImages.nodes[0].heroImageField.image.node.sourceUrl
-  }catch (error) {
-    console.error("WordPress fetch failed:", error);
-  }
+  const data = await getWpData();
+  const heroCards = data.heroCards.nodes
+  const nav =data.navItems.nodes
+  const intro = data.introductions.nodes[0].introField
+  const steps = data.steps.nodes
+  const resources = data.posts.nodes
+  const bio = data.bios.nodes[0].bioField
+  const heroImage = data.heroImages.nodes[0].heroImageField.image.node.sourceUrl
 
   const isError = !heroImage || !intro || !bio || !nav || !steps || !resources;
   if (isError) {

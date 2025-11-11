@@ -2,9 +2,8 @@ import Image from "next/image";
 import styles from "@/styles/services.module.scss";
 import DefaultButton from "@/components/Button";
 import ServiceList from "@/components/ServiceList";
-import { GET_SERVICES } from "../../graphql/queries/query-service";
+import { getServices } from "@/lib/queries/getServices";
 import Link from "next/link";
-import client from "@/lib/apollo-client";
 import Error from "@/components/Error";
 
 export const metadata = {
@@ -24,18 +23,7 @@ const schema = [{
 export const revalidate = 60;
 
 export default async function Services() {
-  let data = null;
-
-  try {
-    const res = await client.query({
-      query: GET_SERVICES,
-      fetchPolicy: "no-cache", // Disable caching
-    });
-    data = res.data;
-  } catch (error) {
-    console.error("WordPress fetch failed:", error);
-  }
-
+  const data = await getServices()
   const isError = !data;
   if (isError) {
     return <Error />;

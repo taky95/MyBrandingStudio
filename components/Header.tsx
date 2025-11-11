@@ -1,24 +1,16 @@
 import Link from 'next/link'
 import styles from '@/styles/header.module.scss'
 import Image from "next/image"
-import client from '@/lib/apollo-client';
-import { WP_QUERY } from '../graphql/queries/query';
 import HamburgerMenu from './Hamburger';
+import { getWpData } from '@/lib/queries/getWpData';
 
 const Header = async (): Promise<React.JSX.Element> => {
     let logoUrl = '/sample1.jpg';
 
-    try {
-        const res = await client.query({ 
-            query: WP_QUERY,
-            fetchPolicy: "no-cache"
-        });
-        const logoNode = res.data?.logos?.nodes[0]?.logoField?.image?.node;
-        if (logoNode?.sourceUrl) {
-            logoUrl = logoNode.sourceUrl;
-        }
-    } catch (error) {
-        console.error('Failed to load logo:', error);
+    const data = await getWpData();
+    const logoNode = data?.logos?.nodes[1]?.logoField?.image?.node;
+    if (logoNode?.sourceUrl) {
+      logoUrl = logoNode.sourceUrl;
     }
     
     return (
