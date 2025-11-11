@@ -12,6 +12,15 @@ import Error from "@/components/Error";
 import { FadeInOnScroll } from "@/components/FadeIn";
 import { Post } from "@/graphql/queries/query-blog";
 
+const schema = [{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Home",
+  "url": "https://mybrandingstudio.ca/",
+  "description": "Branding & Marketing Strategist.",
+  "inLanguage": "en"
+}]
+
 export const revalidate = 60;
 
 export default async function Home() {
@@ -139,7 +148,11 @@ export default async function Home() {
         </div>
         <span className={styles.resources_line}></span>
       </section>
-      
+      {/* Schema markup */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+      />
     </>
   );
 }

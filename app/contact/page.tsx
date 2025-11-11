@@ -2,6 +2,21 @@ import Image from "next/image";
 import styles from "@/styles/contact.module.scss";
 import { FaFacebookF, FaInstagram, FaLinkedin } from "react-icons/fa";
 
+export const metadata = {
+  title: "Contact | My Branding Studio",
+  description: "Get in touch with My Branding Studio for your branding and marketing needs.",
+};
+
+const schema = [{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Contact",
+  "url": "https://mybrandingstudio.ca/contact",
+  "description": "Get in touch with My Branding Studio for your branding and marketing needs.",
+  "inLanguage": "en"
+}]
+
+
 export const revalidate = 60 
 
 export default async function Contact() {
@@ -36,6 +51,11 @@ export default async function Contact() {
                     </div>   
                 </div>
             </section>
+            {/* Schema markup */}
+            <script
+              type="application/ld+json"
+              dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+            />
         </>
     )
 }

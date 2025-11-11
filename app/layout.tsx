@@ -32,24 +32,24 @@ const libre = Libre_Bodoni({
 
 export const metadata = {
   title: "My Branding Studio",
-  description: "providing support for branding.",
+  description: "Branding & Marketing Strategist",
   keywords: ["branding", "design", "consulting"],
   alternates: {
     canonical: "https://mybrandingstudio.ca",
   },
   openGraph: {
     title: "My Branding Studio",
-    description: "providing support for branding.",
+    description: "Branding & Marketing Strategist",
     url: "https://mybrandingstudio.ca",
     siteName: "My Branding Studio",
     locale: "en_US",
     type: "website",
     images: [
       {
-        url: "https://yourdomain.com/og-image.jpg",
+        url: "https://www.mybrandingstudio.ca/logo.png",
         width: 1200,
         height: 630,
-        alt: "Alt text for image",
+        alt: "My Branding Studio | Branding & Marketing Strategist",
       },
     ],
   },
@@ -77,6 +77,30 @@ export const viewport = {
   themeColor: '#070808',
 };
 
+const schema = [{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "My Branding Studio",
+  url: "https://mybrandingstudio.ca",
+  logo: "https://mybrandingstudio.ca/logo.png",
+  sameAs: [
+    "https://www.instagram.com/mypersonalbrandingstudio/",
+    "https://www.linkedin.com/in/marina-yayla/",
+  ],
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "contactType": "customer service",
+    "email": "marinayaylabranding@gmail.com"
+  }
+},
+{
+    "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "My Branding Studio",
+  "url": "https://mybrandingstudio.ca"
+}
+];
+
 export default function RootLayout({ children,}: {children: React.ReactNode}) {
 
   return (
@@ -86,6 +110,12 @@ export default function RootLayout({ children,}: {children: React.ReactNode}) {
           <main>
             {children} 
           </main>
+
+          {/* Schema markup */}
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+          />
         <Footer />
         <Analytics />
         <SpeedInsights />

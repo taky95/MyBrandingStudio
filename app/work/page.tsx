@@ -7,6 +7,20 @@ import SlideshowGallery from "@/components/SlideshowGallery";
 import DefaultButton from "@/components/Button";
 import Error from "@/components/Error";
 
+export const metadata = {
+  title: "Work | My Branding Studio",
+  description: "Discover our portfolio of branding and marketing projects.",
+};
+
+const schema = [{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Work",
+  "url": "https://mybrandingstudio.ca/Work",
+  "description": "Discover our portfolio of branding and marketing projects.",
+  "inLanguage": "en"
+}]
+
 export const revalidate = 60 
 
 export default async function Work() {
@@ -59,6 +73,11 @@ export default async function Work() {
                 <p>Whether you&apos;re launching a new product, refreshing your brand, or looking to level up your marketing — great ideas start with a conversation. I&apos;m here to help you with clarifying your goals, shaping your vision, and mapping out the best path forward. From discovery and strategy to content creation, execution, and ongoing optimization, I&apos;ll guide you through every step. Share your ideas — I&apos;ll help bring them to life.</p>
                 <DefaultButton src="/contact">Let&apos;s Chat!</DefaultButton>
             </section>
+            {/* Schema markup */}
+            <script
+              type="application/ld+json"
+              dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+            />
         </>
     )
 }

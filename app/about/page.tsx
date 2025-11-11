@@ -1,19 +1,22 @@
-"use client";
-
-import { BannerButton } from "@/components/Button";
-import { timelineItems } from "@/data";
 import styles from "@/styles/about.module.scss";
 import Image from "next/image";
-import { useState } from "react";
-import useIsMobile from "@/components/IsMobile";
-import { TimelineItem } from "@/components/TimeLine";
+import Career from "@/components/Career";
+
+export const metadata = {
+  title: "About | My Branding Studio",
+  description: "Learn about our story and mission.",
+};
+
+const schema = [{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "About",
+  "url": "https://mybrandingstudio.ca/about",
+  "description": "Learn more about My Branding Studio and our design process.",
+  "inLanguage": "en"
+}]
 
 export default function About() {
-  const isMobile = useIsMobile();
-  const [activeIndex, setActiveIndex] = useState<number | null>(null);
-  
-  // Detect mobile screens
-
   return (
     <>
       <section className={styles.hero}>
@@ -104,26 +107,13 @@ export default function About() {
         </div>
       </section>
       <section className={styles.career}>
-        {isMobile && (<div className={styles.mobile_background}></div>)}
-        <h2>MY CAREER PATH</h2>
-        <div className={styles.career_content}>
-            {timelineItems.map((item, index) => (
-              <TimelineItem
-                key={index}
-                item={item}
-                index={index}
-                isMobile={isMobile}
-                activeIndex={activeIndex}
-                setActiveIndex={setActiveIndex}
-              />
-            ))}
-        </div>
-        <div className={styles.career_banner}>
-          <BannerButton src="/contact" btnText="Let's connect!">
-            Have a project in mind?
-          </BannerButton>
-        </div>
+        <Career />
       </section>
+      {/* Schema markup */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+      />
     </>
   );
 }

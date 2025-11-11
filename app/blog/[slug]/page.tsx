@@ -17,6 +17,54 @@ interface BlogPostPageProps {
   params: Promise<{ slug: string }>;
 }
 
+export async function generateMetadata({ params }: BlogPostPageProps) {
+    const { slug } = await params;
+    let post = null;
+
+    try {
+      const res = await client.query({
+        query: GET_POST_BYSLUG,
+        variables: { slug },
+        fetchPolicy: "no-cache",
+      });
+      post = res.data.post;
+    } catch (error) {
+      console.error("WordPress fetch failed:", error);
+    }
+
+    return {
+      title: `${post.title} | My Branding Studio`,
+      description: post.excerpt,
+      openGraph: {
+        title: post.title,
+        description: post.excerpt,
+        images: [post.featuredImage?.sourceUrl],
+      },
+      other: {
+        "ld+json": JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Article",
+          headline: post.title,
+          description: post.excerpt,
+          url: `https://mybrandingstudio.ca/blog/${post.slug}`,
+          image: post.featuredImage?.sourceUrl,
+          author: {
+            "@type": "Person",
+            name: post.author?.name ?? "My Branding Studio",
+          },
+          publisher: {
+            "@type": "Organization",
+            name: "My Branding Studio",
+            logo: {
+              "@type": "ImageObject",
+              url: "https://mybrandingstudio.ca/logo.png",
+            },
+          },
+        }),
+      },
+    };
+}
+
 export const revalidate = 60; //60*60 for 1 hour
 
 export default async function BlogPostPage({ params }: BlogPostPageProps) {

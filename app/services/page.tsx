@@ -7,6 +7,20 @@ import Link from "next/link";
 import client from "@/lib/apollo-client";
 import Error from "@/components/Error";
 
+export const metadata = {
+  title: "Services | My Branding Studio",
+  description: "Explore the branding and marketing services offered by My Branding Studio.",
+};
+
+const schema = [{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Services",
+  "url": "https://mybrandingstudio.ca/services",
+  "description": "Explore the branding and marketing services offered by My Branding Studio.",
+  "inLanguage": "en"
+}]
+
 export const revalidate = 60;
 
 export default async function Services() {
@@ -80,6 +94,11 @@ export default async function Services() {
           </div>
         </div>
       </section>
+      {/* Schema markup */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+      />
     </>
   );
 }

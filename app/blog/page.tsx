@@ -8,6 +8,20 @@ import DefaultButton from "@/components/Button";
 import Error from "@/components/Error";
 import Link from "next/link";
 
+export const metadata = {
+  title: "Blog | My Branding Studio",
+  description: "Read our latest articles on branding and marketing.",
+};
+
+const schema = [{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Blog",
+  "url": "https://mybrandingstudio.ca/blog",
+  "description": "Read our latest articles on branding and marketing.",
+  "inLanguage": "en"
+}]
+
 export const revalidate = 60;
 
 export default async function Blog() {
@@ -81,6 +95,11 @@ export default async function Blog() {
           </div>
         </div>
       </section>
+      {/* Schema markup */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+      />
     </>
   );
 }
