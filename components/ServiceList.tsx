@@ -53,7 +53,7 @@ export default function ServiceList({
               <div className={styles.title}>
                 <div className={styles.image}>
                   <Image
-                    src={`/path${index + 1}.png`}
+                    src={`/images/paths/path${index + 1}.png`}
                     alt="service icon"
                     width={80}
                     height={80}
@@ -88,7 +88,7 @@ export default function ServiceList({
               <div className={styles.title}>
                 <div className={styles.image}>
                   <Image
-                    src={`/path${index + 1}.png`}
+                    src={`/images/paths/path${index + 1}.png`}
                     alt="service icon"
                     width={80}
                     height={80}

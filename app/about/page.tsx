@@ -22,7 +22,7 @@ export default function About() {
       <section className={styles.hero}>
         <div className={styles.hero_background}>
           <Image
-            src={"/about-hero.png"}
+            src={"/images/backgrounds/about-hero.jpg"}
             priority
             alt="slider"
             fill
@@ -31,7 +31,7 @@ export default function About() {
         </div>
         <div className={styles.hero_content}>
           <div className={styles.hero_image}>
-            <Image src={"/about-profile.png"} alt="about" fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 100vw"/>
+            <Image src={"/images/profiles/about-profile.jpg"} alt="about" fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 100vw"/>
           </div>
           <div className={styles.hero_text}>
             <h2>Hey,</h2>
@@ -44,7 +44,7 @@ export default function About() {
       <section className={styles.intro}>
         <div className={styles.intro_background}>
           <Image
-            src={"/about-background.jpg"}
+            src={"/images/backgrounds/about-background.jpg"}
             priority
             alt="slider"
             fill
@@ -78,7 +78,7 @@ export default function About() {
               </p>
             <div className={styles.desc_image}>
               <Image
-                src={"/about-background.jpg"}
+                src={"/images/backgrounds/about-background.jpg"}
                 priority
                 alt="slider"
                 fill
@@ -95,7 +95,7 @@ export default function About() {
               </p>
               <div className={styles.signature}>
                 <Image
-                  src={"/signature.png"}
+                  src={"/images/titles/signature.png"}
                   priority
                   alt="signature"
                   fill

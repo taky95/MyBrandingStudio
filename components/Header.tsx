@@ -5,7 +5,7 @@ import HamburgerMenu from './Hamburger';
 import { getWpData } from '@/lib/queries/getWpData';
 
 const Header = async (): Promise<React.JSX.Element> => {
-    let logoUrl = '/sample1.jpg';
+    let logoUrl = '/images/ui/failover.png';
 
     const data = await getWpData();
     const logoNode = data?.logos?.nodes[1]?.logoField?.image?.node;

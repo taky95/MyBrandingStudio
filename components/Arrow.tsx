@@ -15,7 +15,7 @@ const NextArrow = (props: ArrowProps) => {
         onClick={onClick} 
     >
       <Image
-        src="/NextArrow.png"
+        src="/images/ui/next-arrow.png"
         alt="arrow"
         width={62}
         height={62}
@@ -36,7 +36,7 @@ const PrevArrow = (props: ArrowProps) => {
         onClick={onClick} 
     >
       <Image
-        src="/PrevArrow.png"
+        src="/images/ui/prev-arrow.png"
         alt="arrow"
         width={62}
         height={62}

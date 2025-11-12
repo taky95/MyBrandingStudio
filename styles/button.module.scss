@@ -51,7 +51,7 @@
     color: variables.$white;
     font-size: variables.$logoTitleFontSize;
     font-family: variables.$titleFont;
-    background-image: url('/banner.png');
+    background-image: url('/images/banners/banner.png');
     background-repeat: no-repeat;
     background-size: cover;
     align-items: center;
@@ -69,7 +69,7 @@
     flex-direction: column;
     padding: 4% 0;
     font-size: variables.$subTitleFontSize;
-    background-image: url('/banner-mobile.png');
+    background-image: url('/images/banners/banner-mobile.png');
 
     .btn {
       margin: 1% 0;

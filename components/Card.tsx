@@ -37,7 +37,7 @@ const Card = ({ cards }: CardProps) => {
             </div>
             <div className={styles.cardImage}>
               <Image
-                src={card.cardField.image? card.cardField.image.node.sourceUrl: '/sample1.jpg'}
+                src={card.cardField.image? card.cardField.image.node.sourceUrl: '/images/ui/failover.png'}
                 alt={`Slide ${index + 1}`}
                 fill
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 100vw" />

@@ -28,7 +28,7 @@ export default function SlideshowGallery({ data }: { data: WorksProps }) {
             />
             <h2>{work.worksField.catTitle}</h2>
             <div className={styles.works_arrow} >
-              <Image src="/arrow.png" alt="arrow" fill 
+              <Image src="/images/ui/arrow.png" alt="arrow" fill 
                 sizes="(max-width: 768px) 40px, 60px"
               />
             </div>

@@ -20,7 +20,7 @@ const Tile = ({ src, title, link, alt, size }: TileProps) => {
       <div className={styles.link}>
         Read more
         <div className={styles.arrow} >
-          <Image src="/arrow.png" alt="arrow" fill 
+          <Image src="/images/ui/arrow.png" alt="arrow" fill 
             sizes="(max-width: 768px) 40px, 60px"
           />
         </div>

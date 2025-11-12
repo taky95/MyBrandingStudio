@@ -8,7 +8,7 @@ import { getWpData } from "@/lib/queries/getWpData";
 //import { instagram } from "@/data";
 
 const Footer = async (): Promise<React.JSX.Element> => {
-  let logoUrl = "/sample1.jpg";
+  let logoUrl = "/images/ui/failover.png";
   let InstagramData;
 
   const baseUrl =

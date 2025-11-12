@@ -34,7 +34,7 @@ export default async function Services() {
       <section className={styles.hero}>
         <div className={styles.hero_background}>
           <Image
-            src={"/work-header.jpg"}
+            src={"/images/backgrounds/work-hero.jpg"}
             priority
             alt="slider"
             fill
@@ -69,13 +69,13 @@ export default async function Services() {
         <div className={styles.container}>
           <Link href="/" className={styles.image_container}>
             <div className={styles.image}>
-              <Image src="/services-banner.png" alt="service icon" fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 100vw"/>
+              <Image src="/images/banners/banner-catch.png" alt="banner catch" fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 100vw"/>
             </div>
           </Link>
           <div className={styles.title_container}>
             <div className={styles.title_images}>
               <div className={styles.title}>
-                <Image src="/services-title.png" alt="service icon" fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 100vw"/>
+                <Image src="/images/titles/banner-title.png" alt="banner title" fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 100vw"/>
               </div>
             </div>
             <DefaultButton src="/work">View my Portfolio</DefaultButton>

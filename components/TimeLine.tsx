@@ -42,7 +42,7 @@ export function TimelineItem({ item, index, isMobile, setActiveIndex, activeInde
       </div>
       <div className={styles.timeline_icon}>
         <Image
-          src={`/path${index + 1}.png`}
+          src={`/images/paths/path${index + 1}.png`}
           alt="Milestone"
           width={150}
           height={150}

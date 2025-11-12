@@ -36,7 +36,7 @@ export default async function Blog() {
       <section className={styles.hero}>
         <div className={styles.hero_background}>
           <Image
-            src={"/blog-header.jpg"}
+            src={"/images/backgrounds/blog-hero.jpg"}
             priority
             alt="slider"
             fill
@@ -53,7 +53,7 @@ export default async function Blog() {
               src={
                 post.featuredImage
                   ? post.featuredImage.node.sourceUrl
-                  : "/sample1.jpg"
+                  : "/images/ui/failover.png"
               }
               title={post.title}
               link={`/blog/${post.slug}`}
@@ -71,13 +71,13 @@ export default async function Blog() {
         <div className={styles.container}>
           <Link href="/" className={styles.image_container}>
             <div className={styles.image}>
-              <Image src="/services-banner.png" alt="service icon" fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 100vw"/>
+              <Image src="/images/banners/banner-catch.png" alt="service icon" fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 100vw"/>
             </div>
           </Link>
           <div className={styles.title_container}>
             <div className={styles.title_images}>
               <div className={styles.title}>
-                <Image src="/services-title.png" alt="service icon" fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 100vw"/>
+                <Image src="/images/titles/banner-title.png" alt="service icon" fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 100vw"/>
               </div>
             </div>
             <DefaultButton src="/work">View my Portfolio</DefaultButton>
@@ -99,7 +99,7 @@ export default async function Blog() {
         <div className={styles.intro_background}>
             <div className={styles.intro_image}>
                 <Image
-                    src={"/sample1.jpg"}
+                    src={"/images/ui/failover.png"}
                     alt="intro"
                     fill
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 100vw"

@@ -71,7 +71,7 @@ export default async function Home() {
                 <div className={styles.navField_titleArea}>
                   <h2>{nav_item.navField.title}</h2>
                   <div className={styles.nav_arrow} >
-                    <Image src="/arrow.png" alt="arrow" fill 
+                    <Image src="/images/ui/arrow.png" alt="arrow" fill 
                       sizes="(max-width: 768px) 40px, 60px"
                     />
                   </div>
@@ -83,7 +83,7 @@ export default async function Home() {
       </section>
       <section className={styles.intro}>
         <div className={styles.intro_title}>
-          <Image src='/intro-title.png' alt='intro-title' fill/>
+          <Image src='/images/titles/intro-title.png' alt='intro-title' fill/>
         </div>
         <p>{intro.description}</p>
       </section>
@@ -96,7 +96,7 @@ export default async function Home() {
             <div className={styles.bio_content}>
               <div className={styles.bio_text}>
                 <div className={styles.bio_title}>
-                  <Image src='/bio-title.png' alt='bio-title' fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 100vw"/>
+                  <Image src='/images/titles/bio-title.png' alt='bio-title' fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 100vw"/>
                 </div>
                 <h2>{bio.heading}</h2>
                 <h3>{bio.subHeading1}</h3>
@@ -123,7 +123,7 @@ export default async function Home() {
             return (
               <Tile 
                     key={index}
-                    src={r_item.featuredImage? r_item.featuredImage.node.sourceUrl : '/sample1.jpg'}
+                    src={r_item.featuredImage? r_item.featuredImage.node.sourceUrl : '/images/ui/failover.png'}
                     title={r_item.title}
                     link={'/blog/'+r_item.slug}
                     alt={r_item.title}></Tile>

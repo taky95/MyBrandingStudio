@@ -26,7 +26,7 @@ export default async function Contact() {
             <section className={styles.contact}>
                 <div className={styles.image}>
                     <Image
-                        src="/contact-profile.jpg"
+                        src="/images/profiles/contact-profile.jpg"
                         alt="contact"
                         fill
                         sizes="500px"
@@ -38,7 +38,7 @@ export default async function Contact() {
                         While you focus on what you do best, I&apos;ll guide the strategy, branding, and marketing to bring your idea to life. With the right focus, we&apos;ll build something great together. 
                     </p>
                     <div className={styles.contact_title}>
-                        <Image src='/contact-title.png' alt='intro-title' fill sizes="570px"/>
+                        <Image src='/images/titles/contact-title.png' alt='contact-title' fill sizes="570px"/>
                     </div>
                     <p>marinayaylabranding@gmail.com</p>
                     <p>+1(403)4708167</p>

@@ -30,7 +30,7 @@ const Instagram: React.FC<InstagramProps> = ({ instagram }) => {
         <div className={styles.profile}>
           <div className={styles.profileBorder}>
             <div className={styles.inner}>
-              <Image src={instagram?.user?.profile_picture_url||'/sample1.jpg'} alt={instagram?.user?.username||"Instagram"} fill unoptimized />
+              <Image src={instagram?.user?.profile_picture_url||'/images/ui/failover.png'} alt={instagram?.user?.username||"Instagram"} fill unoptimized />
             </div>
           </div>
           <div className={styles.username}>

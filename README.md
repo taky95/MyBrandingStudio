@@ -2,7 +2,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/taky95/mybrandingstudio">
-    <img src="public/logo.png" alt="Logo" width="800" height="450">
+    <img src="public/images/ui/logo.png" alt="Logo" width="800" height="450">
   </a>
 
 <h3 align="center">My Branding Studio</h3>
